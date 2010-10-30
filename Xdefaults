@@ -1,0 +1,14 @@
+XTerm*LoginShell:	true
+XTerm*background:	black
+XTerm*foreground:	white
+XTerm*highlightColor:	grey
+XTerm*scrollBar:	false
+XTerm*metaSendsEscape:	true
+XTerm*font:		10x12
+UXTerm*LoginShell:	true
+UXTerm*background:	black
+UXTerm*foreground:	white
+UXTerm*highlightColor:	grey
+UXTerm*scrollBar:	false
+UXTerm*metaSendsEscape:	true
+//UXTerm*font:		9x15

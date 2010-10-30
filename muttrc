@@ -1,0 +1,63 @@
+#color#
+color normal     white black
+color attachment brightyellow black
+color hdrdefault cyan black
+color indicator  black cyan
+color markers    brightred black
+color quoted     green black
+color signature  cyan black
+color status     brightgreen blue
+color tilde      blue black
+color tree       red black
+color header     brightgreen black ^From:
+color header     brightcyan black ^To:
+color header     brightcyan black ^Reply-To:
+color header     brightcyan black ^Cc:
+color header     brightblue black ^Subject:
+color body       brightred black [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body       brightblue black (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9]+
+set realname            = "Ville Valkonen"
+set from                = "mailaddress@here"
+set mbox                = ~/Mail/mbox
+set use_from            = yes
+set envelope_from       = yes
+set spoolfile           = /var/mail/weezel
+set send_charset        = "iso-8859-1"
+source ~/.mail_aliases
+set alias_file          = ~/.mail_aliases
+set record              = ~/Mail/sent
+set pager_index_lines   = 10
+set signature           = ~/.signature
+##### Sidebar #####
+## set up the sidebar, default not visible
+set sidebar_width=12 
+set sidebar_visible=yes
+set sidebar_delim=' '
+#
+### which mailboxes to list in the sidebar
+mailboxes =inbox =sent
+#
+### color of folders with new mail
+color sidebar_new yellow default
+#
+### ctrl-n, ctrl-p to select next, prev folder
+### ctrl-o to open selected folder
+bind index \CP sidebar-prev 
+bind index \CN sidebar-next 
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
+#
+## I don't need these. just for documentation purposes. See below.
+## sidebar-scroll-up
+## sidebar-scroll-down
+#
+##b toggles sidebar visibility
+#macro index b '<enter-command>toggle sidebar_visible<enter>'
+#macro pager b '<enter-command>toggle sidebar_visible<enter>'
+#
+## Remap bounce-message function to "B"
+#bind index B bounce-message
+
+unignore *
