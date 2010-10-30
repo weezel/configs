@@ -1,0 +1,4 @@
+Host saksacvs
+	HostName openbsd.informatik.uni-erlangen.de
+	#User cvs
+	Port 2022
