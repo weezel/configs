@@ -1,14 +1,18 @@
 "set term=screen-256color
 if has("gui_running")
 	set t_Co=256
-	set background=dark
-	colorscheme zenburn
+        let moria_style='dark' "light
+        let moria_fontface = 'mixed'
+        "let moria_monochrome = 1
+        colors moria
+
 	set guioptions-=T
-	set gfn=Monospace\ 8
+	set gfn=Monospace\ 9
 	set cursorline
 " feel free to choose :set background=light for a different style
 else
 	colors koehler
+	set t_Co=256
 endif
 
 

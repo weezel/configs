@@ -1,0 +1,857 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <silent> <S-Tab> =BackwardsSnippet()
+imap <C-Space> 
+inoremap <F12> :!ectags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+nmap d :scs find d =expand("<cword>")	
+nmap i :scs find i ^=expand("<cfile>")$	
+nmap f :scs find f =expand("<cfile>")	
+nmap e :scs find e =expand("<cword>")	
+nmap t :scs find t =expand("<cword>")	
+nmap c :scs find c =expand("<cword>")	
+nmap g :scs find g =expand("<cword>")	
+nmap s :scs find s =expand("<cword>")	
+snoremap <silent> 	 i<Right>=TriggerSnippet()
+snoremap  b<BS>
+nmap d :cs find d =expand("<cword>")	
+nmap i :cs find i ^=expand("<cfile>")$
+nmap f :cs find f =expand("<cfile>")	
+nmap e :cs find e =expand("<cword>")	
+nmap t :cs find t =expand("<cword>")	
+nmap c :cs find c =expand("<cword>")	
+nmap g :cs find g =expand("<cword>")	
+nmap s :cs find s =expand("<cword>")	
+snoremap % b<BS>%
+snoremap ' b<BS>'
+nmap ,cj :em CVS.Join\ in\ 
+nmap ,cp :em CVS.Import\ 
+nmap ,ci :em CVS.Commit\ 
+nmap ,ca :em CVS.Add\ 
+nmap ,cv :em CVS.Revert\ changes\ 
+nmap ,cu :em CVS.Update\ 
+nmap ,cq :em CVS.Query\ update\ 
+nmap ,co :em CVS.Checkout\ 
+nmap ,cc :em CVS.Local\ status\ 
+nmap ,ch :em CVS.Short\ status\ 
+nmap ,cs :em CVS.Status\ 
+nmap ,cl :em CVS.Log\ 
+nmap ,cr :em CVS.History\ 
+nmap ,cn :em CVS.Annotate\ 
+nmap ,cd :em CVS.Diff\ 
+nmap ,cwu :em CVS.Watch/Edit\ .Unedit\ 
+nmap ,cwt :em CVS.Watch/Edit\ .Edit\ 
+nmap ,cwe :em CVS.Watch/Edit\ .Editors\ 
+nmap ,cwf :em CVS.Watch/Edit\ .Watch\ off\ 
+nmap ,cwn :em CVS.Watch/Edit\ .Watch\ on\ 
+nmap ,cwr :em CVS.Watch/Edit\ .Watch\ remove\ 
+nmap ,cwa :em CVS.Watch/Edit\ .Watch\ add\ 
+nmap ,cww :em CVS.Watch/Edit\ .Watchers\ 
+nmap ,cth :em CVS.Tag\ .Create\ branch\ by\ module\ 
+nmap ,cto :em CVS.Tag\ .Remove\ tag\ by\ module\ 
+nmap ,cta :em CVS.Tag\ .Create\ tag\ by\ module\ 
+nmap ,ctb :em CVS.Tag\ .Create\ branch\ 
+nmap ,ctr :em CVS.Tag\ .Remove\ tag\ 
+nmap ,ctc :em CVS.Tag\ .Create\ tag\ 
+nmap ,cel :em CVS.Delete\ .Release\ workdir\ 
+nmap ,cem :em CVS.Delete\ .Remove\ from\ repository\ 
+nmap ,cmo :em CVS.Admin\ .Logout\ 
+nmap ,cmi :em CVS.Admin\ .Login\ 
+nmap ,cxw :em CVS.Extra\ .Get\ file\ (password)\ 
+nmap ,cxg :em CVS.Extra\ .Get\ file\ 
+nmap ,cxk :em CVS.Extra\ .CVS\ links\ 
+nmap ,cxj :em CVS.Extra\ .Join\ in\ to\ revision\ 
+nmap ,cxp :em CVS.Extra\ .Import\ to\ revision\ 
+nmap ,cxi :em CVS.Extra\ .Commit\ to\ revision\ 
+nmap ,cxf :em CVS.Extra\ .Merge\ in\ revision\ diffs\ 
+nmap ,cxm :em CVS.Extra\ .Merge\ in\ revision\ 
+nmap ,cxu :em CVS.Extra\ .Update\ to\ revision\ 
+nmap ,cxo :em CVS.Extra\ .Checkout\ revision\ 
+nmap ,cxl :em CVS.Extra\ .Log\ to\ revision\ 
+nmap ,cxd :em CVS.Extra\ .Diff\ to\ revision\ 
+nmap ,cxcu :em CVS.Extra\ .Create\ patchfile\ .Uni\ 
+nmap ,cxcs :em CVS.Extra\ .Create\ patchfile\ .Standard\ 
+nmap ,cxcc :em CVS.Extra\ .Create\ patchfile\ .Context\ 
+nmap ,cym :em CVS.Directory\ .Remove\ from\ repositoy\ 
+nmap ,cyi :em CVS.Directory\ .Commit\ 
+nmap ,cya :em CVS.Directory\ .Add\ 
+nmap ,cyu :em CVS.Directory\ .Update\ 
+nmap ,cyq :em CVS.Directory\ .Query\ update\ 
+nmap ,cyc :em CVS.Directory\ .Local\ status\ 
+nmap ,cyh :em CVS.Directory\ .Short\ status\ 
+nmap ,cys :em CVS.Directory\ .Status\ 
+nmap ,cyl :em CVS.Directory\ .Log\ 
+nmap ,ckt :em CVS.Keyword\ .State\ 
+nmap ,cks :em CVS.Keyword\ .Source\ 
+nmap ,ckr :em CVS.Keyword\ .Revision\ 
+nmap ,ckf :em CVS.Keyword\ .RCSfile\ 
+nmap ,ckl :em CVS.Keyword\ .Log\ 
+nmap ,ckk :em CVS.Keyword\ .Locker\ 
+nmap ,ckn :em CVS.Keyword\ .Name\ 
+nmap ,cki :em CVS.Keyword\ .Id\ 
+nmap ,ckh :em CVS.Keyword\ .Header\ 
+nmap ,ckd :em CVS.Keyword\ .Date\ 
+nmap ,cka :em CVS.Keyword\ .Author\ 
+nmap ,cgip :em CVS.Settings\ .Install\ .Install\ buffer\ as\ plugin\ 
+nmap ,cgih :em CVS.Settings\ .Install\ .Install\ buffer\ as\ help\ 
+nmap ,cgid :em CVS.Settings\ .Install\ .Download\ updates\ 
+nmap ,cgii :em CVS.Settings\ .Install\ .Install\ updates\ 
+nmap ,cgou :em CVS.Settings\ .Output\ .Unsorted\ 
+nmap ,cgos :em CVS.Settings\ .Output\ .Sorted\ 
+nmap ,cgof :em CVS.Settings\ .Output\ .Full\ 
+nmap ,cgoc :em CVS.Settings\ .Output\ .Compressed\ 
+nmap ,cgoa :em CVS.Settings\ .Output\ .Autoswitch\ 
+nmap ,cgon :em CVS.Settings\ .Output\ .Notify\ only\ 
+nmap ,cgob :em CVS.Settings\ .Output\ .To\ new\ buffer\ 
+nmap ,cgoob :em CVS.Settings\ .Output\ .Notifcation.Disable\ titlebar\ 
+nmap ,cgoot :em CVS.Settings\ .Output\ .Notifcation.Enable\ titlebar\ 
+nmap ,cgool :em CVS.Settings\ .Output\ .Notifcation.Disable\ statusline\ 
+nmap ,cgoos :em CVS.Settings\ .Output\ .Notifcation.Enable\ statusline\ 
+nmap ,cgqh :em CVS.Settings\ .Revision\ queries\ .Hide\ current\ rev\ 
+nmap ,cgqo :em CVS.Settings\ .Revision\ queries\ .Offer\ current\ rev\ 
+nmap ,cgqd :em CVS.Settings\ .Revision\ queries\ .Disable\ 
+nmap ,cgqe :em CVS.Settings\ .Revision\ queries\ .Enable\ 
+nmap ,cgds :em CVS.Settings\ .Diff\ .Restore\ pre-diff\ mode\ 
+nmap ,cgdn :em CVS.Settings\ .Diff\ .No\ autorestore\ 
+nmap ,cgda :em CVS.Settings\ .Diff\ .Autorestore\ prev\.mode\ 
+nmap ,cgdd :em CVS.Settings\ .Diff\ .Switch\ to\ diffed\ 
+nmap ,cgdo :em CVS.Settings\ .Diff\ .Stay\ in\ original\ 
+nmap ,cgtd :em CVS.Settings\ .Target\ .Directory\ 
+nmap ,cgtb :em CVS.Settings\ .Target\ .File\ in\ buffer\ 
+nmap ,cgad :em CVS.Settings\ .Autocheck\ .Disable\ 
+nmap ,cgae :em CVS.Settings\ .Autocheck\ .Enable\ 
+nmap ,cgm :em CVS.Settings\ .Show\ mappings\ 
+nmap ,cgf :em CVS.Settings\ .Info\ (buffer)\ 
+nmap ,cf :em CVS.Info\ 
+snoremap U b<BS>U
+vmap [% [%m'gv``
+snoremap \ b<BS>\
+nmap <silent> \cv <Plug>VCSVimDiff
+nmap <silent> \cu <Plug>VCSUpdate
+nmap <silent> \cU <Plug>VCSUnlock
+nmap <silent> \cs <Plug>VCSStatus
+nmap <silent> \cr <Plug>VCSReview
+nmap <silent> \cq <Plug>VCSRevert
+nmap <silent> \cn <Plug>VCSAnnotate
+nmap <silent> \cN <Plug>VCSSplitAnnotate
+nmap <silent> \cl <Plug>VCSLog
+nmap <silent> \cL <Plug>VCSLock
+nmap <silent> \ci <Plug>VCSInfo
+nmap <silent> \cg <Plug>VCSGotoOriginal
+nmap <silent> \cG <Plug>VCSClearAndGotoOriginal
+nmap <silent> \cd <Plug>VCSDiff
+nmap <silent> \cD <Plug>VCSDelete
+nmap <silent> \cc <Plug>VCSCommit
+nmap <silent> \ca <Plug>VCSAdd
+map \rwp <Plug>RestoreWinPosn
+map \swp <Plug>SaveWinPosn
+nmap \ihn :IHN
+nmap \is :IHS:A
+nmap \ih :IHS
+vmap ]% ]%m'gv``
+snoremap ^ b<BS>^
+snoremap ` b<BS>`
+vmap a% [%v]%
+nmap gx <Plug>NetrwBrowseX
+snoremap <Left> bi
+snoremap <Right> a
+snoremap <BS> b<BS>
+snoremap <silent> <S-Tab> i<Right>=BackwardsSnippet()
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+nnoremap <silent> <Plug>CVSWatchRemove :CVSWatch remove
+nnoremap <silent> <Plug>CVSWatchOn :CVSWatch on
+nnoremap <silent> <Plug>CVSWatchOff :CVSWatch off
+nnoremap <silent> <Plug>CVSWatchAdd :CVSWatch add
+nnoremap <silent> <Plug>CVSWatchers :CVSWatchers
+nnoremap <silent> <Plug>CVSUnedit :CVSUnedit
+nnoremap <silent> <Plug>CVSEditors :CVSEditors
+nnoremap <silent> <Plug>CVSEdit :CVSEdit
+nnoremap <silent> <Plug>VCSVimDiff :VCSVimDiff
+nnoremap <silent> <Plug>VCSUpdate :VCSUpdate
+nnoremap <silent> <Plug>VCSUnlock :VCSUnlock
+nnoremap <silent> <Plug>VCSStatus :VCSStatus
+nnoremap <silent> <Plug>VCSSplitAnnotate :VCSAnnotate!
+nnoremap <silent> <Plug>VCSReview :VCSReview
+nnoremap <silent> <Plug>VCSRevert :VCSRevert
+nnoremap <silent> <Plug>VCSLog :VCSLog
+nnoremap <silent> <Plug>VCSLock :VCSLock
+nnoremap <silent> <Plug>VCSInfo :VCSInfo
+nnoremap <silent> <Plug>VCSClearAndGotoOriginal :VCSGotoOriginal!
+nnoremap <silent> <Plug>VCSGotoOriginal :VCSGotoOriginal
+nnoremap <silent> <Plug>VCSDiff :VCSDiff
+nnoremap <silent> <Plug>VCSDelete :VCSDelete
+nnoremap <silent> <Plug>VCSCommit :VCSCommit
+nnoremap <silent> <Plug>VCSAnnotate :VCSAnnotate
+nnoremap <silent> <Plug>VCSAdd :VCSAdd
+nmap <Nul><Nul>d :vert scs find d =expand("<cword>")
+nmap <Nul><Nul>i :vert scs find i ^=expand("<cfile>")$	
+nmap <Nul><Nul>f :vert scs find f =expand("<cfile>")	
+nmap <Nul><Nul>e :vert scs find e =expand("<cword>")
+nmap <Nul><Nul>t :vert scs find t =expand("<cword>")
+nmap <Nul><Nul>c :vert scs find c =expand("<cword>")
+nmap <Nul><Nul>g :vert scs find g =expand("<cword>")
+nmap <Nul><Nul>s :vert scs find s =expand("<cword>")
+nmap <silent> <Plug>RestoreWinPosn :call RestoreWinPosn()
+nmap <silent> <Plug>SaveWinPosn :call SaveWinPosn()
+map <F5> :TlistUpdate
+map <F4> :TlistToggle
+map <F10> :call Paste_on_off()
+noremap <F12> :!ectags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+map <F3> :NERDTreeToggle
+inoremap <silent> 	 =TriggerSnippet()
+inoremap <silent> 	 =ShowAvailableSnips()
+inoremap <expr>  omni#cpp#maycomplete#Complete()
+inoremap <expr> . omni#cpp#maycomplete#Dot()
+inoremap <expr> : omni#cpp#maycomplete#Scope()
+inoremap <expr> > omni#cpp#maycomplete#Arrow()
+imap \ihn :IHN
+imap \is :IHS:A
+imap \ih :IHS
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set autoindent
+set background=dark
+set backspace=indent,eol,start
+set cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+set completeopt=menuone,longest,preview
+set copyindent
+set cscopetag
+set cscopeverbose
+set guifont=Monospace\ 8
+set guioptions=aegimrLt
+set history=50
+set hlsearch
+set iminsert=0
+set imsearch=0
+set incsearch
+set laststatus=2
+set listchars=tab:>-,eol:$,trail:.,extends:#
+set mouse=a
+set omnifunc=omni#cpp#complete#Main
+set pastetoggle=<F10>
+set ruler
+set showcmd
+set smartindent
+set smarttab
+set tags=./tags,tags,~/.vim/tags/c,~/.vim/tags/cpp,~/.vim/tags/qt,tags;
+set termencoding=utf-8
+set timeoutlen=500
+set wildignore=*.pyc
+set wildmenu
+set window=51
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd /mnt/linux/weezel/ohjelmointi/python/amazon
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +1 amazoncommentfetcher.py
+badd +15 Comment.py
+badd +1 ip.cp
+badd +43 ~/ip.cpp
+badd +17 /mnt/linux/weezel/omat/koulu/ote/luennot/luento11/2_konversio/konversio.cpp
+badd +28 /mnt/linux/weezel/omat/koulu/ote/luennot/luento11/2_konversio/merkkijono.h
+badd +96 /mnt/linux/weezel/omat/koulu/ote/luennot/luento11/5_perinta/perinta.cpp
+badd +68 /mnt/linux/weezel/omat/koulu/ote/luennot/luento11/3_perinta/perinta.cpp
+badd +4071 comments.html
+badd +16 strip_html.py
+badd +1 ~/git/amazon/strip_html.py
+badd +1 data4.html
+badd +1 urlopener.py
+silent! argdel *
+edit comments.html
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal copyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'html'
+setlocal filetype=html
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=HtmlIndentGet(v:lnum)
+setlocal indentkeys=o,O,*<Return>,<>>,{,}
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'html'
+setlocal syntax=html
+endif
+setlocal tabstop=8
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 2950 - ((25 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2950
+normal! 01l
+tabedit strip_html.py
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:XCOMM,n:>,fb:-
+setlocal commentstring=#%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal copyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'python'
+setlocal filetype=python
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=s*\\(from\\|import\\)
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=pythoncomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.py
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'python'
+setlocal syntax=python
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=80
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 34 - ((32 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+34
+normal! 0
+tabedit amazoncommentfetcher.py
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 183 + 110) / 221)
+exe 'vert 2resize ' . ((&columns * 37 + 110) / 221)
+argglobal
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:XCOMM,n:>,fb:-
+setlocal commentstring=#%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal copyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'python'
+setlocal filetype=python
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=s*\\(from\\|import\\)
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=pythoncomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.py
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'python'
+setlocal syntax=python
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=80
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 198 - ((20 * winheight(0) + 25) / 50)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+198
+normal! 032l
+wincmd w
+argglobal
+enew
+file __Tag_List__
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <silent> <kMultiply> :silent! %foldopen!
+inoremap <buffer> <silent> <kMinus> :silent! foldclose
+inoremap <buffer> <silent> <kPlus> :silent! foldopen
+nnoremap <buffer> <silent> * :silent! %foldopen!
+nnoremap <buffer> <silent> + :silent! foldopen
+nnoremap <buffer> <silent> - :silent! foldclose
+nnoremap <buffer> <silent> = :silent! %foldclose
+nnoremap <buffer> <silent> q :close
+nnoremap <buffer> <silent> <kMultiply> :silent! %foldopen!
+nnoremap <buffer> <silent> <kMinus> :silent! foldclose
+nnoremap <buffer> <silent> <kPlus> :silent! foldopen
+inoremap <buffer> <silent> * :silent! %foldopen!
+inoremap <buffer> <silent> + :silent! foldopen
+inoremap <buffer> <silent> - :silent! foldclose
+inoremap <buffer> <silent> = :silent! %foldclose
+inoremap <buffer> <silent> q :close
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal autoindent
+setlocal balloonexpr=Tlist_Ballon_Expr()
+setlocal nobinary
+setlocal bufhidden=delete
+setlocal nobuflisted
+setlocal buftype=nofile
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal copyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'taglist'
+setlocal filetype=taglist
+endif
+setlocal foldcolumn=3
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=9999
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=0
+setlocal foldnestmax=20
+setlocal foldtext=v:folddashes.getline(v:foldstart)
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=octal,hex
+set number
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=omni#cpp#complete#Main
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'taglist'
+setlocal syntax=taglist
+endif
+setlocal tabstop=8
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+set winfixwidth
+setlocal winfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 183 + 110) / 221)
+exe 'vert 2resize ' . ((&columns * 37 + 110) / 221)
+tabedit Comment.py
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:XCOMM,n:>,fb:-
+setlocal commentstring=#%s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal copyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'python'
+setlocal filetype=python
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=s*\\(from\\|import\\)
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=pythoncomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.py
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'python'
+setlocal syntax=python
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=80
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 13 - ((12 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+13
+normal! 08l
+tabnext 3
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
