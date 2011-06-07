@@ -3,23 +3,27 @@
 # sh/ksh initialization
 
 # Check TERM capabilities
-if [[ $TERM = xterm ]]; then
-	export TERM="xterm-256color";
-else
-	export TERM="wsvt25";
-fi
+#if [[ $TERM == xterm ]]; then
+#	export TERM="xterm-256color";
+#else
+##	export TERM="wsvt25";
+#	export TERM="xterm";
+#fi
+export TERM="screen"
 
-#PS1="\[$(tput setaf 5)\]\u\[$(tput op)\]@\h:\w\$ "
-PS1='\n$(tput setaf 6) \w\n$(tput setaf 5)\t $(tput setaf 7)\u@\H >$(tput op) '
+PS1='\n$(tput setaf 6) \w\n$(tput setaf 5)\t $(tput setaf 7)\u@\H $(tput setaf 2)\$$(tput op) '
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:.
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
 PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/amd64/
 JAVA_HOME=/usr/local/jdk-1.7.0/
 PYTHONPATH=/usr/local/lib/python2.6/site-packages
 HISTFILE=~/.sh_history
+HISTSIZE=1000
+LC_ALL=C
+
 
 export PS1 PATH HOME TERM PAGER VISUAL EDITOR PKG_PATH JAVA_HOME PYTHONPATH\
-	HISTFILE
+	HISTFILE HISTSIZE LC_ALL
 export SDL_VIDEO_X11_DGAMOUSE=0
 
 
@@ -51,5 +55,5 @@ fi
 stty stop ''
 
 #set -o vi
-set +o emacs
-bind -m '^A'=
+#set +o emacs
+#bind -m '^A'=
