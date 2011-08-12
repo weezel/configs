@@ -1,0 +1,41 @@
+# Some other aliases for the base system included commands
+alias cdrecord='cdrecord -v'
+alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
+alias rm="/bin/rm -i"
+alias cp="/bin/cp -i"
+alias rvim"=vim --servername vim --remote-tab"
+#umask 0117
+
+# use most if available, else less
+if [ -x /usr/local/bin/most ]; then
+	export PAGER=most
+else
+	export PAGER=less
+fi
+# fileutils
+if [ -x /usr/local/bin/gls ]; then
+    alias ls="/usr/local/bin/gls -F --color=auto"
+fi
+# colourful grep
+if [ -x /usr/local/bin/ggrep ]; then
+    alias grep="ggrep --colour=always"
+fi
+# vim for the win
+if [ -x /usr/local/bin/vim ]; then
+    export EDITOR=/usr/local/bin/vim
+    export VISUAL=/usr/local/bin/vim
+fi
+
+
+##
+# UTF-8
+##
+#set meta-flag on
+#set input-meta on
+## Turns off 8th bit stripping
+#set convert-meta off
+## Keep the 8th bit for display
+#set output-meta on
+## Will display all alternatives for completion after one tab keypress
+#set show-all-if-ambiguous On
+
