@@ -1,0 +1,17 @@
+[user]
+	name = Ville Valkonen
+	email = example@mail.com
+[color]
+	ui = true
+[core]
+	excludesfile = $HOME/.gitignore
+	autocrlf = input
+[merge]
+	tool = gvimdiff
+[alias]
+	co = checkout
+	ci = commit
+	st = status -bs
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+
