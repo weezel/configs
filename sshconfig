@@ -1,4 +1,18 @@
+ServerAliveInterval 120
 Host saksacvs
 	HostName openbsd.informatik.uni-erlangen.de
 	#User cvs
 	Port 2022
+Host	severi
+	HostName	192.168.xxx.xxx
+	User		weezel
+	Port		22
+Host	weezel
+	HostName	weezel.domain
+	User		weezel
+	Port		1022
+Host	hoplaa
+	HostName	hoplaa.fi
+	User		weezel
+	IdentityFile	~/.ssh/hoplaa_weezel
+
