@@ -6,12 +6,14 @@
 [core]
 	excludesfile = $HOME/.gitignore
 	autocrlf = input
+	editor = gvim -f
 [merge]
-	tool = gvimdiff
+	tool = gvimdiff -f
 [alias]
 	co = checkout
 	ci = commit
 	st = status -bs
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	graph = log --graph --stat --pretty=oneline --abbrev-commit
 
