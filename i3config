@@ -10,6 +10,11 @@ floating_modifier Mod1
 # Focus won't follow mouse
 focus_follows_mouse no
 
+# Prefer vertical split
+new_container stacking
+new_container stack-limit cols 1
+new_container stack-limit rows 5
+
 # Fullscreen (Mod4+f)
 bind Mod4+41 f
 
@@ -46,10 +51,10 @@ bind Mod3+45 wcj
 bind Mod3+46 wck
 bind Mod3+47 wcl
 # (alternatively, you can use the cursor keys:)
-bindsym Mod3+Left wch
-bindsym Mod3+Down wcj
-bindsym Mod3+Up wck
-bindsym Mod3+Right wcl
+bindsym Mod1+Control+Left wch
+bindsym Mod1+Control+Down wcj
+bindsym Mod1+Control+Up wck
+bindsym Mod1+Control+Right wcl
 
 # Snap (Mod4+Control+j/k/l/;)
 bind Mod4+Control+44 sh
@@ -74,10 +79,10 @@ bindsym Mod4+Shift+Up mk
 bindsym Mod4+Shift+Right ml
 
 # Move Container (Mod3+Shift+j/k/l/;)
-bind Mod3+Shift+44 wcmh
-bind Mod3+Shift+45 wcmj
-bind Mod3+Shift+46 wcmk
-bind Mod3+Shift+47 wcml
+bind Mod1+Shift+44 wcmh
+bind Mod1+Shift+45 wcmj
+bind Mod1+Shift+46 wcmk
+bind Mod1+Shift+47 wcml
 
 # Workspaces (Mod4+1/2/…)
 bind Mod4+10 1
@@ -104,14 +109,16 @@ bind Mod4+Shift+18 m9
 bind Mod4+Shift+19 m10
 
 # Mod4+Enter starts a new terminal
-bind Mod4+36 exec /usr/X11R6/bin/xterm -geometry 90x30+0+0 -fa 'Droid Mono' -fs 9
+bind Mod4+36 exec /usr/X11R6/bin/uxterm -geometry 90x30+0+0 -fa 'Droid Mono' -fs 9
 
 # Mod4+Shift+q kills the current client
 bind Mod4+Shift+24 kill
 
 # Mod4+v starts dmenu and launches the selected application
 # for now, we don’t have a launcher of our own.
-bind Mod4+55 exec /usr/local/bin/dmenu_run
+#bind Mod4+55 exec /usr/local/bin/dmenu_run
+# 33 = p
+bind Mod4+33 exec /usr/local/bin/dmenu_run
 
 # Mod4+Shift+e exits i3
 bind Mod4+Shift+26 exit
