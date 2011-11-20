@@ -11,19 +11,22 @@ PS1='\n$(tput setaf 6) \w\n$(tput setaf 5)\t $(tput setaf 7)\u@\H $(tput setaf 2
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/
 INPUTRC=/etc/inputrc
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
-PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/4.9/packages/i386/
+#PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/5.0/packages/i386/
+PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/amd64/
 JAVA_HOME=/usr/local/jdk-1.7.0/
-PYTHONPATH=/usr/local/lib/python2.6/site-packages
+PYTHONPATH=/usr/local/lib/python2.7/site-packages
 #TERM=screen
+LESSCHARSET=utf-8
 LC_ALL=C
 #LC_CTYPE="en_US.UTF-8"
+HISTFILE=~/.sh_history
+HISTSIZE=1000
 #export SDL_VIDEO_X11_DGAMOUSE=0
 
 
-export PS1 PATH HOME PKG_PATH JAVA_HOME PYTHONPATH TERM LC_ALL HISTFILE \
-	HISTSIZE INPUTRC
+export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
+	TERM LESSCHARSET LC_ALL HISTFILE HISTSIZE
 
-#export LESSCHARSET=utf-8
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -43,4 +46,8 @@ stty stop ''
 
 # Ulimit
 ulimit -d 716800
+
+#set -o vi
+#set +o emacs
+#bind -m '^A'=
 

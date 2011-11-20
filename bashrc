@@ -1,6 +1,3 @@
-HISTFILE=~/.sh_history
-HISTSIZE=1000
-
 # Aliases
 alias ls="ls -F"
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
