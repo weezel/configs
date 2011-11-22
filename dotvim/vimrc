@@ -61,8 +61,6 @@ autocmd FileType c,cpp,slang set cindent
 " insert the comment leader characters:
 autocmd FileType c set formatoptions+=ro
 
-" Use with textwidth=n , thus this incidates textwidth length
-set colorcolumn=+1
 " Reveal extra white spaces
 "highlight ExtraWhitespace ctermbg=red guibg=red
 " Show trailing whitespace:
