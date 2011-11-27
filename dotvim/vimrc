@@ -183,7 +183,7 @@ map <F2> :TlistUpdate<cr>
 set sessionoptions=buffers,curdir,folds,tabpages
 
 " Ctags path(s)
-set tags=/home/weezel/.vim/tags/c
-"set tags+=/home/weezel/.vim/tags/cpp
-set tags+=tags;
+set tags+=$HOME/.vim/tags/c
+"set tags+=$HOME/.vim/tags/cpp
+set tags+=tags;/
 
