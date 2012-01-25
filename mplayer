@@ -1,0 +1,10 @@
+# Write your default config options here!
+subfont-autoscale=2
+subfont-osd-scale=2
+subfont-text-scale=2
+
+# gl please
+vo=gl_nosw
+#framedrop=yes
+double=yes
+#cache=16384

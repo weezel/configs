@@ -30,6 +30,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 "set softtabstop=4
 "set shiftwidth=4
 "set tabstop=4
+botright cwindow
 nnoremap Q gqap
 vnoremap Q gq
 

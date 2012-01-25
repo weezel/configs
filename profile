@@ -1,10 +1,11 @@
 # sh/ksh initialization
 
-if [[ $TERM == xterm ]]; then
-	export TERM="xterm-256color";
-else
-	export TERM="screen";
-fi
+#if [[ $TERM == xterm ]]; then
+#	export TERM="xterm-256color";
+#else
+#	export TERM="screen";
+#fi
+export TERM=xterm-color
 
 
 PS1='\n$(tput setaf 6) \w\n$(tput setaf 5)\t $(tput setaf 7)\u@\H $(tput setaf 2)\$$(tput op) '
@@ -16,7 +17,7 @@ PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/amd64/
 JAVA_HOME=/usr/local/jdk-1.7.0/
 PYTHONPATH=/usr/local/lib/python2.7/site-packages
 #TERM=screen
-LESSCHARSET=utf-8
+#LESSCHARSET=utf-8
 LC_ALL=C
 #LC_CTYPE="en_US.UTF-8"
 HISTFILE=~/.sh_history
@@ -27,13 +28,13 @@ HISTSIZE=1000
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 	TERM LESSCHARSET LC_ALL HISTFILE HISTSIZE
 
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
+#export LESS_TERMCAP_mb=$'\E[01;31m'
+#export LESS_TERMCAP_md=$'\E[01;31m'
+#export LESS_TERMCAP_me=$'\E[0m'
+#export LESS_TERMCAP_se=$'\E[0m'
+#export LESS_TERMCAP_so=$'\E[01;44;33m'
+#export LESS_TERMCAP_ue=$'\E[0m'
+#export LESS_TERMCAP_us=$'\E[01;32m'
 
 # Ulimit
 ulimit -d 716800
