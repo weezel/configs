@@ -1,25 +1,24 @@
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
-"set term=screen-256color
 if has("gui_running")
 	set t_Co=256
-	let moria_style='dark' "light
-	let moria_fontface = 'mixed'
+	"set background=dark
+	"colors peaksea
+	"let moria_fontface = 'mixed'
 	"let moria_monochrome = 1
-	set enc=utf8
-	colors moria
+	"set enc=utf8
 	set guioptions-=T
 	"set gfn=Monospace\ 9
-	set gfn=Droid\ Sans\ Mono\ 9
+	set gfn=Droid\ Sans\ Mono\ 10
 	set cursorline
 	set ttyfast
-" feel free to choose :set background=light for a different style
-else
-	colors koehler
 endif
 
 
 " System
+set background=dark
+colors peaksea
+
 set nocompatible
 set listchars=tab:>-,eol:$,trail:.,extends:#
 set backspace=indent,eol,start
