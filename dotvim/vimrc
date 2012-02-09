@@ -164,7 +164,8 @@ if has('mouse')
     set mouse=a
 endif
 
-"map <F4> :TlistToggle<cr>
+" TagBar toggle
+nmap <F4> :TagbarToggle<cr>
 
 " Session options
 set sessionoptions=buffers,curdir,folds,tabpages
