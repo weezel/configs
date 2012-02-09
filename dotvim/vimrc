@@ -33,6 +33,39 @@ botright cwindow
 nnoremap Q gqap
 vnoremap Q gq
 
+" Visual
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l\[%v\],%c\ %)%P
+syntax on
+
+" Automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+
+set nowrap
+set nobackup
+"set list
+set ruler
+set laststatus=2
+set hlsearch
+set number
+set wildmenu
+set showcmd     " display incomplete commands
+set incsearch   " do incremental searching
+
+
+" Indent
+set autoindent
+set smarttab
+set smartindent
+set copyindent
+
+
+" snipMate needs this
+filetype on
+filetype plugin indent on
+"set autoindent
+
+
 " #######################
 " Encoding section
 " #######################
@@ -126,58 +159,12 @@ func! Paste_on_off()
 endfunc
 
 
-" Visual
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l\[%v\],%c\ %)%P
-syntax on
-
-" Automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
-
-set nowrap
-set nobackup
-"set list
-set ruler
-set laststatus=2
-set hlsearch
-set number
-set wildmenu
-set showcmd     " display incomplete commands
-set incsearch   " do incremental searching
-
-
-" Indent
-set autoindent
-set smarttab
-set smartindent
-set copyindent
-
-
-" snipMate needs this
-filetype on
-filetype plugin indent on
-"set autoindent
-
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
     set mouse=a
 endif
 
-" Tagglist settings
-let Tlist_Ctags_Cmd="ectags"
-"let Tlist_Auto_Open = 1
-let Tlist_Winwidth = 60
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_Auto_Highlight_Tag = 1
-let Tlist_Auto_Update = 1
-let Tlist_Show_One_File = 1
-let Tlist_Sort_Type="name"
-map <F4> :TlistToggle<cr>
-map <F2> :TlistUpdate<cr>
-" fold from { to }
-"nmap <F1> /}<CR>zf%<ESC>:nohlsearch<CR>
+"map <F4> :TlistToggle<cr>
 
 " Session options
 set sessionoptions=buffers,curdir,folds,tabpages
