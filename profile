@@ -24,6 +24,9 @@ HISTFILE=~/.sh_history
 HISTSIZE=1000
 #export SDL_VIDEO_X11_DGAMOUSE=0
 
+sprunge() {
+	printf '%s%s\n' "$(curl -sF 'sprunge=<-' http://sprunge.us/)" "${*:+?$*}";
+}
 
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 	TERM LESSCHARSET LC_ALL HISTFILE HISTSIZE
