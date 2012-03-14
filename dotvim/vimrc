@@ -171,7 +171,5 @@ nmap <F4> :TagbarToggle<cr>
 set sessionoptions=buffers,curdir,folds,tabpages
 
 " Ctags path(s)
-set tags+=$HOME/.vim/tags/c
-"set tags+=$HOME/.vim/tags/cpp
-set tags+=tags;/
+set tags=./tags;/
 

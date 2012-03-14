@@ -6,3 +6,5 @@ nnoremap <F5> :w <CR> :make!
 nnoremap <C-n> :cn<CR>
 nnoremap <C-p> :cp<CR>
 
+" C related tags
+set tags+=$HOME/.vim/tags/c
