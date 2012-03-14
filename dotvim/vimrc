@@ -112,6 +112,10 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 inoremap <C-Space> <C-x><C-o>
 "inoremap <C-k> <C-x><C-o>
 
+" FuzzyFindFile
+nnoremap <C-s> :FufFile<CR>
+inoremap <C-s> :FufFile<CR>
+
 " Allow deleting selection without updating the clipboard (yank buffer)
 noremap dd "_dd
 vnoremap x "_x
