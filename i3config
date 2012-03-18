@@ -128,5 +128,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar
 # XXX: i3status has not been ported to OpenBSD yet
 bar {
-        status_command /usr/bin/true
+        #status_command /usr/bin/true
+        status_command /home/weezel/bin/mybar.sh
+        #status_command statusbar.sh
 }
