@@ -12,8 +12,7 @@ PS1='\n$(tput setaf 6) \w\n$(tput setaf 5)\t $(tput setaf 7)\u@\H $(tput setaf 2
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/
 INPUTRC=/etc/inputrc
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
-#PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/5.0/packages/i386/
-PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/amd64/
+PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/`uname -p`/
 JAVA_HOME=/usr/local/jdk-1.7.0/
 PYTHONPATH=/usr/local/lib/python2.7/site-packages
 #TERM=screen
@@ -35,6 +34,7 @@ export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 #export LESS_TERMCAP_so=$'\E[01;44;33m'
 #export LESS_TERMCAP_ue=$'\E[0m'
 #export LESS_TERMCAP_us=$'\E[01;32m'
+export PAGER=less
 
 # Ulimit
 ulimit -d 716800
@@ -47,6 +47,8 @@ stty stop ''
 
 # Ulimit
 ulimit -d 716800
+
+alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 
 #set -o vi
 #set +o emacs
