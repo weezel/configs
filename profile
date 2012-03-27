@@ -31,6 +31,9 @@ sprunge() {
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 	TERM LESSCHARSET LC_ALL HISTFILE HISTSIZE
 
+# Common aliases
+alias sudo="sudo -E"
+
 #export LESS_TERMCAP_mb=$'\E[01;31m'
 #export LESS_TERMCAP_md=$'\E[01;31m'
 #export LESS_TERMCAP_me=$'\E[0m'
@@ -47,9 +50,6 @@ ulimit -d 716800
 
 # Remove stupid suspend console binding
 stty stop ''
-
-# Ulimit
-ulimit -d 716800
 
 #set -o vi
 #set +o emacs
