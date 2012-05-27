@@ -5,7 +5,6 @@
 #else
 #	export TERM="screen";
 #fi
-export TERM=xterm-color
 
 
 PS1='\n$(tput setaf 6) \w\n$(tput setaf 5)\t $(tput setaf 7)\u@\H $(tput setaf 2)\$$(tput op) '
