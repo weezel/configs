@@ -136,6 +136,9 @@ inoremap <c-e> <esc>A
 noremap  <F1> :set invfullscreen<CR>
 inoremap <F1> <ESC>:set invfullscreen<CR>a
 
+" Switch to header file
+nmap <F4> :A<cr>
+
 
 "#################################
 "########### PLUGINS #############
@@ -169,11 +172,27 @@ if has('mouse')
 endif
 
 " TagBar toggle
-nmap <F4> :TagbarToggle<cr>
+nmap <F2> :TagbarToggle<cr>
 
 " Session options
 set sessionoptions=buffers,curdir,folds,tabpages
 
 " Ctags path(s)
 set tags=./tags;/
+
+" CScope thingies
+if has("cscope")
+	set csprg=/usr/local/bin/cscope
+	set csto=0
+	set cst
+	set nocsverb
+	" add any database in current directory
+	if filereadable("cscope.out")
+	    cs add cscope.out
+	" else add database pointed to by environment
+	elseif $CSCOPE_DB != ""
+	    cs add $CSCOPE_DB
+	endif
+	set csverb
+endif
 
