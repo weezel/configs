@@ -7,9 +7,10 @@ if has("gui_running")
 	"let moria_fontface = 'mixed'
 	"let moria_monochrome = 1
 	"set enc=utf8
-	set guioptions-=T
+	set guioptions-=T " No toolbar
+	set guioptions-=m " No menubar
 	"set gfn=Monospace\ 9
-	set gfn=Droid\ Sans\ Mono\ 10
+	set gfn=Droid\ Sans\ Mono\ 9
 	set cursorline
 	set ttyfast
 endif
@@ -113,8 +114,11 @@ inoremap <C-Space> <C-x><C-o>
 "inoremap <C-k> <C-x><C-o>
 
 " FuzzyFindFile
-nnoremap <C-s> :FufFile<CR>
-inoremap <C-s> :FufFile<CR>
+nnoremap <C-f> :FufFile<CR>
+inoremap <C-f> <Esc>:FufFile<CR>
+
+nnoremap <C-b> :FufBuffer<CR>
+inoremap <C-b> <Esc>:FufBuffer<CR>
 
 " Allow deleting selection without updating the clipboard (yank buffer)
 noremap dd "_dd
@@ -125,7 +129,7 @@ vnoremap X "_X
 noremap p p`[
 noremap P P`[
 
-" Visually select areas for folding, editing etc.
+" Visually select areas for folding, editing etc. Jumps from { to }
 nnoremap <C-l> ^v%$
 
 " Sorry Vim guys
@@ -139,6 +143,14 @@ inoremap <F1> <ESC>:set invfullscreen<CR>a
 " Switch to header file
 nmap <F4> :A<cr>
 
+" Ctrl - Left mouse = Open definition in a new tab
+" Ctrl - Right mouse = Jump back to previous position
+"nmap <C-\> :tab <CR>:exec("tag ".expand("<cword>"))<CR>
+"nmap <C-?> <C-]><CR>
+
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <C-LeftMouse> <C-\>
+map <C-RightMouse> <C-]>
 
 "#################################
 "########### PLUGINS #############
@@ -148,6 +160,7 @@ map <F3> :NERDTreeToggle<CR>
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 noremap <F12> :!ectags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<cr>
 inoremap <F12> <Esc>:!ectags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<cr>
+
 " Paste Mode On/Off
 map <F10> :call Paste_on_off()<CR>
 set pastetoggle=<F10>
