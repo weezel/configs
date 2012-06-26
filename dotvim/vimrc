@@ -26,7 +26,7 @@ set backspace=indent,eol,start
 set tm=500 " time out to 500msec
 set history=50
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
-set so=999 " When scrolling, cursor stays in the middle
+
 "set textwidth=78
 "set softtabstop=4
 "set shiftwidth=4
@@ -140,6 +140,8 @@ inoremap <c-e> <esc>A
 " Useless crap
 noremap  <F1> :set invfullscreen<CR>
 inoremap <F1> <ESC>:set invfullscreen<CR>a
+" When scrolling, cursor stays in the middle
+nnoremap <F1> :let &scrolloff=999-&scrolloff<CR>
 
 " Switch to header file
 nmap <F4> :A<cr>
