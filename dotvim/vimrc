@@ -10,7 +10,7 @@ if has("gui_running")
 	set guioptions-=T " No toolbar
 	set guioptions-=m " No menubar
 	"set gfn=Monospace\ 9
-	set gfn=Droid\ Sans\ Mono\ 9
+	set gfn=Droid\ Sans\ Mono\ 10
 	set cursorline
 	set ttyfast
 endif
@@ -110,6 +110,16 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 "#################################
 "########### Mappings ############
 "#################################
+let mapleader = ","
+nnoremap <leader>w <C-w>v<C-w>l
+
+" Allow moving in insert mode with Alt + {j,k}
+inoremap <C-c> <Esc>
+inoremap <M-h> <Left>
+inoremap <M-j> <Up>
+inoremap <M-k> <Down>
+inoremap <M-l> <Right>
+
 " OmniComplete
 inoremap <C-Space> <C-x><C-o>
 "inoremap <C-k> <C-x><C-o>
@@ -134,8 +144,8 @@ noremap P P`[
 nnoremap <C-l> ^v%$
 
 " Sorry Vim guys
-inoremap <c-a> <esc>I
-inoremap <c-e> <esc>A
+inoremap <C-a> <esc>I
+inoremap <C-e> <esc>A
 
 " Useless crap
 noremap  <F1> :set invfullscreen<CR>
