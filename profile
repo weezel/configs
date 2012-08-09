@@ -17,8 +17,6 @@ PYTHONPATH=/usr/local/lib/python2.7/site-packages
 #LESSCHARSET=utf-8
 LC_ALL=C
 #LC_CTYPE="en_US.UTF-8"
-HISTFILE=~/.sh_history
-HISTSIZE=1000
 #export SDL_VIDEO_X11_DGAMOUSE=0
 
 sprunge() {
@@ -31,16 +29,6 @@ export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 # Common aliases
 alias sudo="sudo -E"
 
-#export LESS_TERMCAP_mb=$'\E[01;31m'
-#export LESS_TERMCAP_md=$'\E[01;31m'
-#export LESS_TERMCAP_me=$'\E[0m'
-#export LESS_TERMCAP_se=$'\E[0m'
-#export LESS_TERMCAP_so=$'\E[01;44;33m'
-#export LESS_TERMCAP_ue=$'\E[0m'
-#export LESS_TERMCAP_us=$'\E[01;32m'
-export PAGER=less
-alias ls='ls -F'
-
 # Notify mails
 #biff y
 
@@ -50,13 +38,17 @@ stty stop ''
 # Ulimit
 ulimit -d 716800
 
+##
+# Some shell indepentent aliases
+##
+alias ls="ls -F"
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
+alias rm="rm -i"
+alias cp="cp -i"
 
+
+# Load ksh specific configuration if exist
 if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc
 fi
-
-#set -o vi
-#set +o emacs
-#bind -m '^A'=
 
