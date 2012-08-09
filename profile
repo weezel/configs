@@ -9,6 +9,7 @@
 
 
 #PS1='\n$(tput setaf 6) \w\n$(tput setaf 5)\t $(tput setaf 7)\u@\H $(tput setaf 2)\$$(tput op) '
+PS1="[\e[0;31m\]\t\[\e[0m\]] \u@\[\H \W > "
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/
 INPUTRC=/etc/inputrc
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
@@ -40,9 +41,6 @@ export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 export PAGER=less
 alias ls='ls -F'
 
-# Ulimit
-ulimit -d 716800
-
 # Notify mails
 #biff y
 
@@ -53,6 +51,10 @@ stty stop ''
 ulimit -d 716800
 
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
+
+if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
+	. ~/.kshrc
+fi
 
 #set -o vi
 #set +o emacs
