@@ -12,14 +12,12 @@ HISTSIZE=1000
 if [ -x /usr/local/bin/most ]; then
 	export PAGER=most
 else
-	export PAGER=less
-	#export LESS_TERMCAP_mb=$'\e[01;31m'
-	#export LESS_TERMCAP_md=$'\e[01;31m'
-	#export LESS_TERMCAP_me=$'\e[0m'
-	#export LESS_TERMCAP_se=$'\e[0m'
-	#export LESS_TERMCAP_so=$'\e[01;44;33m'
-	#export LESS_TERMCAP_ue=$'\e[0m'
-	#export LESS_TERMCAP_us=$'\e[01;32m'
+	# Use colors for less, man, etc.
+	# To compile mostlike.txt, do this
+	# $ tic mostlike.txt
+	# It will end up under ~/.terminfo/m/mostlike
+	# Source: http://nion.modprobe.de/blog/archives/569-colored-manpages.html
+	alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 fi
 # fileutils
 if [ -x /usr/local/bin/gls ]; then
