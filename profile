@@ -5,10 +5,7 @@
 #else
 #	export TERM="screen";
 #fi
-#export TERM=xterm-color
 
-
-#PS1='\n$(tput setaf 6) \w\n$(tput setaf 5)\t $(tput setaf 7)\u@\H $(tput setaf 2)\$$(tput op) '
 PS1="[\e[0;31m\]\t\[\e[0m\]] \u@\[\H \W > "
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/
 INPUTRC=/etc/inputrc
@@ -30,6 +27,9 @@ sprunge() {
 
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 	TERM LESSCHARSET LC_ALL HISTFILE HISTSIZE
+
+# Common aliases
+alias sudo="sudo -E"
 
 #export LESS_TERMCAP_mb=$'\E[01;31m'
 #export LESS_TERMCAP_md=$'\E[01;31m'
