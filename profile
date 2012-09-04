@@ -6,17 +6,18 @@
 #	export TERM="screen";
 #fi
 
-PS1="[\e[0;31m\]\t\[\e[0m\]] \u@\[\H \W > "
+PS1="[\e[1;33m\]\t\[\e[0m\]] \u@\[\H \e[1;31m\]\W\e[0m\] > "
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/
 INPUTRC=/etc/inputrc
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
 PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/`uname -p`/
 JAVA_HOME=/usr/local/jdk-1.7.0/
 PYTHONPATH=/usr/local/lib/python2.7/site-packages
-#TERM=screen
-#LESSCHARSET=utf-8
-LC_ALL=C
-#LC_CTYPE="en_US.UTF-8"
+#TERM=screen #jos ongelmia unicoden kanssa, kayta tata
+LESSCHARSET=utf-8
+#LC_ALL=C
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
 #export SDL_VIDEO_X11_DGAMOUSE=0
 
 sprunge() {
@@ -24,7 +25,7 @@ sprunge() {
 }
 
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
-	TERM LESSCHARSET LC_ALL HISTFILE HISTSIZE
+	TERM LESSCHARSET LC_ALL LANG HISTFILE HISTSIZE
 
 # Common aliases
 alias sudo="sudo -E"
@@ -45,7 +46,7 @@ alias ls="ls -F"
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias cp="cp -i"
-
+alias sftp='sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com '
 
 # Load ksh specific configuration if exist
 if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
