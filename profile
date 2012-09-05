@@ -1,10 +1,6 @@
 # sh/ksh initialization
 
-#if [[ $TERM == xterm ]]; then
-#	export TERM="xterm-256color";
-#else
-#	export TERM="screen";
-#fi
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 PS1="[\e[1;33m\]\t\[\e[0m\]] \u@\[\H \e[1;31m\]\W\e[0m\] > "
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/
