@@ -13,6 +13,7 @@ if has("gui_running")
 	set gfn=Droid\ Sans\ Mono\ 10
 	set cursorline
 	set ttyfast
+	set guicursor=a:blinkon0
 endif
 
 
