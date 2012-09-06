@@ -15,13 +15,11 @@ CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
 PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/`uname -p`/
 JAVA_HOME=/usr/local/jdk-1.7.0/
 PYTHONPATH=/usr/local/lib/python2.7/site-packages
-#TERM=screen
-LESSCHARSET=utf-8
+#TERM=screen #jos ongelmia unicoden kanssa, kayta tata
 #LC_ALL=C
-LC_ALL="en_US.UTF-8"
-LANG="en_US.UTF-8"
-HISTFILE=~/.sh_history
-HISTSIZE=1000
+LESSCHARSET=utf-8
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
 export SDL_VIDEO_X11_DGAMOUSE=0
 
 sprunge() {
@@ -40,7 +38,6 @@ stty stop ''
 # Ulimit
 ulimit -d 716800
 
-
 ##
 # Some shell indepentent aliases
 ##
@@ -56,7 +53,21 @@ if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc
 fi
 
-#set -o vi
-#set +o emacs
-#bind -m '^A'=
+# Ulimit
+ulimit -d 716800
+
+##
+# Some shell indepentent aliases
+##
+alias sudo="sudo -E"
+alias ls="ls -F"
+alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
+alias rm="rm -i"
+alias cp="cp -i"
+alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
+
+# Load ksh specific configuration if exist
+if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
+	. ~/.kshrc
+fi
 
