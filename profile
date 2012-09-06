@@ -53,21 +53,3 @@ if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc
 fi
 
-# Ulimit
-ulimit -d 716800
-
-##
-# Some shell indepentent aliases
-##
-alias sudo="sudo -E"
-alias ls="ls -F"
-alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
-alias rm="rm -i"
-alias cp="cp -i"
-alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
-
-# Load ksh specific configuration if exist
-if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
-	. ~/.kshrc
-fi
-
