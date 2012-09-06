@@ -23,9 +23,6 @@ sprunge() {
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 	TERM LESSCHARSET LC_ALL LANG HISTFILE HISTSIZE
 
-# Common aliases
-alias sudo="sudo -E"
-
 # Notify mails
 #biff y
 
@@ -38,11 +35,12 @@ ulimit -d 716800
 ##
 # Some shell indepentent aliases
 ##
+alias sudo="sudo -E"
 alias ls="ls -F"
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias cp="cp -i"
-alias sftp='sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com '
+alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
 
 # Load ksh specific configuration if exist
 if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
