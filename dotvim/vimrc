@@ -1,7 +1,6 @@
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
 if has("gui_running")
-	set t_Co=256
 	"set background=dark
 	"colors peaksea
 	"let moria_fontface = 'mixed'
@@ -13,12 +12,14 @@ if has("gui_running")
 	set gfn=Droid\ Sans\ Mono\ 10
 	set cursorline
 	set ttyfast
+	set guicursor=a:blinkon0
 endif
 
 
 " System
-set background=dark
+set t_Co=256
 colors peaksea
+set background=dark
 
 set nocompatible
 set listchars=tab:>-,eol:$,trail:.,extends:#
