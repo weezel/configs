@@ -93,6 +93,13 @@ snippet main
 
 	\begin{titlepage}
 	${2}
+	all: pdflatex
+	latexmk:
+		latexmk -e "$pdflatex=q/pdflatex -synctex=1 -interaction=nonstopmode/" -pdf %.tex
+
+	pdflatex:
+		pdflatex -synctex=1 -interaction=nonstopmode *.tex
+
 	\end{titlepage}
 
 	\end{document}
