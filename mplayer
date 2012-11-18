@@ -3,8 +3,18 @@ subfont-autoscale=2
 subfont-osd-scale=2
 subfont-text-scale=2
 
+# add black borders so the movies have the same aspect ratio of the monitor
+# for wide screen monitors
+vf-add=expand=::::1:16/9:16
+
 # gl please
-vo=gl_nosw
+#vo=gl_nosw
+vo=gl:swapinterval=0
+# multithreaded decoding of H264/MPEG-1/2 (valid: 1-8)
+lavdopts=threads=2
 #framedrop=yes
 double=yes
 #cache=16384
+#cache=8192
+cache=1024
+fs=yes
