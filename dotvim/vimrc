@@ -111,7 +111,7 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 "#################################
 "########### Mappings ############
 "#################################
-let mapleader = ","
+let mapleader = "^"
 nnoremap <leader>w <C-w>v<C-w>l
 
 " Allow moving in insert mode with Alt + {j,k}
@@ -129,8 +129,8 @@ inoremap <C-Space> <C-x><C-o>
 nnoremap <C-f> :FufFile<CR>
 inoremap <C-f> <Esc>:FufFile<CR>
 
-nnoremap <C-b> :FufBuffer<CR>
-inoremap <C-b> <Esc>:FufBuffer<CR>
+"nnoremap <C-b> :FufBuffer<CR>
+"inoremap <C-b> <Esc>:FufBuffer<CR>
 
 " Allow deleting selection without updating the clipboard (yank buffer)
 noremap dd "_dd
@@ -147,6 +147,10 @@ nnoremap <C-l> ^v%$
 " Sorry Vim guys
 inoremap <C-a> <esc>I
 inoremap <C-e> <esc>A
+
+" Control + J/K for Page Up/Down
+noremap <C-j> <PageDown>
+noremap <C-k> <PageUp>
 
 " Useless crap
 noremap  <F1> :set invfullscreen<CR>
