@@ -18,7 +18,7 @@ xset b off
 xset r rate 300 30
 setxkbmap se
 
-fbsetroot -solid black
+xsetroot -solid black
 env LC_CTYPE="en_EN.UTF-8" i3
 
 
