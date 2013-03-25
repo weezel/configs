@@ -53,6 +53,7 @@ set completeopt=menuone,menu,longest,preview
 
 set nowrap
 set nobackup
+set noswapfile
 "set list
 set ruler
 set laststatus=2
