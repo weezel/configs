@@ -148,6 +148,7 @@ noremap P P`[
 
 " Visually select areas for folding, editing etc. Jumps from { to }
 nnoremap <C-l> ^v%$
+map <Space> za
 
 " Sorry Vim guys, I'm used to readline
 inoremap <C-a> <esc>I
@@ -159,9 +160,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Control + J/K for Page Up/Down
-"noremap <C-j> <PageDown>
-"noremap <C-k> <PageUp>
+" Scrolling
+nmap <C-E> <C-E>j
+nmap <C-Y> <C-Y>k
+imap <C-E> <ESC><C-E>i
+imap <C-Y> <ESC><C-Y>i
 
 " Useless crap
 noremap  <F1> :set invfullscreen<CR>
