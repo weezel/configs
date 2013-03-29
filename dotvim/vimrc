@@ -129,8 +129,8 @@ inoremap <A-k> <Up>
 inoremap <A-j> <Down>
 inoremap <A-l> <Right>
 " Scrolling
-nnoremap <C-A-j> <PageUp>
-nnoremap <C-A-k> <PageDown>
+nnoremap <C-A-j> <PageDown>
+nnoremap <C-A-k> <PageUp>
 inoremap <C-A-j> <ESC><C-E>i
 inoremap <C-A-k> <ESC><C-Y>i
 
