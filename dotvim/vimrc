@@ -138,6 +138,8 @@ inoremap <C-A-k> <ESC><C-Y>i
 " Sorry Vim guys, I'm used to readline
 inoremap <C-a> <esc>I
 inoremap <C-e> <esc>A
+inoremap <A-f> <C-Right>
+inoremap <A-b> <C-Left>
 
 " More convenient moving between windows
 nnoremap <M-h> <C-w>h
