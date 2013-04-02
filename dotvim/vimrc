@@ -173,6 +173,16 @@ inoremap <F1> <ESC>:set invfullscreen<CR>a
 " When scrolling, cursor stays in the middle
 nnoremap <F1> :let &scrolloff=999-&scrolloff<CR>
 
+" Visual text search
+function! s:VSetSearch(cmdtype)
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
+
 " Switch to header file
 nmap <F4> :A<cr>
 
