@@ -120,12 +120,32 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 let mapleader = "^"
 nnoremap <leader>w <C-w>v<C-w>l
 
-" Allow moving in insert mode with Alt + {j,k}
+" Ctrl-C behaves like pressing Esc
 inoremap <C-c> <Esc>
-inoremap <M-h> <Left>
-inoremap <M-j> <Up>
-inoremap <M-k> <Down>
-inoremap <M-l> <Right>
+
+" Allow vi moving in insert mode when Shift is pressed
+inoremap <A-h> <Left>
+inoremap <A-k> <Up>
+inoremap <A-j> <Down>
+inoremap <A-l> <Right>
+" Scrolling
+nnoremap <C-A-j> <PageDown>
+nnoremap <C-A-k> <PageUp>
+inoremap <C-A-j> <ESC><C-E>i
+inoremap <C-A-k> <ESC><C-Y>i
+
+
+" Sorry Vim guys, I'm used to readline
+inoremap <C-a> <esc>I
+inoremap <C-e> <esc>A
+inoremap <A-f> <C-Right>
+inoremap <A-b> <C-Left>
+
+" More convenient moving between windows
+nnoremap <M-h> <C-w>h
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
+nnoremap <M-l> <C-w>l
 
 " OmniComplete
 inoremap <C-Space> <C-x><C-o>
@@ -151,21 +171,6 @@ noremap P P`[
 nnoremap <C-l> ^v%$
 map <Space> za
 
-" Sorry Vim guys, I'm used to readline
-inoremap <C-a> <esc>I
-inoremap <C-e> <esc>A
-
-" More convenient moving between windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" Scrolling
-nmap <C-E> <C-E>j
-nmap <C-Y> <C-Y>k
-imap <C-E> <ESC><C-E>i
-imap <C-Y> <ESC><C-Y>i
 
 " Useless crap
 noremap  <F1> :set invfullscreen<CR>
