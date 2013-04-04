@@ -93,7 +93,6 @@ set encoding=utf-8
 " Make sure your terminal is configured with the same encoding.
 set tenc=utf-8
 
-
 " in human-language files, automatically format everything at 72 chars:
 autocmd FileType mail,human set formatoptions+=t textwidth=72
 " for C-like programming, have automatic indentation:
@@ -112,18 +111,16 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 " Alternatively, the following pattern will match trailing whitespace, except when typing at the end of a line.
 "match ExtraWhitespace /\s\+\%#\@<!$/
 
-
-
 "#################################
 "########### Mappings ############
 "#################################
-let mapleader = "^"
+let mapleader = ","
 nnoremap <leader>w <C-w>v<C-w>l
 
 " Ctrl-C behaves like pressing Esc
 inoremap <C-c> <Esc>
 
-" Allow vi moving in insert mode when Shift is pressed
+" Allow vi moving in insert mode when Alt is pressed
 inoremap <A-h> <Left>
 inoremap <A-k> <Up>
 inoremap <A-j> <Down>
@@ -133,7 +130,6 @@ nnoremap <C-A-j> <PageDown>
 nnoremap <C-A-k> <PageUp>
 inoremap <C-A-j> <ESC><C-E>i
 inoremap <C-A-k> <ESC><C-Y>i
-
 
 " Sorry Vim guys, I'm used to readline
 inoremap <C-a> <esc>I
@@ -147,6 +143,10 @@ nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
 
+" Open folds with space and create by Ctrl+space
+map <Space> za
+nnoremap <C-Space> zfa}
+
 " OmniComplete
 inoremap <C-Space> <C-x><C-o>
 "inoremap <C-k> <C-x><C-o>
@@ -155,7 +155,7 @@ inoremap <C-Space> <C-x><C-o>
 nnoremap <C-f> :FufFile<CR>
 inoremap <C-f> <Esc>:FufFile<CR>
 
-"nnoremap <C-b> :FufBuffer<CR>
+nnoremap <C-b> :FufBuffer<CR>
 "inoremap <C-b> <Esc>:FufBuffer<CR>
 
 " Allow deleting selection without updating the clipboard (yank buffer)
@@ -166,11 +166,6 @@ vnoremap X "_X
 " (by jumping to back start of previously changed text)
 noremap p p`[
 noremap P P`[
-
-" Visually select areas for folding, editing etc. Jumps from { to }
-nnoremap <C-l> ^v%$
-map <Space> za
-
 
 " Useless crap
 noremap  <F1> :set invfullscreen<CR>
