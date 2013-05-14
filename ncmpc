@@ -1,11 +1,11 @@
 auto-center = yes
 set-xterm-title = yes
 enable-colors = yes
- 
+
 list-format = "[[%track%. ][%artist% - ][%title% - ][%album%]]|[%shortfile%]"
 status-format = "[[%track%. ][%artist% - ][%title% - ][%album%]]|[%shortfile%]"
 xterm-title-format = "[[%track%. ][%artist% - ][%title% - ][%album%]]|[%shortfile%]"
- 
+
 color background = none
 color title = green
 color title-bold = brightgreen
