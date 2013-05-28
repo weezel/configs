@@ -155,7 +155,10 @@ inoremap <C-Space> <C-x><C-o>
 nnoremap <C-f> :FufFile<CR>
 inoremap <C-f> <Esc>:FufFile<CR>
 
-nnoremap <C-b> :FufBuffer<CR>
+" Tags completion
+inoremap <C-]> <C-x><C-]>
+
+nnoremap <C-b> :FufLine<CR>
 "inoremap <C-b> <Esc>:FufBuffer<CR>
 
 " Allow deleting selection without updating the clipboard (yank buffer)
@@ -186,14 +189,6 @@ xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 " Switch to header file
 nmap <F4> :A<cr>
 
-" Ctrl - Left mouse = Open definition in a new tab
-" Ctrl - Right mouse = Jump back to previous position
-"nmap <C-\> :tab <CR>:exec("tag ".expand("<cword>"))<CR>
-"nmap <C-?> <C-]><CR>
-
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <C-LeftMouse> <C-\>
-map <C-RightMouse> <C-]>
 
 "#################################
 "########### PLUGINS #############
