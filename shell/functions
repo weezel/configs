@@ -1,0 +1,5 @@
+sprunge() {
+	printf '%s%s\n' "$(curl -sF 'sprunge=<-' http://sprunge.us/)" "${*:+?$*}";
+}
+
+
