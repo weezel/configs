@@ -5,6 +5,7 @@
 ##
 # Settings
 ##
+HISTTIMEFORMAT="[%Y-%m-%d - %H:%M:%S] "
 HISTFILE=~/.sh_history
 HISTSIZE=1000
 
@@ -36,4 +37,6 @@ fi
 
 #set -o vi
 #set +o emacs
+set +o markdirs		# Add / to all directory names generated from wildcard
+			# expansion. From zmyrgel's dotfile.
 
