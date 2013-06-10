@@ -1,7 +1,7 @@
 ##### SUBTITLE STUFF
 subfont-autoscale=2
 subfont-osd-scale=2
-subfont-text-scale=2.5
+subfont-text-scale=2
 
 subpos="90"	#By default subtitles are too low
 subalign="2"
