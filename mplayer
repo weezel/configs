@@ -1,7 +1,27 @@
-# Write your default config options here!
+##### SUBTITLE STUFF
 subfont-autoscale=2
 subfont-osd-scale=2
-subfont-text-scale=2
+subfont-text-scale=2.5
+
+subpos="90"	#By default subtitles are too low
+subalign="2"
+
+# Antialiased subs (best quality = 4)
+spuaa=2
+
+# Find subtitle files. (1: load all subs containing movie name)
+sub-fuzziness=1
+
+# Subtitle love
+unicode=yes
+utf8=yes
+
+##### PLAYER STUFF
+
+# This sets the postprocessing into overdrive using all possible spare cpu
+# cycles to make the movie look better
+autoq=100
+vf=pp=de,hqdn3d
 
 # add black borders so the movies have the same aspect ratio of the monitor
 # for wide screen monitors
@@ -14,7 +34,6 @@ vo=gl:swapinterval=0
 lavdopts=threads=2
 #framedrop=yes
 double=yes
-#cache=16384
 #cache=8192
 cache=1024
 fs=yes
