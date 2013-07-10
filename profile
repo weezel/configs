@@ -7,6 +7,7 @@
 #[ -r $HOME/.shell/aliases ] && . $HOME/.shell/aliases
 #[ -r $HOME/.shell/functions ] && . $HOME/.shell/functions
 
+TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
 PS1="[\e[1;32m\]\t\[\e[0m\]] \u@\[\H \e[1;33m\]\W\e[0m\] $ "
@@ -16,7 +17,7 @@ CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
 PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/`uname -p`/
 JAVA_HOME=/usr/local/jdk-1.7.0/
 PYTHONPATH=/usr/local/lib/python2.7/site-packages
-#TERM=screen # if unicode is proble, use this
+#TERM=screen # if unicode is problem, use this <-- weird hint
 #LC_ALL=C
 LESSCHARSET=utf-8
 LC_ALL=en_US.UTF-8
@@ -25,6 +26,12 @@ export SDL_VIDEO_X11_DGAMOUSE=0
 
 sprunge() {
 	printf '%s%s\n' "$(curl -sF 'sprunge=<-' http://sprunge.us/)" "${*:+?$*}";
+}
+
+fcd() {
+	navdir=$(fastcd $1 $2)
+	$(cd ${navdir})
+	#$($_navdir $@)
 }
 
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
