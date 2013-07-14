@@ -12,7 +12,7 @@ if has("gui_running")
 	set guioptions-=T " No toolbar
 	set guioptions-=m " No menubar
 	"set gfn=Monospace\ 9
-	set gfn=Droid\ Sans\ Mono\ 9
+	set gfn=Droid\ Sans\ Mono\ 10
 	set cursorline
 	set ttyfast
 	set guicursor=a:blinkon0
@@ -137,6 +137,9 @@ nnoremap <C-A-j> <PageDown>
 nnoremap <C-A-k> <PageUp>
 inoremap <C-A-j> <ESC><C-E>i
 inoremap <C-A-k> <ESC><C-Y>i
+" Page up/down moving between tabs
+nnoremap <C-j> :tabp<CR>
+nnoremap <C-k> :tabn<CR>
 
 " Sorry Vim guys, I'm used to readline
 inoremap <C-a> <esc>I
@@ -161,11 +164,11 @@ inoremap <C-Space> <C-x><C-u>
 " FuzzyFindFile
 nnoremap <C-f> :FufFile<CR>
 inoremap <C-f> <Esc>:FufFile<CR>
+nnoremap <C-b> :FufLine<CR>
 
 " Tags completion
 inoremap <C-]> <C-x><C-]>
 
-nnoremap <C-b> :FufLine<CR>
 "inoremap <C-b> <Esc>:FufBuffer<CR>
 
 " Allow deleting selection without updating the clipboard (yank buffer)
@@ -206,7 +209,7 @@ noremap <F12> :!ectags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<cr>
 inoremap <F12> <Esc>:!ectags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<cr>
 
 " Clang_complete related
-let clang_complete_auto = 0
+let g:clang_complete_auto = 0
 
 " Paste Mode On/Off
 map <F10> :call Paste_on_off()<CR>
