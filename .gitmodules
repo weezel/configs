@@ -7,3 +7,6 @@
 [submodule "dotvim/bundle/nerdtree"]
 	path = dotvim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+[submodule "dotvim/bundle/sessionman"]
+	path = dotvim/bundle/sessionman
+	url = git@github.com:vim-scripts/sessionman.vim.git
