@@ -2,3 +2,11 @@ sessions*
 tags*
 spell
 .netrwhist
+
+# clang_complete related
+bin/cc_args.py
+doc/clang_complete.txt
+plugin/clang/
+plugin/libclang.py
+plugin/snippets/
+

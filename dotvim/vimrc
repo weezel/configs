@@ -77,6 +77,11 @@ filetype on
 filetype plugin indent on
 "set autoindent
 
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+    set mouse=a
+endif
+
 " #######################
 " Encoding section
 " #######################
@@ -150,7 +155,7 @@ map <Space> za
 nnoremap <C-Space> zfa}
 
 " OmniComplete
-inoremap <C-Space> <C-x><C-o>
+inoremap <C-Space> <C-x><C-u>
 "inoremap <C-k> <C-x><C-o>
 
 " FuzzyFindFile
@@ -191,7 +196,6 @@ xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 " Switch to header file
 nmap <F4> :A<cr>
 
-
 "#################################
 "########### PLUGINS #############
 "#################################
@@ -200,6 +204,9 @@ map <F3> :NERDTreeToggle<CR>
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 noremap <F12> :!ectags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<cr>
 inoremap <F12> <Esc>:!ectags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<cr>
+
+" Clang_complete related
+let clang_complete_auto = 0
 
 " Paste Mode On/Off
 map <F10> :call Paste_on_off()<CR>
@@ -217,12 +224,6 @@ func! Paste_on_off()
 		endif
 	return
 endfunc
-
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-    set mouse=a
-endif
 
 " TagBar toggle
 nmap <F2> :TagbarToggle<cr>
