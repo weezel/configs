@@ -1,3 +1,6 @@
 [submodule "dotvim/bundle/syntastic"]
 	path = dotvim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "dotvim/bundle/tagbar"]
+	path = dotvim/bundle/tagbar
+	url = git@github.com:majutsushi/tagbar.git
