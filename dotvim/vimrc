@@ -144,6 +144,7 @@ nnoremap <C-k> :tabn<CR>
 " Sorry Vim guys, I'm used to readline
 inoremap <C-a> <esc>I
 inoremap <C-e> <esc>A
+inoremap <C-d> <Delete>
 inoremap <A-f> <C-Right>
 inoremap <A-b> <C-Left>
 
