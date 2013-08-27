@@ -44,7 +44,7 @@ alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
 alias sudo="sudo -E"
-
+alias flowstats="sudo nfdump -R /var/log/nfcapd -o extended -s srcip -s ip/flows -s dstport/pps/packets/bytes -s record/bytes"
 # Load ksh specific configuration if exist
 if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc
