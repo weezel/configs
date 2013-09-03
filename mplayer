@@ -34,6 +34,5 @@ vo=gl:swapinterval=0
 lavdopts=threads=2
 #framedrop=yes
 double=yes
-#cache=8192
-cache=1024
+#cache=1024
 fs=yes

@@ -28,6 +28,12 @@ sprunge() {
 	printf '%s%s\n' "$(curl -sF 'sprunge=<-' http://sprunge.us/)" "${*:+?$*}";
 }
 
+ripdvd() {
+	lsdvd
+	read nr
+	for i in $(jot ${nr} 2); do mplayer -dumpstream -dumpfile Nikke_Knatterton-${i}.vob dvd://$i ; done
+}
+
 fcd() {
 	navdir=$(fastcd $1 $2)
 	$(cd ${navdir})
