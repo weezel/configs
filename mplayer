@@ -22,6 +22,7 @@ utf8=yes
 # cycles to make the movie look better
 autoq=100
 vf=pp=de,hqdn3d
+#vf=yadif=1 # interlace
 
 # add black borders so the movies have the same aspect ratio of the monitor
 # for wide screen monitors
