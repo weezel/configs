@@ -1,4 +1,5 @@
 XTerm*LoginShell:	true
+XTerm*deleteIsDEL:	false
 XTerm*background:	black
 XTerm*foreground:	white
 XTerm*highlightColor:	grey

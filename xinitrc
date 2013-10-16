@@ -18,6 +18,8 @@ xset b off
 xset r rate 300 30
 setxkbmap se
 
+xmodmap ~/.Xmodmap
+
 xsetroot -solid black
 env LC_CTYPE="en_EN.UTF-8" i3
 
