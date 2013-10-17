@@ -1,4 +1,9 @@
+# General options
 ServerAliveInterval 120
+Host    *
+        ControlPath     ~/.ssh/master-%r@%h:%p
+        ControlMaster   auto
+
 Host saksacvs
 	HostName openbsd.informatik.uni-erlangen.de
 	#User cvs
