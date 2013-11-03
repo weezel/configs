@@ -146,8 +146,8 @@ nnoremap <C-A-k> <PageUp>
 inoremap <C-A-j> <ESC><C-E>i
 inoremap <C-A-k> <ESC><C-Y>i
 " Page up/down moving between tabs
-nnoremap <C-j> :tabp<CR>
-nnoremap <C-k> :tabn<CR>
+nnoremap <C-j> :tabn<CR>
+nnoremap <C-k> :tabp<CR>
 
 " Sorry Vim guys, I'm used to readline
 inoremap <C-a> <esc>I
