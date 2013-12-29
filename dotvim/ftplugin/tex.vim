@@ -5,6 +5,11 @@ set colorcolumn=+1
 inoremap <F5> <Esc> :w <CR> :!make 2>&1 >/dev/null<CR>
 nnoremap <F5> :w <CR> :!make 2>&1 >/dev/null<CR>
 
+" No syntax checker
+SyntasticToggleMode
+
+set spell
+
 " The Saurus
 set thesaurus+=$HOME/.vim/dict/mthesaur.txt
 

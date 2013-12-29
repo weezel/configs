@@ -55,7 +55,6 @@ stty stop ''
 ##
 # Some shell indepentent aliases
 ##
-alias sudo="sudo -E"
 alias ls="ls -F"
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"

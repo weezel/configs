@@ -155,6 +155,7 @@ inoremap <C-e> <esc>A
 inoremap <C-d> <Delete>
 inoremap <A-f> <C-Right>
 inoremap <A-b> <C-Left>
+inoremap <A-d> <Esc><Right>dwi
 
 " More convenient moving between windows
 nnoremap <M-h> <C-w>h
