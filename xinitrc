@@ -21,6 +21,10 @@ setxkbmap se
 xmodmap ~/.Xmodmap
 /usr/local/libexec/tray-app/sound &
 
+#if [ -x /usr/local/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+#	eval `dbus-launch --sh-syntax --exit-with-session`
+#fi
+
 xsetroot -solid black
 env LC_CTYPE="en_EN.UTF-8" i3
 
