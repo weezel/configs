@@ -155,7 +155,7 @@ inoremap <C-e> <esc>A
 inoremap <C-d> <Delete>
 inoremap <A-f> <C-Right>
 inoremap <A-b> <C-Left>
-inoremap <A-d> <Esc><Right>dwi
+"inoremap <A-d> <Esc><Right>dwi
 
 " More convenient moving between windows
 nnoremap <M-h> <C-w>h
@@ -243,6 +243,7 @@ nmap <F2> :TagbarToggle<cr>
 
 " Session options
 set sessionoptions=buffers,curdir,folds,tabpages
+let sessionman_save_on_exit=0
 
 " Ctags path(s)
 set tags=./tags;/
