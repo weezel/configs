@@ -6,7 +6,7 @@
 
 # Mouse related
 xinput --set-prop 10 243 20
-xset mouse 150 20
+xset mouse 50 10
 synclient HorizTwoFingerScroll=1
 synclient PalmDetect=1
 synclient PalmMinWidth=15
@@ -16,10 +16,14 @@ synclient PalmMinZ=30
 xset b off
 #xset r rate 190 60
 xset r rate 300 30
-setxkbmap se
+setxkbmap -layout fi,us -option grp:alt_shift_toggle
 
 xmodmap ~/.Xmodmap
 /usr/local/libexec/tray-app/sound &
+
+#if [ -x /usr/local/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+#	eval `dbus-launch --sh-syntax --exit-with-session`
+#fi
 
 xsetroot -solid black
 env LC_CTYPE="en_EN.UTF-8" i3
