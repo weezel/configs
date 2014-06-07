@@ -243,6 +243,7 @@ nmap <F2> :TagbarToggle<cr>
 
 " Session options
 set sessionoptions=buffers,curdir,folds,tabpages
+let sessionman_save_on_exit=0
 
 " Ctags path(s)
 set tags=./tags;/
