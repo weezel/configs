@@ -83,6 +83,9 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+# Switch back where we came from
+workspace_auto_back_and_forth yes
+
 # move focused container to workspace
 bindsym $mod+Shift+exclam move workspace 1
 bindsym $mod+Shift+quotedbl move workspace 2
@@ -94,6 +97,13 @@ bindsym $mod+Shift+slash move workspace 7
 bindsym $mod+Shift+parenleft move workspace 8
 bindsym $mod+Shift+parenright move workspace 9
 bindsym $mod+Shift+equal move workspace 10
+
+# Assigns
+assign [class="Firefox"] 3
+assign [class="Chrome"] 4
+
+# Start these automatically
+exec uxterm
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
