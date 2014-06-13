@@ -103,7 +103,7 @@ assign [class="Firefox"] 3
 assign [class="Chrome"] 4
 
 # Start these automatically
-exec uxterm
+exec uxterm -geometry 90x30+0+0 -fa 'Droid Mono' -fs 9
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
