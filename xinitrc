@@ -16,7 +16,7 @@ synclient PalmMinZ=30
 xset b off
 #xset r rate 190 60
 xset r rate 300 30
-setxkbmap -layout fi,us -option grp:alt_shift_toggle
+setxkbmap -layout fi,us -option grp:caps_toggle
 
 xmodmap ~/.Xmodmap
 /usr/local/libexec/tray-app/sound &
