@@ -16,13 +16,12 @@ snippet Inc
 # #ifndef ... #define ... #endif
 snippet ifn
 	#ifndef $1
-	#define	${1:SYMBOL}	${2:value}
+	#define ${1:SYMBOL}	${2:value}
 	#endif${3}
 snippet def
 	#define	
 snippet ifdef
-	#ifdef ${1:FOO}
-		${2:#define }
+	#ifdef ${1:FOO}		${2:#define }
 	#endif
 snippet #if
 	#if ${1:FOO}
@@ -63,12 +62,12 @@ snippet wh
 	}
 # For Loop
 snippet for
-	for (${1:i} = 0; $1 ${2:<} ${3:count}; $1${4:++}) {
+	for (${1:i} = 0; $1 ${2:<} ${3:len}; $1${4:++}) {
 		${5:/* code */}
 	}
 # Custom For Loop
 snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
+	for (${1:i} = ${2:0}; ${3:$1 < len}; $1${4:++}) {
 		${5:/* code */}
 	}
 # Function
