@@ -5,7 +5,13 @@
 TERM="xterm-256color"
 [ -n "$TMUX" ] && export TERM=screen-256color
 
-PS1="[\e[1;33m\]\t\[\e[0m\]] \u@\[\H \e[1;31m\]\W\e[0m\] > "
+#FALSE PS1="\`if [ \$? = 0 ]; then echo \[\e[33m\]^_^\[\e[0m\]; else echo \[\e[31m\]O_O\[\e[0m\]; fi\`[\u@\h:\w]\\$ "
+#PS1TRUE="[\e[1;33m\]\t\[\e[0m\]] \u@\[\H \e[1;36m\]\W\e[0m\] $ "
+#PS1FALSE="[\e[1;31m\]\t\[\e[0m\]] \u@\[\H \e[1;36m\]\W\e[0m\] $ "
+#PS1="\`if [ \$? = 0 ]; then echo ${PS1TRUE}; else echo ${PS1FALSE}; fi \`\${PS1TRUE}"
+
+PS1="[\e[1;33m\]\t\[\e[0m\]] \u@\[\H \e[1;36m\]\W\e[0m\] $ "
+
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/
 INPUTRC=/etc/inputrc
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
@@ -39,14 +45,12 @@ ulimit -d 716800
 # Some shell indepentent aliases
 ##
 alias cp="cp -i"
-alias ls="ls -F"
+alias ls="gls --color=auto -F"
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
-alias sudo="sudo -E"
 alias flowstats="sudo nfdump -R /var/log/nfcapd -o extended -s srcip -s ip/flows -s dstport/pps/packets/bytes -s record/bytes"
 # Load ksh specific configuration if exist
 if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc
 fi
-
