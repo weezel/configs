@@ -26,6 +26,12 @@ xmodmap ~/.Xmodmap
 #fi
 
 xsetroot -solid black
+
+if [ $(xrandr | grep " connected" | wc -l) == 2 ]; then
+	xrandr --output LVDS1 --off
+	xrandr --output HDMI1 --auto
+fi
+
 env LC_CTYPE="en_EN.UTF-8" i3
 
 
