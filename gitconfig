@@ -8,7 +8,7 @@
 	autocrlf = input
 	editor = gvim -f
 [merge]
-	tool = gvimdiff -f
+	tool = kdiff3
 [alias]
 	co = checkout
 	ci = commit
