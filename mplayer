@@ -3,7 +3,7 @@ subfont-autoscale=2
 subfont-osd-scale=2
 subfont-text-scale=2
 
-subpos="90"	#By default subtitles are too low
+subpos="90"	# Better position of subtitles
 subalign="2"
 
 # Antialiased subs (best quality = 4)
@@ -32,8 +32,9 @@ vf-add=expand=::::1:16/9:16
 #vo=gl_nosw
 vo=gl:swapinterval=0
 # multithreaded decoding of H264/MPEG-1/2 (valid: 1-8)
-lavdopts=threads=2
+lavdopts=threads=4
 #framedrop=yes
 double=yes
-#cache=1024
+cache-min=60
+cache=8192
 fs=yes
