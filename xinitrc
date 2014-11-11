@@ -32,6 +32,9 @@ if [ $(xrandr | grep -c " connected") == 2 ]; then
 	xrandr --output HDMI1 --auto
 fi
 
+# Let the newest chrome work again
+/usr/X11R6/bin/xcompmgr &
+
 env LC_CTYPE="en_EN.UTF-8" i3
 
 
