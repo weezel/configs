@@ -8,6 +8,7 @@
 xinput --set-prop 10 243 20
 xset mouse 100 5
 synclient HorizTwoFingerScroll=1
+synclient HorizScrollDelta=15
 synclient PalmDetect=1
 synclient PalmMinWidth=15
 synclient PalmMinZ=30
