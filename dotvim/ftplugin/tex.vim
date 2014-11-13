@@ -10,6 +10,10 @@ SyntasticToggleMode
 
 set spell
 
+" QuickFix mappings
+nnoremap <C-n> :cn<CR>
+nnoremap <C-p> :cp<CR>
+
 " The Saurus
 set thesaurus+=$HOME/.vim/dict/mthesaur.txt
 
