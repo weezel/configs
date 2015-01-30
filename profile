@@ -11,11 +11,11 @@ TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
 PS1="[\e[1;32m\]\t\[\e[0m\]] \u@\[\H \e[1;33m\]\W\e[0m\] $ "
-PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/
+PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/:/usr/games/
 INPUTRC=/etc/inputrc
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
 #PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/`uname -p`/
-PKG_PATH=http://ftp2.eu.openbsd.org/pub/OpenBSD/snapshots/packages/`uname -p`/
+PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/snapshots/packages/`uname -p`/
 JAVA_HOME=/usr/local/jdk-1.7.0/
 PYTHONPATH=/usr/local/lib/python2.7/site-packages
 #TERM=screen # if unicode is problem, use this <-- weird hint
@@ -60,6 +60,7 @@ alias ls="ls -F"
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias cp="cp -i"
+alias egrep="gegrep --color=auto"
 #alias sftp="sftp -o Ciphers=chacha20-poly1305@openssh.com"
 
 # Load ksh specific configuration if exist
