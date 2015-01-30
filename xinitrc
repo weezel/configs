@@ -37,7 +37,8 @@ fi
 /usr/X11R6/bin/xcompmgr &
 
 # Lock screen when away or resuming from suspend
-/usr/X11R6/bin/xidle &
+/usr/X11R6/bin/xidle -program "/usr/X11R6/bin/xlock" \
+	-timeout 300 &
 
 env LC_CTYPE="en_EN.UTF-8" i3
 
