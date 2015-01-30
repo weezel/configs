@@ -36,6 +36,9 @@ fi
 # Let the newest chrome work again
 /usr/X11R6/bin/xcompmgr &
 
+# Lock screen when away or resuming from suspend
+/usr/X11R6/bin/xidle &
+
 env LC_CTYPE="en_EN.UTF-8" i3
 
 
