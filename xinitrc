@@ -34,12 +34,15 @@ if [ $(xrandr | grep -c " connected") == 2 ]; then
 fi
 
 # Let the newest chrome work again
-/usr/X11R6/bin/xcompmgr &
+#/usr/X11R6/bin/xcompmgr &
+/usr/local/bin/compton -b
 
 # Lock screen when away or resuming from suspend
 /usr/X11R6/bin/xidle -program "/usr/X11R6/bin/xlock" \
 	-timeout 300 &
 
+#exec env LC_CTYPE="en_EN.UTF-8" i3
 env LC_CTYPE="en_EN.UTF-8" i3
+
 
 #kbd us.dvorak
