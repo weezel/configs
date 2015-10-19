@@ -29,7 +29,7 @@ fi
 xsetroot -solid black
 
 if [ $(xrandr | grep -c " connected") == 2 ]; then
-	xrandr --output LVDS1 --off
+	xrandr --output eDP1 --off
 	xrandr --output HDMI1 --auto
 fi
 
