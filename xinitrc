@@ -39,7 +39,7 @@ fi
 
 # Lock screen when away or resuming from suspend
 /usr/X11R6/bin/xidle -program "/usr/X11R6/bin/xlock" \
-	-timeout 300 &
+	-timeout 600 &
 
 #exec env LC_CTYPE="en_EN.UTF-8" i3
 env LC_CTYPE="en_EN.UTF-8" i3
