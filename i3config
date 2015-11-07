@@ -100,7 +100,7 @@ bindsym $mod+Shift+10 move workspace 10
 
 # Assigns
 assign [class="Firefox"] 3
-assign [class="Chrome"] 4
+assign [class="chromium-browser"] 4
 
 # Start these automatically
 exec uxterm -geometry 90x30+0+0 -fa 'Droid Mono' -fs 9
