@@ -30,7 +30,8 @@ sprunge() {
 ripdvd() {
 	lsdvd
 	read nr
-	for i in $(jot ${nr} 2); do mplayer -dumpstream -dumpfile Nikke_Knatterton-${i}.vob dvd://$i ; done
+	for i in $(jot ${nr} 2); do mplayer -dumpstream -dumpfile \
+		Nikke_Knatterton-${i}.vob dvd://$i ; done
 }
 
 fcd() {
