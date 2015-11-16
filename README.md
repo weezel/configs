@@ -1,4 +1,4 @@
-Somewhat easy way to centralize configs.
+Centralized configs.
 
 For example:
 
