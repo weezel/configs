@@ -23,10 +23,6 @@ LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 export SDL_VIDEO_X11_DGAMOUSE=0
 
-sprunge() {
-	printf '%s%s\n' "$(curl -sF 'sprunge=<-' http://sprunge.us/)" "${*:+?$*}";
-}
-
 ripdvd() {
 	lsdvd
 	read nr
@@ -34,11 +30,7 @@ ripdvd() {
 		Nikke_Knatterton-${i}.vob dvd://$i ; done
 }
 
-fcd() {
-	navdir=$(fastcd $1 $2)
-	$(cd ${navdir})
-	#$($_navdir $@)
-}
+. $HOME/configs/shell/functions
 
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 	TERM LESSCHARSET LC_ALL LANG HISTFILE HISTSIZE
