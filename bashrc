@@ -4,7 +4,7 @@ alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias cp="cp -i"
 alias rgvim="gvim --servername gvim --remote-tab"
-alias fswebcam="`whereis fswebcam` -c $HOME/.fswebcam.conf"
+alias fswebcam="`which fswebcam` -c $HOME/.fswebcam.conf"
 
 # GNU ls alias color ls
 if [ -x /usr/local/bin/gls ]; then
