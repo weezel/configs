@@ -29,7 +29,13 @@ xsetroot -solid black
 if [ $(xrandr | grep -c " connected") == 2 ]; then
 	xrandr --output eDP1 --off
 	xrandr --output HDMI1 --auto
+elif [ $(xrandr | grep -c " connected") == 3 ]; then
+	xrandr --output eDP1 --off \
+	    --output HDMI1 --auto \
+	    --output DP2 --auto --rotate right --right-of HDMI1
 fi
+
+
 
 # Let the newest chrome work again
 #/usr/X11R6/bin/xcompmgr &
