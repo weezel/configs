@@ -12,10 +12,12 @@ Host	severi
 	HostName	192.168.xxx.xxx
 	User		weezel
 	Port		22
-Host	weezel
-	HostName	weezel.domain
+Host	jump.example.com
+	HostName	123.123.123.123
 	User		weezel
-	Port		1022
+Host lb.example.com
+	Hostname	10.10.10.4 # private
+	ProxyCommand	ssh -W %h:%p jump.example.com
 Host	hoplaa
 	HostName	hoplaa.fi
 	User		weezel
