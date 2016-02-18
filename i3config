@@ -98,6 +98,9 @@ bindsym $mod+Shift+8 move workspace 8
 bindsym $mod+Shift+9 move workspace 9
 bindsym $mod+Shift+10 move workspace 10
 
+workspace 1 output HDMI1
+workspace 3 output DP2
+
 # Assigns
 assign [class="Firefox"] 3
 assign [class="chromium-browser"] 4
