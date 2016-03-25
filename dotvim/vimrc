@@ -8,11 +8,9 @@ if has("gui_running")
 	"colors peaksea
 	"let moria_fontface = 'mixed'
 	"let moria_monochrome = 1
-	"set enc=utf8
 	set guioptions-=T " No toolbar
 	set guioptions-=m " No menubar
-	"set gfn=Monospace\ 9
-	set gfn=Droid\ Sans\ Mono\ 10
+	set gfn=Hack\ Regular\ 10
 	set cursorline
 	set ttyfast
 	set guicursor=a:blinkon0
