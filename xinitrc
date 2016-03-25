@@ -17,6 +17,14 @@ xset b off
 xset r rate 300 30
 setxkbmap -layout us,fi -option grp:caps_toggle
 
+# Load extra fonts
+xset fp+ /usr/local/share/fonts/ghostscript
+xset fp+ /usr/local/share/fonts/noto
+xset fp+ /usr/local/share/fonts/roboto
+xset fp+ /usr/local/share/fonts/terminus
+xset fp+ /usr/local/share/fonts/Hack
+xset fp rehash
+
 xmodmap ~/.Xmodmap
 /usr/local/libexec/tray-app/sound &
 
