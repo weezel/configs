@@ -20,10 +20,7 @@ else
 	# Source: http://nion.modprobe.de/blog/archives/569-colored-manpages.html
 	alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 fi
-# fileutils
-#if [ -x /usr/local/bin/gls ]; then
-#	alias ls="/usr/local/bin/gls -F --color=auto"
-#fi
+
 # colourful grep
 if [ -x /usr/local/bin/ggrep ]; then
 	alias grep="ggrep --colour=auto"

@@ -67,7 +67,11 @@ ulimit -d 716800
 # Some shell indepentent aliases
 ##
 alias cp="cp -i"
-alias ls="gls --color=auto -F"
+if [ -x /usr/local/bin/gls ]; then
+	alias ls="/usr/local/bin/gls -F --color=auto"
+else
+	alias ls="ls -F"
+fi
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
