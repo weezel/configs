@@ -14,7 +14,7 @@ PS1="[\e[1;32m\]\t\[\e[0m\]] \u@\[\H \e[1;33m\]\W\e[0m\] $ "
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/:/usr/games/
 INPUTRC=/etc/inputrc
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
-JAVA_HOME=/usr/local/jdk-1.7.0/
+JAVA_HOME=/usr/local/jdk-1.8.0/
 PYTHONPATH=/usr/local/lib/python2.7/site-packages
 #TERM=screen # if unicode is problem, use this <-- weird hint
 #LC_ALL=C
@@ -38,8 +38,8 @@ export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 # Notify mails
 #biff y
 
-# Remove stupid suspend console binding
-stty stop ''
+# Remove suspend console binding
+#stty stop ''
 
 # Ulimit
 #ulimit -d 716800
@@ -52,6 +52,7 @@ alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias cp="cp -i"
 alias egrep="gegrep --color=auto"
+alias sftp="sftp -c arcfour"
 #alias sftp="sftp -o Ciphers=chacha20-poly1305@openssh.com"
 
 # Load ksh specific configuration if exist
