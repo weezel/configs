@@ -46,8 +46,8 @@ export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 # Notify mails
 #biff y
 
-# Remove stupid suspend console binding
-stty stop ''
+# Remove suspend console binding
+#stty stop ''
 
 # Ulimit
 ulimit -d 716800
