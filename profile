@@ -39,7 +39,7 @@ export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 #biff y
 
 # Remove suspend console binding
-#stty stop ''
+stty stop ''
 
 # Ulimit
 #ulimit -d 716800
