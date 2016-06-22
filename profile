@@ -3,10 +3,6 @@
 #ENV=$HOME/.kshrc
 #export ENV
 #
-#[ -r $HOME/.shell/variables ] && . $HOME/.shell/variables
-#[ -r $HOME/.shell/aliases ] && . $HOME/.shell/aliases
-#[ -r $HOME/.shell/functions ] && . $HOME/.shell/functions
-
 TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
@@ -23,17 +19,20 @@ LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 export SDL_VIDEO_X11_DGAMOUSE=0
 
-ripdvd() {
-	lsdvd
-	read nr
-	for i in $(jot ${nr} 2); do mplayer -dumpstream -dumpfile \
-		Nikke_Knatterton-${i}.vob dvd://$i ; done
-}
 
-. $HOME/configs/shell/functions
+
+SSH_AGENT_PID=$(pgrep -u $(id -u) ssh-agent)
+if [ -z $SSH_AGENT_PID ]; then
+	eval $(ssh-agent -a $HOME/.ssh/agent_sock)
+	ssh-add $HOME/.ssh/id_rsa
+fi
 
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 	TERM LESSCHARSET LC_ALL LANG HISTFILE HISTSIZE
+
+#[ -r $HOME/.shell/variables ] && . $HOME/.shell/variables
+[ -r $HOME/configs/shell/aliases ] && . $HOME/configs/shell/aliases
+[ -r $HOME/configs/shell/functions ] && . $HOME/configs/shell/functions
 
 # Notify mails
 #biff y
@@ -47,10 +46,7 @@ stty stop ''
 ##
 # Some shell indepentent aliases
 ##
-alias ls="ls -F"
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
-alias rm="rm -i"
-alias cp="cp -i"
 alias egrep="gegrep --color=auto"
 alias sftp="sftp -c arcfour"
 #alias sftp="sftp -o Ciphers=chacha20-poly1305@openssh.com"
