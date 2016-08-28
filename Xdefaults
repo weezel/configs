@@ -7,6 +7,7 @@ XTerm*scrollBar:	false
 XTerm*metaSendsEscape:	true
 XTerm*font:		10x12
 UXTerm*LoginShell:	true
+UXTerm*deleteIsDEL:	false
 UXTerm*background:	black
 UXTerm*foreground:	white
 UXTerm*highlightColor:	grey
