@@ -36,8 +36,19 @@ LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 #export SDL_VIDEO_X11_DGAMOUSE=0
 
-sprunge() {
+sprunge()
+{
 	printf '%s%s\n' "$(curl -sF 'sprunge=<-' http://sprunge.us/)" "${*:+?$*}";
+}
+
+flowstats()
+{
+	[[ -z ${1} ]] && echo "Need a filename or dir" && return 1
+	sudo nfdump -R ${1} -o extended      \
+		-s srcip                     \
+		-s ip/flows                  \
+		-s dstport/pps/packets/bytes \
+		-s record/bytes
 }
 
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
@@ -60,7 +71,6 @@ alias ls="gls --color=auto -F"
 alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
-alias flowstats="sudo nfdump -R /var/log/nfcapd -o extended -s srcip -s ip/flows -s dstport/pps/packets/bytes -s record/bytes"
 # Load ksh specific configuration if exist
 if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc
