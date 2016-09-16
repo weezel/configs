@@ -92,11 +92,11 @@ snippet tds
 	typedef struct ${1: }{
 		${2:/* data */}
 	} ${1:`Filename('$1', 'name')`};
-# Typdef enum
-snippet tde
-	typedef enum {
-		${1:/* data */}
-	} ${2:foo};
+snippet enum
+	enum ${1:name} {
+		${2:ONE},
+		${3:TWO}
+	};
 # printf
 # unfortunately version this isn't as nice as TextMates's, given the lack of a
 # dynamic `...`
