@@ -7,7 +7,7 @@ TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
 PS1="[\e[1;32m\]\t\[\e[0m\]] \u@\[\H \e[1;33m\]\W\e[0m\] $ "
-PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.7.0/bin/:/usr/games/
+PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.8.0/bin/:/usr/games/
 INPUTRC=/etc/inputrc
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
 JAVA_HOME=/usr/local/jdk-1.8.0/
