@@ -1,25 +1,17 @@
-# General options
 ServerAliveInterval 120
-Host    *
-        ControlPath     ~/.ssh/master-%r@%h:%p
-        ControlMaster   auto
 
-Host saksacvs
-	HostName openbsd.informatik.uni-erlangen.de
-	#User cvs
-	Port 2022
-Host	severi
-	HostName	192.168.xxx.xxx
+Host *
+	ControlPath	~/.ssh/master-%r@%h:%p
+	ControlMaster	auto
+
+Host myserverdomain server.domain
+	HostName	server.domain
+	Port		10022
+	ProxyCommand	none
+
+Host hostbehindfw
+	HostName	fw.lan
 	User		weezel
 	Port		22
-Host	jump.example.com
-	HostName	123.123.123.123
-	User		weezel
-Host lb.example.com
-	Hostname	10.10.10.4 # private
-	ProxyCommand	ssh -W %h:%p jump.example.com
-Host	hoplaa
-	HostName	hoplaa.fi
-	User		weezel
-	IdentityFile	~/.ssh/hoplaa_weezel
+	ProxyJump	myserverdomain
 
