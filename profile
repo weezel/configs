@@ -39,6 +39,8 @@ export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 
 # Remove suspend console binding
 stty stop ''
+# "Show status" binding
+stty status ^T
 
 # Ulimit
 #ulimit -d 716800
