@@ -15,3 +15,6 @@ Host hostbehindfw
 	Port		22
 	ProxyJump	myserverdomain
 
+Host    OlderProxyMethod
+        ProxyCommand ssh -q -W %h:%p host-behind-proxy
+
