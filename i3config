@@ -21,7 +21,7 @@ focus_follows_mouse no
 floating_modifier Mod1
 
 # start a terminal
-bindsym $mod+Return exec /usr/X11R6/bin/xterm -geometry 90x30+0+0 -fa 'Hack Regular' -fs 10
+bindsym $mod+Return exec xterm -geometry 90x30+0+0 -fa 'Hack Regular' -fs 10
 #bindsym $mod+Return exec /usr/X11R6/bin/xterm -geometry 90x30+0+0 -fa 'Droid Mono' -fs 10
 
 # kill focused window
