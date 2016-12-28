@@ -36,20 +36,8 @@ LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 #export SDL_VIDEO_X11_DGAMOUSE=0
 
-sprunge()
-{
-	printf '%s%s\n' "$(curl -sF 'sprunge=<-' http://sprunge.us/)" "${*:+?$*}";
-}
-
-flowstats()
-{
-	[[ -z ${1} ]] && echo "Need a filename or dir" && return 1
-	sudo nfdump -R ${1} -o extended      \
-		-s srcip                     \
-		-s ip/flows                  \
-		-s dstport/pps/packets/bytes \
-		-s record/bytes
-}
+[ -r $HOME/configs/shell/aliases ] && . $HOME/configs/shell/aliases
+[ -r $HOME/configs/shell/functions ] && . $HOME/configs/shell/functions
 
 export PS1 HOME PATH INPUTRC CVSROOT PKG_PATH JAVA_HOME PYTHONPATH \
 	TERM LESSCHARSET LC_ALL LANG HISTFILE HISTSIZE HISTTIMEFORMAT
@@ -66,15 +54,12 @@ ulimit -d 716800
 ##
 # Some shell indepentent aliases
 ##
-alias cp="cp -i"
 if [ -x /usr/local/bin/gls ]; then
 	alias ls="/usr/local/bin/gls -F --color=auto"
 else
 	alias ls="ls -F"
 fi
-alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
-alias rm="rm -i"
-alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
+
 # Load ksh specific configuration if exist
 if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc

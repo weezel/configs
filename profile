@@ -19,8 +19,6 @@ LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 export SDL_VIDEO_X11_DGAMOUSE=0
 
-
-
 SSH_AGENT_PID=$(pgrep -u $(id -u) ssh-agent)
 if [ -z $SSH_AGENT_PID ]; then
 	eval $(ssh-agent -a $HOME/.ssh/agent_sock)

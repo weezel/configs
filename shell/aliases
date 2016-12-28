@@ -1,6 +1,7 @@
 ##
 # Some shell indepentent aliases
 ##
+alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
 alias sudo="sudo -E"
 alias ls="ls -F"
 alias rm="rm -i"

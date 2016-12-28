@@ -1,11 +1,30 @@
-ripdvd() {
+flowstats()
+{
+	[[ -z ${1} ]] && echo "Need a filename or dir" && return 1
+	sudo nfdump -R ${1} -o extended      \
+		-s srcip                     \
+		-s ip/flows                  \
+		-s dstport/pps/packets/bytes \
+		-s record/bytes
+}
+
+print_colours()
+{
+	for i in $(jot 255); do
+		  printf "\033[38;5;${i}mcolour${i}\n"
+	  done
+}
+
+ripdvd()
+{
 	lsdvd
 	read nr
 	for i in $(jot ${nr} 2); do mplayer -dumpstream -dumpfile \
 		Nikke_Knatterton-${i}.vob dvd://$i ; done
 }
 
-sprunge() {
+sprunge()
+{
 	printf '%s%s\n' "$(curl -sF 'sprunge=<-' \
 		http://sprunge.us/)" "${*:+?$*}";
 }
