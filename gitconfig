@@ -9,6 +9,10 @@
 	editor = gvim -f
 [merge]
 	tool = kdiff3
+[difftool]
+	tool = kdiff3
+[difftool "kdiff3"]
+	prompt = false
 [alias]
 	co = checkout
 	ci = commit
