@@ -124,10 +124,8 @@ nnoremap <leader>w <C-w>v<C-w>l
 
 " Mappings for VimDiff
 if &diff
-	nnoremap <A-LEFT> do
-	nnoremap <A-RIGHT> dp
-	nnoremap <A-DOWN> ]c
-	nnoremap <A-UP> [c
+	nnoremap <leader>1 do
+	nnoremap <leader>2 dp
 endif
 
 " Ctrl-C behaves like pressing Esc
