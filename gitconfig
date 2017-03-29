@@ -14,13 +14,13 @@
 [difftool "kdiff3"]
 	prompt = false
 [alias]
-	co = checkout
-	ci = commit
-	st = status -bs
 	br = branch
-	sup = submodule foreach git pull origin master
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	ci = commit
+	co = checkout
 	graph = log --graph --stat --pretty=oneline --abbrev-commit
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status -bs
+	sup = submodule foreach git pull origin master
 [push]
 	default = simple
