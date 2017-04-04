@@ -1,5 +1,3 @@
-# $OpenBSD: dot.profile,v 1.4 2005/02/16 06:56:57 matthieu Exp $
-#
 # sh/ksh initialization
 
 ##
@@ -7,6 +5,13 @@
 ##
 HISTFILE=~/.sh_history
 HISTSIZE=1000
+
+CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
+JAVA_HOME=/usr/local/jdk-1.8.0/
+PYTHONPATH=/usr/local/lib/python2.7/site-packages
+SDL_VIDEO_X11_DGAMOUSE=0
+
+export CVSROOT JAVA_HOME PYTHONPATH SDL_VIDEO_X11_DGAMOUSE
 
 # use most if available, else less
 if [ -x /usr/local/bin/most ]; then
