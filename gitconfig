@@ -9,6 +9,8 @@
 	editor = gvim -f
 [merge]
 	tool = kdiff3
+[mergetool]
+	keepBackup = false
 [difftool]
 	tool = kdiff3
 [difftool "kdiff3"]
