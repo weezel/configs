@@ -39,8 +39,6 @@ if [ -x /usr/local/bin/vim ]; then
 	alias rvim"=vim --servername vim --remote-tab"
 fi
 
-alias xcap="ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq blaa.mpg"
-
 #set -o vi
 #set +o emacs
 set +o markdirs		# Add / to all directory names generated from wildcard
