@@ -39,8 +39,9 @@ if [ -x /usr/local/bin/vim ]; then
 	alias rvim"=vim --servername vim --remote-tab"
 fi
 
-#set -o vi
-#set +o emacs
+# "Show status" binding
+stty status ^T
+
 set +o markdirs		# Add / to all directory names generated from wildcard
 			# expansion. From zmyrgel's dotfile.
 
