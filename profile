@@ -43,14 +43,6 @@ stty status ^T
 # Ulimit
 #ulimit -d 716800
 
-##
-# Some shell indepentent aliases
-##
-alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
-alias egrep="gegrep --color=auto"
-alias sftp="sftp -c arcfour"
-#alias sftp="sftp -o Ciphers=chacha20-poly1305@openssh.com"
-
 # Load ksh specific configuration if exist
 if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc
