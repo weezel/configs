@@ -1,6 +1,8 @@
-[user]
-	name = Ville Valkonen
-	email = example@mail.com
+[include]
+	# Include [user] section from .gituser
+	# name = My name
+	# email = My email
+	path = ~/.gituser
 [color]
 	ui = true
 [core]
