@@ -11,6 +11,7 @@
 	editor = gvim -f
 [merge]
 	tool = kdiff3
+	ff = only
 [mergetool]
 	keepBackup = false
 [difftool]
@@ -24,8 +25,10 @@
 	graph = log --graph --stat --pretty=oneline --abbrev-commit
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	prune = fetch --prune
 	rmremotebranch = push origin --delete
 	st = status -bs
 	sup = submodule foreach git pull origin master
+	undo = reset --soft HEAD^
 [push]
 	default = simple
