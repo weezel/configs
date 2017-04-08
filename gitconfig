@@ -20,6 +20,10 @@
 [difftool "kdiff3"]
 	prompt = false
 [alias]
+	# Editing and adding conflicted files: when we get many merge conflicts
+	# and want to quickly solve them using an editor, then add the  files.
+	add-unmerged = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+	edit-unmerged = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; `git var GIT_EDITOR` `f`"
 	br = branch
 	ci = commit
 	co = checkout
