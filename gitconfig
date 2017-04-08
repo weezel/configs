@@ -32,3 +32,4 @@
 	undo = reset --soft HEAD^
 [push]
 	default = simple
+	followTags = true
