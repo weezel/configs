@@ -31,6 +31,7 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	prune = fetch --prune
+	publish = !"git push --set-upstream origin $(git branch-name)"
 	rmremotebranch = push origin --delete
 	st = status -bs
 	sup = submodule foreach git pull origin master
