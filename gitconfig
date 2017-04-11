@@ -35,6 +35,7 @@
 	rmremotebranch = push origin --delete
 	st = status -bs
 	sup = submodule foreach git pull origin master
+	thisbranch = log --color --date=short --pretty=format:'%h %ad %ae %s' --first-parent --no-merges
 	undo = reset --soft HEAD^
 [push]
 	default = simple
