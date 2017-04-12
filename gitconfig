@@ -8,16 +8,16 @@
 [core]
 	excludesfile = $HOME/.gitignore
 	autocrlf = input
-	editor = gvim -f
+	editor = vim -f
 [merge]
 	ff = only
 	conflictstyle = diff3
-	tool = kdiff3
+	tool = vimdiff -f
 [mergetool]
 	keepBackup = false
 [difftool]
-	tool = kdiff3
-[difftool "kdiff3"]
+	tool = vimdiff -f
+[difftool "vimdiff"]
 	prompt = false
 [alias]
 	# Editing and adding conflicted files: when we get many merge conflicts
@@ -27,6 +27,7 @@
 	br = branch
 	ci = commit
 	co = checkout
+	firstcommit = log --diff-filter=A
 	graph = log --graph --stat --pretty=oneline --abbrev-commit
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
