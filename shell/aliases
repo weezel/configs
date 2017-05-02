@@ -3,7 +3,7 @@
 ##
 alias cp="cp -i"
 alias ls="ls -F"
-alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
+alias pfrules="doas /sbin/pfctl -vvs rules | grep @"
 alias rm="rm -i"
 alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
 alias sudo="sudo -E"
