@@ -32,6 +32,8 @@ if [ -x /usr/local/bin/vim ]; then
 	alias rvim"=vim --servername vim --remote-tab"
 fi
 
+[ -r $HOME/.ksh_autocomplete ] && . $HOME/.ksh_autocomplete
+
 #set -o vi
 #set +o emacs
 set +o markdirs		# Add / to all directory names generated from wildcard

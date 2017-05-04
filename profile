@@ -19,7 +19,6 @@ fi
 
 export HOME PATH TERM LESSCHARSET LC_ALL LANG
 
-#[ -r $HOME/.shell/variables ] && . $HOME/.shell/variables
 [ -r $HOME/configs/shell/aliases ] && . $HOME/configs/shell/aliases
 [ -r $HOME/configs/shell/functions ] && . $HOME/configs/shell/functions
 

@@ -39,6 +39,8 @@ if [ -x /usr/local/bin/vim ]; then
 	alias rvim"=vim --servername vim --remote-tab"
 fi
 
+[ -r $HOME/.ksh_autocomplete ] && . $HOME/.ksh_autocomplete
+
 # "Show status" binding
 stty status ^T
 
