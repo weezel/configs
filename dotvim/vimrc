@@ -201,6 +201,11 @@ endfunction
 xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 
+" Remove folds while in diff mode
+if &diff
+	set foldminlines=99999
+endif
+
 "#################################
 "########### PLUGINS #############
 "#################################
