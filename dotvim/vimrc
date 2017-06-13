@@ -166,6 +166,10 @@ nnoremap <C-Space> zfa}
 inoremap <C-Space> <C-x><C-u>
 "inoremap <C-k> <C-x><C-o>
 
+" QuickFix mappings
+nnoremap <C-n> :cn<CR>
+nnoremap <C-p> :cp<CR>
+
 " FuzzyFindFile
 nnoremap <C-f> :FufFile<CR>
 inoremap <C-f> <Esc>:FufFile<CR>
