@@ -79,6 +79,9 @@ if has('mouse')
     set mouse=a
 endif
 
+" All splits are equal
+autocmd VimResized * wincmd =
+
 " #######################
 " Encoding section
 " #######################
