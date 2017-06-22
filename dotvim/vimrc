@@ -124,6 +124,8 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 let mapleader = ","
 nnoremap <leader>w <C-w>v<C-w>l
 
+nnoremap <leader>c :bot copen<CR>
+
 " Mappings for VimDiff
 if &diff
 	nnoremap <leader>1 do
