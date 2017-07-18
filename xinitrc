@@ -41,16 +41,19 @@ fi
 
 xsetroot -solid black
 
+# Monitor autosetup
+_laptop=eDP1
+_primary=DP7
+_secondary=DP6
+
 if [ $(xrandr | grep -c " connected") == 2 ]; then
-	xrandr --output eDP1 --off
-	xrandr --output HDMI1 --auto --primary
+	xrandr --output ${_laptop} --off
+	xrandr --output ${_primary} --auto --primary
 elif [ $(xrandr | grep -c " connected") == 3 ]; then
-	xrandr --output eDP1 --off \
-	    --output HDMI1 --auto --primary \
-	    --output DP2 --auto --rotate right --right-of HDMI1
+	xrandr --output ${_laptop} --off \
+	    --output ${_primary} --auto --primary \
+	    --output ${_secondary} --auto --rotate right --right-of ${_primary}
 fi
-
-
 
 # Let the newest chrome work again
 #/usr/X11R6/bin/xcompmgr &
