@@ -43,8 +43,8 @@ xsetroot -solid black
 
 # Monitor autosetup
 _laptop=eDP1
-_primary=DP7
-_secondary=DP6
+_primary=DP4
+_secondary=DP3
 
 if [ $(xrandr | grep -c " connected") == 2 ]; then
 	xrandr --output ${_laptop} --off
