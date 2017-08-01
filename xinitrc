@@ -10,8 +10,6 @@ synclient HorizScrollDelta=15
 synclient PalmDetect=1
 synclient PalmMinWidth=15
 synclient PalmMinZ=30
-# Faster trackpoint
-xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.35
 
 # Trackpoint scroll
 #xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
@@ -49,10 +47,15 @@ _secondary=DP3
 if [ $(xrandr | grep -c " connected") == 2 ]; then
 	xrandr --output ${_laptop} --off
 	xrandr --output ${_primary} --auto --primary
+	# Faster trackpoint
+	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.9
 elif [ $(xrandr | grep -c " connected") == 3 ]; then
 	xrandr --output ${_laptop} --off \
 	    --output ${_primary} --auto --primary \
 	    --output ${_secondary} --auto --rotate right --right-of ${_primary}
+	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.9
+else
+	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.35
 fi
 
 # Let the newest chrome work again
