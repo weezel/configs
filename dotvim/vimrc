@@ -37,6 +37,8 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
 "set softtabstop=4
 "set shiftwidth=4
 "set tabstop=4
+
+" Put quickfix window always on bottom
 botright cwindow
 nnoremap Q gqap
 vnoremap Q gq
@@ -59,12 +61,21 @@ set hlsearch
 set number
 set wildmenu
 set showtabline=2
-set showcmd     " display incomplete commands
-set incsearch   " do incremental searching
+
+" Display incomplete commands
+set showcmd
+
+" Do incremental searching
+set incsearch
+
+" When splitting, don't substitute the current
+" buffer with the newly opened one
 set splitbelow
 set splitright
+" All splits are equal
+autocmd VimResized * wincmd =
 
-" Indent
+" Sane indent
 set autoindent
 set smarttab
 set smartindent
@@ -84,9 +95,6 @@ filetype plugin indent on
 if has('mouse')
     set mouse=a
 endif
-
-" All splits are equal
-autocmd VimResized * wincmd =
 
 " #######################
 " Encoding section
@@ -121,21 +129,25 @@ autocmd FileType c set formatoptions+=ro
 match ExtraWhitespace /\s\+$/
 " Show trailing whitepace and spaces before a tab:
 match ExtraWhitespace /\s\+$\| \+\ze\t/
-" Alternatively, the following pattern will match trailing whitespace, except when typing at the end of a line.
+" Alternatively, the following pattern will match trailing whitespace, except
+" when typing at the end of a line.
 "match ExtraWhitespace /\s\+\%#\@<!$/
 
 "#################################
 "########### Mappings ############
 "#################################
 let mapleader = ","
+
+" Split current buffer
 nnoremap <leader>w <C-w>v<C-w>l
 
+" Open quickfix window
 nnoremap <leader>c :bot copen<CR>
 
 " Mappings for VimDiff
 if &diff
-	nnoremap <leader>1 do
-	nnoremap <leader>2 dp
+	nnoremap <leader>1 diffput
+	nnoremap <leader>2 diffget
 endif
 
 " Ctrl-C behaves like pressing Esc
