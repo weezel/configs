@@ -70,6 +70,12 @@ set smarttab
 set smartindent
 set copyindent
 
+" Padding when scrolling
+" Vertical
+set scrolloff=5
+" Horizontal
+set sidescrolloff=5
+
 filetype on
 filetype plugin indent on
 "set autoindent
