@@ -85,7 +85,7 @@ set copyindent
 " Vertical
 set scrolloff=5
 " Horizontal
-set sidescrolloff=5
+set sidescrolloff=80
 
 filetype on
 filetype plugin indent on
