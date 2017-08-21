@@ -40,7 +40,7 @@ fi
 xsetroot -solid black
 
 # Monitor autosetup
-_laptop=eDP1
+_laptop=eDP-1
 _primary=DP-2-2
 _secondary=DP-2-1
 
