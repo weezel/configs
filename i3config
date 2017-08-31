@@ -99,12 +99,14 @@ bindsym $mod+Shift+8 move workspace 8
 bindsym $mod+Shift+9 move workspace 9
 bindsym $mod+Shift+10 move workspace 10
 
+hide_edge_borders horizontal
+
 workspace 1 output DP-2-2
 workspace 3 output DP-2-1
 
 # Assigns
 assign [class="Firefox"] 3
-assign [class="chromium-browser"] 4
+assign [class="[Cc]hromium-browser"] 4
 
 # Start these automatically
 exec xterm -geometry 90x30+0+0 -fa 'Hack Regular' -fs 10
