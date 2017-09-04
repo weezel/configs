@@ -1,7 +1,3 @@
-# xv -root -quit images/background.png
-#env LC_CTYPE="en_US.UTF-8" /usr/local/bin/fluxbox
-#fbsetroot -gradient Vertical -from red -to black
-
 # Mouse related
 xinput --set-prop 10 243 20
 xset mouse 100 5
@@ -62,7 +58,8 @@ xsetroot -solid black
 /usr/X11R6/bin/xidle -program "/usr/X11R6/bin/xlock" \
 	-timeout 600 &
 
-#exec env LC_CTYPE="en_EN.UTF-8" i3
+# xv -root -quit images/background.png
+#fbsetroot -gradient Vertical -from red -to black
+
 env LC_CTYPE="en_EN.UTF-8" i3
 
-#kbd us.dvorak
