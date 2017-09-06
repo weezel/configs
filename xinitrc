@@ -39,24 +39,20 @@ fi
 
 xsetroot -solid black
 
-# Monitor autosetup
-_laptop=eDP-1
-_primary=DP-2-2
-_secondary=DP-2-1
+~/bin/monitor_config.sh
 
-if [ $(xrandr | grep -c " connected") == 2 ]; then
-	xrandr --output ${_laptop} --off
-	xrandr --output ${_primary} --auto --primary
-	# Faster trackpoint
-	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.9
-elif [ $(xrandr | grep -c " connected") == 3 ]; then
-	xrandr --output ${_laptop} --off \
-	    --output ${_primary} --auto --primary \
-	    --output ${_secondary} --auto --rotate right --right-of ${_primary}
-	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.9
-else
+monitorcount=$(grep -c " connected")
+case "${monitorcount}" in
+1)
 	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.35
-fi
+	;;
+2)
+	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.9
+	;;
+3)
+	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.9
+	;;
+esac
 
 # Let the newest chrome work again
 #/usr/X11R6/bin/xcompmgr &
