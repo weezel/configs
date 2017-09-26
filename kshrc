@@ -3,6 +3,7 @@
 ##
 # Settings
 ##
+HISTCONTROL=ignoredups:ignorespace
 HISTFILE=~/.sh_history
 HISTSIZE=1000
 
