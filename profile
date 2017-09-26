@@ -1,8 +1,5 @@
 # sh/ksh initialization
 
-#ENV=$HOME/.kshrc
-#export ENV
-#
 TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
@@ -23,7 +20,7 @@ export HOME PATH TERM LESSCHARSET LC_ALL LANG
 [ -r $HOME/configs/shell/functions ] && . $HOME/configs/shell/functions
 
 # Need to import here since it uses functions
-PS1='[\e[1;32m\]\t\[\e[0m\]] $(prev_exitval `whoami`)@\[\H \e[1;33m\]\W\e[0m\] $(git_branch) $ '
+[ -r $HOME/configs/machine_specific/shell_ps1 ] && . $HOME/configs/machine_specific/shell_ps1
 export PS1
 
 # Notify mails
