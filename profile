@@ -20,7 +20,12 @@ export HOME PATH TERM LESSCHARSET LC_ALL LANG
 [ -r $HOME/configs/shell/functions ] && . $HOME/configs/shell/functions
 
 # Need to import here since it uses functions
-[ -r $HOME/configs/machine_specific/shell_ps1 ] && . $HOME/configs/machine_specific/shell_ps1
+if [ -r $HOME/configs/machine_specific/ps1 ]; then
+	. $HOME/configs/machine_specific/ps1
+else
+	[ -r $HOME/configs/shell/ps1 ] \
+	&& . $HOME/configs/shell/ps1
+fi
 export PS1
 
 # Notify mails
