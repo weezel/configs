@@ -1,5 +1,67 @@
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
+call plug#begin()
+let g:ycm_auto_trigger = 0
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+"let g:ycm_key_invoke_completion = '<C-e>'
+let g:ycm_key_list_previous_completion=['<C-p>']
+let g:ycm_key_list_select_completion = ['<C-n>']
+let g:ycm_register_as_syntastic_checker = 1
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_server_log_level = 'error'
+let g:ycm_use_ultisnips_completer = 1
+let g:ycm_filetype_blacklist = {
+      \ 'markdown' : 1,
+      \ 'notes' : 1,
+      \ 'tex' : 1,
+      \ 'text' : 1,
+      \ 'unite' : 1,
+      \ 'vim' : 1,
+      \ 'nim' : 1,
+      \ 'sql' : 1,
+\}
+" \ 'typescript' : 1,
+" \ 'javascript' : 1,
+let g:ycm_semantic_triggers = {
+      \ 'gitcommit' : ['#'],
+      \ 'clojure' : ['(', '/'],
+      \ 'nim' : ['.'],
+      \ 'typescript' : ['.']
+      \ }
+nnoremap <space>h :YcmCompleter GetType<cr>
+nnoremap gt :YcmCompleter GoTo<cr>
+nnoremap gd :YcmCompleter GoToDefinition<cr>
+nnoremap <c-]> :YcmCompleter GoToDefinition<cr>
+" nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<cr>
+"Plug 'Valloric/YouCompleteMe', { 'do': 'cd ~/configs/dotvim/plugged/YouCompleteMe && git submodule update --init --recursive && python2 install.py' }
+
+let g:ale_enabled=1
+let g:ale_sign_error = '#'
+let g:ale_sign_warning = '?'
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_sign_column_always = 1
+let g:ale_lint_delay = 500
+let g:ale_set_quickfix = 1
+let g:airline#extensions#ale#enabled = 1
+Plug 'w0rp/ale'
+
+Plug 'jwhitley/vim-matchit'
+Plug 'majutsushi/tagbar'
+Plug 'mbbill/undotree'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/L9'
+
+let g:UltiSnipsSnippetsDir = "~/configs/dotvim/snippets"
+Plug 'SirVer/ultisnips'
+call plug#end()
+
 if has("gui_running")
 	"set background=dark
 	"colors peaksea
@@ -71,6 +133,7 @@ set splitbelow
 set splitright
 " All splits are equal
 autocmd VimResized * wincmd =
+set fillchars+=vert:│
 
 " Sane indent
 set autoindent
@@ -133,10 +196,13 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 "#################################
 "########### Mappings ############
 "#################################
-let mapleader = ","
+let mapleader = ";"
 
 " Split current buffer
 nnoremap <leader>w <C-w>v<C-w>l
+
+" Reload vimrc
+nnoremap <leader><leader>v :source $MYVIMRC<CR>
 
 " Open quickfix window
 nnoremap <leader>c :bot copen<CR>
@@ -180,10 +246,10 @@ nnoremap <M-l> <C-w>l
 
 " Open folds with space and create by Ctrl+space
 map <Space> za
-nnoremap <C-Space> zfa}
+"nnoremap <C-Space> zfa}
 
 " OmniComplete
-inoremap <C-Space> <C-x><C-u>
+"inoremap <C-Space> <C-x><C-u>
 "inoremap <C-k> <C-x><C-o>
 
 " QuickFix mappings
