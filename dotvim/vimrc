@@ -1,8 +1,5 @@
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
-" Pathogen, yes please
-call pathogen#infect()
-
 if has("gui_running")
 	"set background=dark
 	"colors peaksea
