@@ -41,7 +41,7 @@ nnoremap gt :YcmCompleter GoTo<cr>
 nnoremap gd :YcmCompleter GoToDefinition<cr>
 nnoremap <c-]> :YcmCompleter GoToDefinition<cr>
 " nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<cr>
-"Plug 'Valloric/YouCompleteMe', { 'do': 'cd ~/configs/dotvim/plugged/YouCompleteMe && git submodule update --init --recursive && python2 install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'cd ~/configs/dotvim/plugged/YouCompleteMe && git submodule update --init --recursive && python2 install.py' }
 
 let g:ale_enabled=1
 let g:ale_sign_error = '#'
