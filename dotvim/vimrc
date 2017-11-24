@@ -1,5 +1,7 @@
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
+set nocompatible
+
 call plug#begin()
 let g:ycm_auto_trigger = 0
 let g:ycm_add_preview_to_completeopt = 0
@@ -52,11 +54,25 @@ let g:ale_set_quickfix = 1
 let g:airline#extensions#ale#enabled = 1
 Plug 'w0rp/ale'
 
-Plug 'jwhitley/vim-matchit'
+nnoremap <F2> :TagbarToggle<cr>
+let g:tagbar_autofocus=0
+let g:tagbar_sort=1
 Plug 'majutsushi/tagbar'
-Plug 'mbbill/undotree'
+
+map <F3> :NERDTreeToggle<CR>
 Plug 'scrooloose/nerdtree'
+
+nnoremap <F4> :UndotreeToggle<cr>
+Plug 'mbbill/undotree'
+
+Plug 'jwhitley/vim-matchit'
 Plug 'vim-scripts/L9'
+
+" FuzzyFindFile
+"nnoremap <C-f> :FufFile<CR>
+"inoremap <C-f> <Esc>:FufFile<CR>
+"nnoremap <C-b> :FufLine<CR>
+
 
 let g:UltiSnipsSnippetsDir = "~/configs/dotvim/snippets"
 Plug 'SirVer/ultisnips'
@@ -75,7 +91,6 @@ if has("gui_running")
 	set guicursor=a:blinkon0
 endif
 
-
 " Sanity check for colors
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
 	set t_Co=256
@@ -85,17 +100,10 @@ endif
 colors peaksea
 set background=dark
 
-set nocompatible
 set listchars=tab:>-,eol:$,trail:.,extends:#
 set backspace=indent,eol,start
 set tm=500 " time out to 500msec
-set history=50
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
-
-"set textwidth=78
-"set softtabstop=4
-"set shiftwidth=4
-"set tabstop=4
 
 " Put quickfix window always on bottom
 botright cwindow
@@ -107,13 +115,13 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#s
 syntax on
 
 " Automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
+"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+"set completeopt=menuone,menu,longest,preview
 
+set history=2000
 set nowrap
 set nobackup
 set noswapfile
-"set list
 set ruler
 set laststatus=2
 set hlsearch
@@ -198,9 +206,6 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 "#################################
 let mapleader = ";"
 
-" Split current buffer
-nnoremap <leader>w <C-w>v<C-w>l
-
 " Reload vimrc
 nnoremap <leader><leader>v :source $MYVIMRC<CR>
 
@@ -246,36 +251,22 @@ nnoremap <M-l> <C-w>l
 
 " Open folds with space and create by Ctrl+space
 map <Space> za
-"nnoremap <C-Space> zfa}
-
-" OmniComplete
-"inoremap <C-Space> <C-x><C-u>
-"inoremap <C-k> <C-x><C-o>
+"nnoremap <C-}> zfa}
 
 " QuickFix mappings
 nnoremap <C-n> :cn<CR>
 nnoremap <C-p> :cp<CR>
 
-" FuzzyFindFile
-nnoremap <C-f> :FufFile<CR>
-inoremap <C-f> <Esc>:FufFile<CR>
-nnoremap <C-b> :FufLine<CR>
-
-" Tags completion
-inoremap <C-]> <C-x><C-]>
-
-"inoremap <C-b> <Esc>:FufBuffer<CR>
-
 " Allow deleting selection without updating the clipboard (yank buffer)
-noremap dd "_dd
-vnoremap x "_x
-vnoremap X "_X
+"noremap dd "_dd
+"vnoremap x "_x
+"vnoremap X "_X
 " Don't move the cursor after pasting
 " (by jumping to back start of previously changed text)
 noremap p p`[
 noremap P P`[
 
-" Useless crap
+" Don't so help, really
 noremap  <F1> :set invfullscreen<CR>
 inoremap <F1> <ESC>:set invfullscreen<CR>a
 " When scrolling, cursor stays in the middle
@@ -296,16 +287,6 @@ if &diff
 	set foldminlines=99999
 endif
 
-"#################################
-"########### PLUGINS #############
-"#################################
-map <F3> :NERDTreeToggle<CR>
-
-" Build tags of your own project with CTRL+F12
-"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-noremap <F12> :!ectags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<cr>
-inoremap <F12> <Esc>:!ectags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<cr>
-
 " Paste Mode On/Off
 map <F10> :call Paste_on_off()<CR>
 set pastetoggle=<F10>
@@ -322,32 +303,4 @@ func! Paste_on_off()
 		endif
 	return
 endfunc
-
-" TagBar settings
-nmap <F2> :TagbarToggle<cr>
-let g:tagbar_autofocus=0
-let g:tagbar_sort=1
-
-" Session options
-set sessionoptions=buffers,curdir,folds,tabpages
-let sessionman_save_on_exit=0
-
-" Ctags path(s)
-set tags=./tags;/
-
-" CScope thingies
-if has("cscope")
-	set csprg=/usr/local/bin/cscope
-	set csto=0
-	set cst
-	set nocsverb
-	" add any database in current directory
-	if filereadable("cscope.out")
-	    cs add cscope.out
-	" else add database pointed to by environment
-	elseif $CSCOPE_DB != ""
-	    cs add $CSCOPE_DB
-	endif
-	set csverb
-endif
 
