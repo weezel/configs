@@ -65,17 +65,32 @@ Plug 'scrooloose/nerdtree'
 nnoremap <F4> :UndotreeToggle<cr>
 Plug 'mbbill/undotree'
 
-Plug 'jwhitley/vim-matchit'
-Plug 'vim-scripts/L9'
+let g:ctrlp_map = '<C-f>'
+let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+Plug 'kien/ctrlp.vim'
 
 " FuzzyFindFile
 "nnoremap <C-f> :FufFile<CR>
 "inoremap <C-f> <Esc>:FufFile<CR>
 "nnoremap <C-b> :FufLine<CR>
 
-
 let g:UltiSnipsSnippetsDir = "~/configs/dotvim/snippets"
 Plug 'SirVer/ultisnips'
+
+nnoremap <leader>c call: ToggleQuickfixList()<CR>
+Plug 'milkypostman/vim-togglelist'
+
+Plug 'jwhitley/vim-matchit'
+Plug 'vim-scripts/L9'
+
 call plug#end()
 
 if has("gui_running")
@@ -96,7 +111,6 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
 	set t_Co=256
 endif
 
-" System
 colors peaksea
 set background=dark
 
@@ -209,8 +223,9 @@ let mapleader = ";"
 " Reload vimrc
 nnoremap <leader><leader>v :source $MYVIMRC<CR>
 
-" Open quickfix window
-nnoremap <leader>c :bot copen<CR>
+" LEADER MAPPINGS
+" Append to each matching line
+nnoremap <leader>a :g/^pattern/s/$/
 
 " Mappings for VimDiff
 if &diff
