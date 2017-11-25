@@ -225,7 +225,9 @@ nnoremap <leader><leader>v :source $MYVIMRC<CR>
 
 " LEADER MAPPINGS
 " Append to each matching line
-nnoremap <leader>a :g/^pattern/s/$/
+nnoremap <leader>a :g/pattern/s/$/
+" Execute macro on each matching line
+nnoremap <leader>m :g/pattern/normal @q
 
 " Mappings for VimDiff
 if &diff
