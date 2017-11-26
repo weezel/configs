@@ -1,5 +1,13 @@
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
+if has('linux')
+	let g:python_host_prog = '/bin/python2'
+	let g:python3_host_prog = '/bin/python3'
+elseif has('openbsd')
+	let g:python_host_prog = '/usr/local/bin/python2'
+	let g:python3_host_prog = '/usr/local/bin/python3'
+endif
+
 set nocompatible
 
 call plug#begin()
@@ -56,7 +64,7 @@ Plug 'w0rp/ale'
 
 nnoremap <F2> :TagbarToggle<cr>
 let g:tagbar_autofocus=0
-let g:tagbar_sort=1
+let g:tagbar_sort = 1
 Plug 'majutsushi/tagbar'
 
 map <F3> :NERDTreeToggle<CR>
