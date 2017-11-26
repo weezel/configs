@@ -11,6 +11,8 @@ endif
 set nocompatible
 
 call plug#begin()
+Plug 'vim-scripts/L9'
+
 let g:ycm_auto_trigger = 0
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 0
@@ -51,6 +53,23 @@ nnoremap <c-]> :YcmCompleter GoToDefinition<cr>
 " nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 Plug 'Valloric/YouCompleteMe', { 'do': 'cd ~/configs/dotvim/plugged/YouCompleteMe && git submodule update --init --recursive && python2 install.py' }
 
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#wordcount#enabled = 0
+"let g:airline#extensions#ale#enabled = 1
+let g:airline_extensions = ['tabline', 'ale']
+let g:airline_detect_spell = 0
+let g:airline_detect_paste = 0
+let g:airline_detect_spelllang = 0
+let g:airline_detect_iminsert = 0
+let g:airline_powerline_fonts = 0
+let g:airline_symbols_ascii = 1
+let g:airline_theme='dark'
+let g:airline_highlighting_cache=1
+" Disable all plugins
+Plug 'vim-airline/vim-airline'
+
 let g:ale_enabled=1
 let g:ale_sign_error = '#'
 let g:ale_sign_warning = '?'
@@ -59,7 +78,6 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_sign_column_always = 1
 let g:ale_lint_delay = 500
 let g:ale_set_quickfix = 1
-let g:airline#extensions#ale#enabled = 1
 Plug 'w0rp/ale'
 
 nnoremap <F2> :TagbarToggle<cr>
@@ -74,21 +92,25 @@ nnoremap <F4> :UndotreeToggle<cr>
 Plug 'mbbill/undotree'
 
 let g:ctrlp_map = '<C-f>'
-let g:ctrlp_cmd = 'CtrlP'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_cmd = 'CtrlPLine'
+let g:ctrlp_extensions = ['line', 'mixed']
+set wildignore+=*/tmp/*,*.so,*.swp,*.gz,*.7z,*.zip " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
-" FuzzyFindFile
-"nnoremap <C-f> :FufFile<CR>
-"inoremap <C-f> <Esc>:FufFile<CR>
-"nnoremap <C-b> :FufLine<CR>
+if executable('ag')
+	let g:ackprg = 'ag --vimgrep'
+	"let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+let g:ack_apply_qmappings = 0
+nnoremap <C-F>f :LAck!<Space>
+Plug 'mileszs/ack.vim'
 
 let g:UltiSnipsSnippetsDir = "~/configs/dotvim/snippets"
 Plug 'SirVer/ultisnips'
@@ -97,7 +119,6 @@ nnoremap <leader>c call: ToggleQuickfixList()<CR>
 Plug 'milkypostman/vim-togglelist'
 
 Plug 'jwhitley/vim-matchit'
-Plug 'vim-scripts/L9'
 
 call plug#end()
 
@@ -110,9 +131,11 @@ if has("gui_running")
 	set guioptions-=m " No menubar
 	set gfn=Hack\ Regular\ 10
 	set cursorline
-	set ttyfast
 	set guicursor=a:blinkon0
 endif
+
+set ttyfast
+set lazyredraw
 
 " Sanity check for colors
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
@@ -257,8 +280,8 @@ nnoremap <C-A-k> <PageUp>
 inoremap <C-A-j> <ESC><C-E>i
 inoremap <C-A-k> <ESC><C-Y>i
 " Page up/down moving between tabs
-nnoremap <C-h> :tabp<CR>
-nnoremap <C-l> :tabn<CR>
+nnoremap <C-h> :bprev<CR>
+nnoremap <C-l> :bnext<CR>
 
 " Sorry Vim guys, I'm used to readline
 inoremap <C-a> <esc>I
