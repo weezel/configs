@@ -115,7 +115,7 @@ nnoremap <C-F>f :LAck!<Space>
 Plug 'mileszs/ack.vim'
 
 let g:UltiSnipsSnippetsDir = "~/configs/dotvim/snippets"
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 
 nnoremap <leader>c call: ToggleQuickfixList()<CR>
 Plug 'milkypostman/vim-togglelist'
@@ -261,6 +261,10 @@ nnoremap <leader><leader>v :source $MYVIMRC<CR>
 nnoremap <leader>a :g/pattern/s/$/
 " Execute macro on each matching line
 nnoremap <leader>m :g/pattern/normal @q
+" Go back to file where we jumped off
+nnoremap <leader>b :e#<CR>
+" Close current buffer
+nnoremap <leader>, :bd<CR>
 
 " Mappings for VimDiff
 if &diff
