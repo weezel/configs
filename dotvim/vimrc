@@ -93,10 +93,12 @@ Plug 'mbbill/undotree'
 
 let g:ctrlp_map = '<C-f>'
 let g:ctrlp_cmd = 'CtrlPLine'
-let g:ctrlp_extensions = ['line', 'mixed']
-set wildignore+=*/tmp/*,*.so,*.swp,*.gz,*.7z,*.zip " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe " Windows
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_extensions = ['line']
+let g:ctrlp_types = ['fil', 'buf', 'mru']
+let g:ctrlp_open_new_file = 'ri'
+let g:ctrlp_open_multiple_files = 'ri'
+set wildignore+=*/tmp/*,*.so,*.swp
+set wildignore+=*.gz,*.zip,*.7z,*.swp,*.zip,*.exe
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
