@@ -1,13 +1,5 @@
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
-if has('linux')
-	let g:python_host_prog = '/bin/python2'
-	let g:python3_host_prog = '/bin/python3'
-elseif has('openbsd')
-	let g:python_host_prog = '/usr/local/bin/python2'
-	let g:python3_host_prog = '/usr/local/bin/python3'
-endif
-
 set nocompatible
 
 call plug#begin()
