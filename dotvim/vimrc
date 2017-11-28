@@ -2,6 +2,8 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
 set nocompatible
 
+let mapleader = ";"
+
 call plug#begin()
 Plug 'vim-scripts/L9'
 
@@ -103,7 +105,7 @@ if executable('ag')
 	"let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 let g:ack_apply_qmappings = 0
-nnoremap <C-F>f :LAck!<Space>
+nnoremap <leader>f :LAck!<Space>
 Plug 'mileszs/ack.vim'
 
 let g:UltiSnipsSnippetsDir = "~/configs/dotvim/snippets"
@@ -250,8 +252,6 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 "#################################
 "########### Mappings ############
 "#################################
-let mapleader = ";"
-
 " Reload vimrc
 nnoremap <leader><leader>v :source $MYVIMRC<CR>
 
