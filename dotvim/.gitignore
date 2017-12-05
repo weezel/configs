@@ -1,3 +1,4 @@
+.VimballRecord
 .netrwhist
 autoload/plug.vim
 plugged
