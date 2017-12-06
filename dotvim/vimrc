@@ -51,6 +51,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': 'cd ~/configs/dotvim/plugged/YouCompleteM
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline_extensions = ['tabline', 'ale']
 let g:airline_detect_spell = 0
@@ -183,7 +184,7 @@ set splitbelow
 set splitright
 " All splits are equal
 autocmd VimResized * wincmd =
-set fillchars+=vert:│
+"set fillchars+=vert:│
 
 " Undo related
 set undofile
