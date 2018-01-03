@@ -11,7 +11,11 @@ LANG=en_US.UTF-8
 SSH_AGENT_PID=$(pgrep -u $(id -u) ssh-agent)
 if [ -z $SSH_AGENT_PID ]; then
 	eval $(ssh-agent -a $HOME/.ssh/agent_sock)
-	ssh-add $HOME/.ssh/id_rsa
+	for key in $HOME/.ssh/id_rsa $HOME/.ssh/id_ed25519; do
+		if [ -r "${key}" ]; then
+			ssh-add "${key}"
+		fi
+	done
 fi
 
 export HOME PATH TERM LESSCHARSET LC_ALL LANG
