@@ -119,6 +119,8 @@ Plug 'milkypostman/vim-togglelist'
 
 Plug 'jwhitley/vim-matchit'
 
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 if has("gui_running")
