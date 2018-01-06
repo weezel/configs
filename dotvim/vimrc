@@ -47,8 +47,8 @@ nnoremap <c-]> :YcmCompleter GoToDefinition<cr>
 " nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 Plug 'Valloric/YouCompleteMe', { 'do': 'cd ~/configs/dotvim/plugged/YouCompleteMe && git submodule update --init --recursive && python2 install.py' }
 
-"let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#enabled = 0
+"let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#tagbar#enabled = 0
@@ -63,7 +63,7 @@ let g:airline_symbols_ascii = 1
 let g:airline_theme='dark'
 let g:airline_highlighting_cache=1
 " Disable all plugins
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
 
 let g:ale_enabled=1
 let g:ale_sign_error = '#'
@@ -112,7 +112,9 @@ Plug 'mileszs/ack.vim'
 let g:UltiSnipsSnippetsDir = "~/configs/dotvim/snippets"
 "Plug 'SirVer/ultisnips'
 
-nnoremap <leader>c call: ToggleQuickfixList()<CR>
+"g:toggle_list_no_mappings
+"nnoremap <script> <silent> <leader>c call: ToggleQuickfixList()<CR>
+"nnoremap <script> <silent> <leader>x call: ToggleLocationList()<CR>
 Plug 'milkypostman/vim-togglelist'
 
 Plug 'jwhitley/vim-matchit'
@@ -120,8 +122,6 @@ Plug 'jwhitley/vim-matchit'
 call plug#end()
 
 if has("gui_running")
-	"set background=dark
-	"colors peaksea
 	"let moria_fontface = 'mixed'
 	"let moria_monochrome = 1
 	set guioptions-=T " No toolbar
@@ -285,7 +285,7 @@ nnoremap <C-A-j> <PageDown>
 nnoremap <C-A-k> <PageUp>
 inoremap <C-A-j> <ESC><C-E>i
 inoremap <C-A-k> <ESC><C-Y>i
-" Page up/down moving between tabs
+" Page up/down moving between buffers
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
 
