@@ -121,6 +121,10 @@ Plug 'jwhitley/vim-matchit'
 
 Plug 'airblade/vim-gitgutter'
 
+nmap <silent> <C-A-h> :BufSurfBack<CR>
+nmap <silent> <C-A-l> :BufSurfForward<CR>
+Plug 'ton/vim-bufsurf'
+
 call plug#end()
 
 if has("gui_running")
