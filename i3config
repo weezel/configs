@@ -30,6 +30,9 @@ bindsym $mod+Shift+Q kill
 # start dmenu (a program launcher)
 bindsym $mod+p exec /usr/local/bin/dmenu_run
 
+# find a window
+bindsym $mod+i exec --no-startup-id rofi -show window
+
 # Configure monitors
 bindsym $mod+o exec --no-startup-id ~/bin/monitor_config.sh
 
