@@ -110,7 +110,7 @@ nnoremap <leader>f :LAck!<Space>
 Plug 'mileszs/ack.vim'
 
 let g:UltiSnipsSnippetsDir = "~/configs/dotvim/snippets"
-"Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 "g:toggle_list_no_mappings
 "nnoremap <script> <silent> <leader>c call: ToggleQuickfixList()<CR>
