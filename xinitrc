@@ -37,19 +37,6 @@ xsetroot -solid black
 
 ~/bin/monitor_config.sh
 
-#monitorcount=$(grep -c " connected")
-#case "${monitorcount}" in
-#1)
-#	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.35
-#	;;
-#2)
-#	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.9
-#	;;
-#3)
-#	xinput set-prop /dev/wsmouse "Device Accel Constant Deceleration" 0.9
-#	;;
-#esac
-
 # Let the newest chrome work again
 #/usr/X11R6/bin/xcompmgr &
 /usr/local/bin/compton -b
