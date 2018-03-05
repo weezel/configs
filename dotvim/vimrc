@@ -121,8 +121,8 @@ Plug 'jwhitley/vim-matchit'
 
 Plug 'airblade/vim-gitgutter'
 
-nmap <silent> <C-h> :BufSurfBack<CR>
-nmap <silent> <C-l> :BufSurfForward<CR>
+nmap <silent> <C-A-h> :BufSurfBack<CR>
+nmap <silent> <C-A-l> :BufSurfForward<CR>
 Plug 'ton/vim-bufsurf'
 
 call plug#end()
@@ -292,8 +292,8 @@ nnoremap <C-A-k> <PageUp>
 inoremap <C-A-j> <ESC><C-E>i
 inoremap <C-A-k> <ESC><C-Y>i
 " Page up/down moving between buffers
-nnoremap <C-A-h> :bprev<CR>
-nnoremap <C-A-l> :bnext<CR>
+nnoremap <C-h> :bprev<CR>
+nnoremap <C-l> :bnext<CR>
 
 " Sorry Vim guys, I'm used to readline
 inoremap <C-a> <esc>I
