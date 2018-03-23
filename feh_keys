@@ -1,0 +1,14 @@
+zoom_in
+zoom_out
+scroll_up
+scroll_down
+scroll_left
+scroll_right
+
+scroll_up	k
+scroll_down	j
+scroll_left	h
+scroll_right	l
+zoom_in		S-Z
+zoom_out	z
+
