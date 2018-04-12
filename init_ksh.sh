@@ -1,8 +1,9 @@
 #!/bin/sh
 
-[[ -r $HOME/.ksh_autocomplete ]] || \
-	ln -s ${HOME}/configs/shell/ksh_autocomplete $HOME/.ksh_autocomplete
-[[ -r ${HOME}/.kshrc ]] || \
-	ln -s ${HOME}/configs/kshrc ${HOME}/.kshrc
-[[ -r ${HOME}/.profile ]] || \
-	ln -s ${HOME}/configs/profile ${HOME}/.profile
+cd $HOME
+[[ -r .ksh_autocomplete ]] || \
+        ln -s configs/shell/ksh_autocomplete .ksh_autocomplete
+[[ -r .kshrc ]] || \
+        ln -s configs/kshrc .kshrc
+[[ -r .profile ]] || \
+        ln -s configs/profile .profile
