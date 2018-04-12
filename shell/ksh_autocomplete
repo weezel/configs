@@ -6,6 +6,6 @@ function reload_completions {
 }
 
 # _1 means the first argument
-set -A complete_make_1 -- install clean clean repackage reinstall
+set -A complete_make_1 -- install clean repackage reinstall
 set -A complete_ssh_1 -- $(awk '$1 == "Host" {print $2}' ~/.ssh/config)
 set -A complete_vmctl_1 -- console load reload start stop reset status
