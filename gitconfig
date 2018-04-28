@@ -30,7 +30,7 @@
 	firstcommit = log --diff-filter=A
 	graph = log --graph --stat --pretty=oneline --abbrev-commit
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen %ai | %ar | %C(bold blue)<%an>%Creset' --abbrev-commit
 	prune = fetch --prune
 	publish = !"git push --set-upstream origin $(git branch-name)"
 	rmremotebranch = push origin --delete
