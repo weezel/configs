@@ -160,7 +160,7 @@ nnoremap Q gqap
 vnoremap Q gq
 
 " Visual
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l\[%v\],%c\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l\[%v\],%c\ %)%L
 syntax on
 
 " Automatically open and close the popup menu / preview window
