@@ -40,6 +40,9 @@ bindsym $mod+o exec --no-startup-id ~/bin/monitor_config.sh
 bindsym XF86AudioRaiseVolume exec "mixerctl outputs.master=+10"
 bindsym XF86AudioLowerVolume exec "mixerctl outputs.master=-10"
 #bindsym XF86AudioMute exec "mixerctl outputs.master.mute=toggle"
+#bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
+#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 10%-
+#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 10%+
 
 # change focus
 bindsym $mod+Left focus left
@@ -109,11 +112,6 @@ bindsym $mod+Shift+7 move workspace 7
 bindsym $mod+Shift+8 move workspace 8
 bindsym $mod+Shift+9 move workspace 9
 bindsym $mod+Shift+0 move workspace 10
-
-# Audio
-#bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
-#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 10%-
-#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 10%+
 
 # Brightness
 #bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
