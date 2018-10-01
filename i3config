@@ -31,10 +31,10 @@ bindsym $mod+Shift+Q kill
 bindsym $mod+p exec /usr/local/bin/dmenu_run
 
 # find a window
-bindsym $mod+i exec --no-startup-id rofi -show window
+bindsym $mod+o exec --no-startup-id rofi -show window
 
 # Configure monitors
-bindsym $mod+o exec --no-startup-id ~/bin/monitor_config.sh
+bindsym $mod+i exec --no-startup-id ~/bin/monitor_config.sh
 
 # Bind volume keys
 bindsym XF86AudioRaiseVolume exec "mixerctl outputs.master=+10"
