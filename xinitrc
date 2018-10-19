@@ -11,6 +11,7 @@ synclient PalmMinZ=30
 #xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
 #xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Button" 2
 #xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
+xinput set-prop 8 'Device Accel Constant Deceleration' 0.3
 
 # Keyboard related
 xset b off
