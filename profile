@@ -9,7 +9,7 @@ LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 
 SSH_AGENT_PID=$(pgrep -u $(id -u) ssh-agent)
-if [ -z $SSH_AGENT_PID ]; then
+if [[ -z $SSH_AGENT_PID ]]; then
 	eval $(ssh-agent -a $HOME/.ssh/agent_sock)
 	for key in $HOME/.ssh/id_rsa $HOME/.ssh/id_ed25519; do
 		if [ -r "${key}" ]; then
