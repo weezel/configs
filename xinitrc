@@ -1,3 +1,8 @@
+$!/bin/ksh
+
+PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/local/libexec:/usr/libexec:/usr/local/jdk-1.8.0/bin/:/usr/games
+export PATH
+
 # Mouse related
 xinput --set-prop 10 243 20
 xset mouse 100 5
