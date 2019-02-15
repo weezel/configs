@@ -34,7 +34,7 @@
 	prune = fetch --prune
 	publish = !"git push --set-upstream origin $(git branch-name)"
 	rmremotebranch = push origin --delete
-	st = status -bs --untracked-files=no
+	st = status
 	sup = submodule foreach git pull origin master
 	thisbranch = log --color --date=short --pretty=format:'%h %ad %ae %s' --first-parent --no-merges
 	undo = reset --soft HEAD^
