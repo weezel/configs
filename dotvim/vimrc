@@ -23,7 +23,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'ksh install.sh',
     \ }
 
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
