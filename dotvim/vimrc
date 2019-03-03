@@ -5,6 +5,12 @@ set nocompatible
 let mapleader = ";"
 
 call plug#begin()
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+Plug 'itchyny/lightline.vim'
+
 " Language server settings
 set hidden
 
@@ -159,7 +165,6 @@ if has("gui_running")
 	set guioptions-=T " No toolbar
 	set guioptions-=m " No menubar
 	set gfn=Hack\ Regular\ 10
-	set cursorline
 	set guicursor=a:blinkon0
 endif
 
@@ -216,7 +221,8 @@ set splitbelow
 set splitright
 " All splits are equal
 autocmd VimResized * wincmd =
-"set fillchars+=vert:│
+set fillchars+=vert:│
+hi VertSplit ctermbg=NONE guibg=NONE guifg=grey
 
 " Undo related
 set undofile
