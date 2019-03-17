@@ -229,6 +229,7 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 set undodir=~/.config/vim/undodir
+if !isdirectory(&undodir) | call mkdir(&undodir, 'p', 0700) | endif
 
 " Sane indent
 set autoindent
