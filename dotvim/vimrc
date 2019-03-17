@@ -244,7 +244,6 @@ set sidescrolloff=80
 
 filetype on
 filetype plugin indent on
-"set autoindent
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -269,14 +268,10 @@ set encoding=utf-8
 " Make sure your terminal is configured with the same encoding.
 set tenc=utf-8
 
-" in human-language files, automatically format everything at 72 chars:
-autocmd FileType mail,human set formatoptions+=t textwidth=72
-" for C-like programming, have automatic indentation:
-autocmd FileType c,cpp,slang set cindent
-" for actual C (not C++) programming where comments have explicit end
-" characters, if starting a new line in the middle of a comment automatically
-" insert the comment leader characters:
-autocmd FileType c set formatoptions+=ro
+augroup my-human
+    autocmd!
+    autocmd FileType mail,human set formatoptions+=t textwidth=72
+augroup end
 
 " Reveal extra white spaces
 "highlight ExtraWhitespace ctermbg=red guibg=red
