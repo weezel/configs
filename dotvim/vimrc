@@ -5,6 +5,11 @@ set nocompatible
 let mapleader = ";"
 
 call plug#begin()
+" Tmux zoom pane a like
+nnoremap <C-w>z :ZoomWinTabToggle<CR>
+"let g:zoomwintab_hidetabline = 1
+Plug 'weezel/zoomwintab.vim'
+
 set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'wombat',
