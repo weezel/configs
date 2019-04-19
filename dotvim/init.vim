@@ -272,6 +272,9 @@ endif
 " Ctrl-C behaves like pressing Esc
 inoremap <C-c> <Esc>
 
+" Ctrl-Return adds a newline in command mode
+nnoremap <C-CR> i<CR><Esc>
+
 " Allow vi moving in insert mode when Alt is pressed
 inoremap <A-h> <Left>
 inoremap <A-k> <Up>
