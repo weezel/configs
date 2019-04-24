@@ -84,7 +84,7 @@ nnoremap <C-j> :CtrlPBuffer<CR>
 let g:ctrlp_map = '<C-f>'
 let g:ctrlp_cmd = 'CtrlPLine'
 let g:ctrlp_extensions = ['line']
-let g:ctrlp_working_path = '0'
+let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_types = ['fil', 'buf', 'mru']
 let g:ctrlp_open_new_file = 'ri'
 let g:ctrlp_open_multiple_files = 'ri'
