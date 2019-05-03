@@ -30,6 +30,8 @@ inoremap <C-Space> <C-X><C-O>
 inoremap <expr> <CR> (pumvisible() ? "\<c-y>" : "\<CR>")
 
 let g:LanguageClient_serverCommands = {
+    \ 'c': ['clangd'],
+    \ 'cpp': ['clangd'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'python': ['~/bin/pyls'],
     \ }
