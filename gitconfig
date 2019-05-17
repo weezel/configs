@@ -12,12 +12,11 @@
 [merge]
 	ff = only
 	conflictstyle = diff3
-	tool = vimdiff -f
-[mergetool]
+	tool = kdiff3
+	prompt = false
 	keepBackup = false
 [difftool]
-	tool = vimdiff -f
-[difftool "vimdiff"]
+	tool = kdiff3
 	prompt = false
 [alias]
 	# Editing and adding conflicted files: when we get many merge conflicts
