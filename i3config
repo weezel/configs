@@ -171,3 +171,16 @@ bar {
 	tray_output primary
         status_command i3status
 }
+
+# For two monitor setups
+#bar {
+#        output $primary_monitor
+#        font pango:monospace 20
+#        status_command i3status -c ~/.i3/i3status.conf
+#}
+#
+#bar {
+#        output $secondary_monitor
+#        font pango:monospace 10
+#        status_command i3status -c ~/.i3/i3status.conf
+#}
