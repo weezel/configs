@@ -119,6 +119,10 @@ bindsym $mod+Shift+0 move workspace 10
 
 #hide_edge_borders horizontal
 
+# Setup monitors
+#set $primary_monitor eDP-1
+#set $secondary_monitor DP-2
+
 # Workspace setup for external monitors
 workspace 1 output DP-2-2
 workspace 2 output DP-2-2
