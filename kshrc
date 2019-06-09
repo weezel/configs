@@ -9,7 +9,7 @@ HISTSIZE=1000
 
 CVSROOT=anoncvs@anoncvs.eu.openbsd.org:/cvs
 JAVA_HOME=/usr/local/jdk-1.8.0/
-PYTHONPATH=/usr/local/lib/python3.6/site-packages
+PYTHONPATH=/usr/local/lib/python3.7/site-packages
 SDL_VIDEO_X11_DGAMOUSE=0
 
 export CVSROOT JAVA_HOME PYTHONPATH SDL_VIDEO_X11_DGAMOUSE
