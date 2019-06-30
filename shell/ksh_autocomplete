@@ -6,7 +6,11 @@ function reload_completions {
 }
 
 # _1 means the first argument
-set -A complete_make_1 -- $(awk '/^[a-zA-Z0-9_-]+:/ {gsub(":", ""); print $1}' "$PWD/Makefile")
-set -A complete_ssh_1 -- $(awk '$1 ~ "^Host" && $0 !~ "\\*" {print $2}' ~/.ssh/config |uniq |sort)
+set -A complete_make_1 -- $([[ -r "$PWD/Makefile" ]] && \
+	awk '/^[a-zA-Z0-9_-]+:/ {gsub(":", ""); print $1}' "$PWD/Makefile")
+set -A complete_ssh_1 -- $([[ -r $HOME/.ssh/config ]] && \
+	awk '$1 ~ "^Host" && $0 !~ "\\*" {print $2}' \
+	~/.ssh/config |uniq |sort)
 set -A complete_vmctl_1 -- console create load reload send start stop receive reset status
-set -A complete_vmctl_2 -- start stop $(vmctl status |awk 'NR > 1 {print $NF}')
+set -A complete_vmctl_2 -- start stop $([[ -r /var/run/vmd.sock ]] && \
+	vmctl status |awk 'NR > 1 {print $NF}')
