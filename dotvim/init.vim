@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
 set nocompatible
@@ -20,7 +23,8 @@ Plug 'itchyny/lightline.vim'
 set hidden
 
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <C-S-Space> :call LanguageClient_contextMenu()<CR>
+inoremap <C-S-Space> <Esc>:call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 inoremap <C-Space> <C-X><C-O>
 inoremap <expr> <CR> (pumvisible() ? "\<c-y>" : "\<CR>")
@@ -142,6 +146,9 @@ endif
 
 colors peaksea
 set background=dark
+" Better matching completion menu
+hi Pmenu ctermfg=0 ctermbg=6 guibg=#444444
+hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
 
 set listchars=tab:>-,eol:$,trail:.,extends:#
 set backspace=indent,eol,start
@@ -171,6 +178,7 @@ set hlsearch
 set number
 set wildmenu
 set showtabline=2
+set hidden " Don't force to write
 
 " Display incomplete commands
 set showcmd
