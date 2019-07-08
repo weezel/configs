@@ -13,4 +13,4 @@ set -A complete_ssh_1 -- $([[ -r $HOME/.ssh/config ]] && \
 	~/.ssh/config |uniq |sort)
 set -A complete_vmctl_1 -- console create load reload send start stop receive reset status
 set -A complete_vmctl_2 -- start stop $([[ -r /var/run/vmd.sock ]] && \
-	vmctl status |awk 'NR > 1 {print $NF}')
+	vmctl status 2>/dev/null |awk 'NR > 1 {print $NF}')
