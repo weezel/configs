@@ -167,6 +167,7 @@ syntax on
 " Automatically open and close the popup menu / preview window
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 "set completeopt=menuone,menu,longest,preview
+set completeopt=longest,menuone,preview
 
 set history=2000
 set nowrap
