@@ -1,6 +1,6 @@
 flowstats()
 {
-	doas nfdump -R /var/cache/nfdump -o extended      \
+	doas nfdump -R /var/cache/nfcapd -o extended      \
 		-s srcip                     \
 		-s ip/flows                  \
 		-s dstport/pps/packets/bytes \
