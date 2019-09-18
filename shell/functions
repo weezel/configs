@@ -1,7 +1,6 @@
 flowstats()
 {
-	[[ -z ${1} ]] && echo "Need a filename or dir" && return 1
-	sudo nfdump -R ${1} -o extended      \
+	doas nfdump -R /var/cache/nfdump -o extended      \
 		-s srcip                     \
 		-s ip/flows                  \
 		-s dstport/pps/packets/bytes \
