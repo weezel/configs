@@ -2,6 +2,15 @@
 # *color* 'area' 'fgcolor' 'bgcolor' '[attributes]'
 # SOURCE: https://github.com/cbertoldi/dotfiles/blob/master/tigrc.symlink
 
+# Bindings
+set main-view               = line-number:no,interval=5 id:yes date:default author:full,width=0,maxwidth=10 commit-title:yes,graph,refs,overflow=no
+set main-view-date          = custom
+set main-view-date-format   = "%Y-%m-%d %H:%M"
+bind generic    g    none
+bind generic    gg   move-first-line
+bind generic    G    move-last-line
+bind main       G    move-last-line
+
 # general
 color   default                 15      235
 color   cursor                  15      241
