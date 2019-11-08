@@ -16,7 +16,7 @@ SDL_VIDEO_X11_DGAMOUSE=0
 
 export CVSROOT GOPATH JAVA_HOME PYTHONPATH SDL_VIDEO_X11_DGAMOUSE
 
-# use most if available, else less
+# Use most if available, else less
 if [ -x /usr/local/bin/most ]; then
 	export PAGER=most
 else

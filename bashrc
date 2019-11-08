@@ -1,40 +1,32 @@
-# Aliases
-alias ls="ls -F"
-alias pfrules="/usr/bin/sudo /sbin/pfctl -vvs rules | grep @"
-alias rm="rm -i"
-alias cp="cp -i"
-alias rgvim="gvim --servername gvim --remote-tab"
-alias fswebcam="`which fswebcam` -c $HOME/.fswebcam.conf"
+##
+# Settings
+##
+HISTCONTROL=ignoreboth
+HISTFILE=~/.bash_history
+HISTSIZE=1000
 
-# GNU ls alias color ls
-if [ -x /usr/local/bin/gls ]; then
-    alias ls="/usr/local/bin/gls -F --color=auto"
+# Language specific locations
+GOPATH=$HOME/apps/go
+#JAVA_HOME=/usr/local/jdk-1.8.0/
+#PYTHONPATH=/usr/local/lib/python3.7/site-packages
+
+# Use most if available, else less
+if [ -x /usr/local/bin/most ]; then
+	export PAGER=most
+else
+	# Use colors for less, man, etc.
+	# To compile mostlike.txt, do this
+	# $ tic mostlike.txt
+	# It will end up under ~/.terminfo/m/mostlike
+	# Source: http://nion.modprobe.de/blog/archives/569-colored-manpages.html
+	alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 fi
 
-# Better pager
-export PAGER=less
-export LESSCHARSET=utf-8
-#if [ -x /usr/local/bin/most ]; then
-#    alias less="/usr/local/bin/most"
-#    export PAGER=/usr/local/bin/most
-#fi
+alias ls="/bin/ls -F --color=auto"
 
-# Colourful grep
-if [ -x /usr/local/bin/ggrep ]; then
-    alias grep="ggrep --colour=auto"
-fi
-# Fileutils
-if [ -x /usr/local/bin/gls ]; then
-    alias ls="/usr/local/bin/gls -F --color=auto"
-fi
-# Vim for the win
 if [ -x /usr/local/bin/vim ]; then
-    export EDITOR=/usr/local/bin/vim
-    export VISUAL=/usr/local/bin/vim
+	export EDITOR=vim
+	export VISUAL=emacs
+	alias rvim"=vim --servername vim --remote-tab"
 fi
-# cdrecord
-alias cdrecord='cdrecord -v'
-
-# Not a right place for export(s), but..
-export SDL_VIDEO_X11_DGAMOUSE=0
 
