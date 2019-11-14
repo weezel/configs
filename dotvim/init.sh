@@ -1,15 +1,19 @@
 #!/bin/sh
 
 
-function golangserv
-{
+function ideinit {
+	local _ide_file="$HOME/.config/vim_ide.vim"
+	[[ -L "${_ide_file}" ]] || \
+		ln -s "$HOME/configs/dotvim/vim_ide.vim" "${_ide_file}"
+}
+
+function golangserv {
 	echo "### Installing go-language-server..."
 	go get -u github.com/sourcegraph/go-langserver
 	echo "### Done"
 }
 
-function python3_langserv
-{
+function python3_langserv {
 	local readonly _pylspath="$HOME/apps/language_servers/py3-langserver"
 
 	echo "### Installing python-language-server in venv..."
@@ -24,8 +28,7 @@ function python3_langserv
 	echo "### Done"
 }
 
-function vim_plug
-{
+function vim_plug {
 	echo "### Fetching Plug..."
 	curl --create-dirs -fLo autoload/plug.vim \
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -36,14 +39,20 @@ case "${1}" in
 gols)
 	golangserv
 	;;
-plug)
+ide_init)
+	echo "### Use Vim as IDE"
 	vim_plug
+	ideinit
 	;;
 pyls)
 	python3_langserv
 	;;
 *)
-	echo "usage: $0: [gols|plug|pyls]"
+	printf "ide_init %17sUse Vim as IDE\n" ""
+	printf "\nLanguage servers:\n"
+	printf "gols %20sInstall go language server\n" ""
+	printf "pyls %20sInstall Python language server\n" ""
+	echo "\nusage: $0: [OPTION]"
 	exit 0
 esac
 
