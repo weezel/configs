@@ -26,7 +26,7 @@ if [ -r $HOME/configs/machine_specific/ps1 ]; then
 	. $HOME/configs/machine_specific/ps1
 else
 	[ -r $HOME/configs/shell/ps1 ] \
-	&& . $HOME/configs/shell/ps1
+		&& . $HOME/configs/shell/ps1
 fi
 export PS1
 
