@@ -18,8 +18,8 @@ fi
 
 export HOME PATH TERM LESSCHARSET LC_ALL LANG
 
-[ -r $HOME/configs/shell/aliases ] && . $HOME/configs/shell/aliases
-[ -r $HOME/configs/shell/functions ] && . $HOME/configs/shell/functions
+[ -r $HOME/configs/shell/bash_aliases ] && . $HOME/configs/shell/bash_aliases
+[ -r $HOME/configs/shell/bash_functions ] && . $HOME/configs/shell/bash_functions
 
 # Need to import here since it uses functions
 if [ -r $HOME/configs/machine_specific/ps1 ]; then
@@ -33,10 +33,8 @@ export PS1
 # Remove suspend console binding
 stty stop ''
 
-# Load ksh specific configuration if exist
-if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
-	. ~/.kshrc
-elif [ ${SHELL} == "/bin/bash" ] && [ -f ~/.bashrc ]; then
+# Load bash specific configuration if exist
+if [ ${SHELL} == "/bin/bash" ] && [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
