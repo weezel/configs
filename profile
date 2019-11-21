@@ -38,9 +38,9 @@ else
 fi
 
 # Load shell specific configuration
-if [ ${SHELL} == $(which bash) ] && [ -f ~/.bashrc ]; then
+if [ ${SHELL} == $(which bash 2>/dev/null) ] && [ -f ~/.bashrc ]; then
 	. ~/.bashrc
-elif [ ${SHELL} == $(which ksh) ] && [ -f ~/.kshrc ]; then
+elif [ ${SHELL} == $(which ksh 2>/dev/null) ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc
 fi
 
