@@ -1,0 +1,8 @@
+##
+# Some shell indepentent aliases
+alias cp="cp -i"
+alias ls="ls -F"
+alias pfrules="doas /sbin/pfctl -vvs rules | grep @"
+alias rm="rm -i"
+#alias sftp="sftp -o Ciphers=arcfour128 -o MACs=umac-64@openssh.com"
+alias xcap="ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq blaa.mpg"

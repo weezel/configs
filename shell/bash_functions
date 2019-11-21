@@ -1,0 +1,49 @@
+flowstats()
+{
+	doas nfdump -R /var/cache/nfcapd -o extended      \
+		-s srcip                     \
+		-s ip/flows                  \
+		-s dstport/pps/packets/bytes \
+		-s record/bytes
+}
+
+git_branch()
+{
+	local _gb=$(git branch -l 2>&1 |awk '$1 == "*" {print $2}')
+
+	[ -z $_gb ] && return 0
+	printf "(%s)" "${_gb}"
+}
+
+prev_exitval()
+{
+	local _prevxtval=$?
+
+	if [ ${_prevxtval} -eq 0 ]; then
+		printf "\e[1;32m%s\e[0m" "${1}"
+	else
+		printf "\e[1;31m%s\e[0m" "${1}"
+	fi
+}
+
+print_colours()
+{
+	for i in $(jot 255); do
+		  printf "\033[38;5;${i}mcolour${i}\n"
+	  done
+}
+
+ripdvd()
+{
+	lsdvd
+	read nr
+	for i in $(jot ${nr} 2); do mplayer -dumpstream -dumpfile \
+		Nikke_Knatterton-${i}.vob dvd://$i ; done
+}
+
+sprunge()
+{
+	printf '%s%s\n' "$(curl -sF 'sprunge=<-' \
+		http://sprunge.us/)" "${*:+?$*}";
+}
+
