@@ -1,4 +1,4 @@
-TERM=xterm-256color
+TERM=screen-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
@@ -18,9 +18,6 @@ fi
 
 export HOME PATH TERM LESSCHARSET LC_ALL LANG
 
-[ -r $HOME/configs/shell/bash_aliases ] && . $HOME/configs/shell/bash_aliases
-[ -r $HOME/configs/shell/bash_functions ] && . $HOME/configs/shell/bash_functions
-
 # Need to import here since it uses functions
 if [ -r $HOME/configs/machine_specific/ps1 ]; then
 	. $HOME/configs/machine_specific/ps1
@@ -28,13 +25,11 @@ else
 	[ -r $HOME/configs/shell/ps1 ] \
 		&& . $HOME/configs/shell/ps1
 fi
-export PS1
 
 # Remove suspend console binding
 stty stop ''
 
-# Load bash specific configuration if exist
-if [ ${SHELL} == "/bin/bash" ] && [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+if [ ${SHELL} == $(which bash) ] && [ -f ~/.bashrc ]; then
+	source ~/.bashrc
 fi
 

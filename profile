@@ -1,4 +1,4 @@
-# sh/ksh initialization
+# Common initialization
 
 TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
@@ -20,18 +20,6 @@ fi
 
 export HOME PATH TERM LESSCHARSET LC_ALL LANG
 
-[ -r $HOME/configs/shell/aliases ] && . $HOME/configs/shell/aliases
-[ -r $HOME/configs/shell/functions ] && . $HOME/configs/shell/functions
-
-# Need to import here since it uses functions
-if [ -r $HOME/configs/machine_specific/ps1 ]; then
-	. $HOME/configs/machine_specific/ps1
-else
-	[ -r $HOME/configs/shell/ps1 ] \
-	&& . $HOME/configs/shell/ps1
-fi
-export PS1
-
 # Notify mails
 #biff y
 
@@ -41,8 +29,18 @@ stty stop ''
 # Ulimit
 #ulimit -d 716800
 
-# Load ksh specific configuration if exist
-if [ ${SHELL} == "/bin/ksh" ] && [ -f ~/.kshrc ]; then
+# Need to import here since it uses functions
+if [ -r $HOME/configs/machine_specific/ps1 ]; then
+	. $HOME/configs/machine_specific/ps1
+else
+	[ -r $HOME/configs/shell/ps1 ] \
+		&& . $HOME/configs/shell/ps1
+fi
+
+# Load shell specific configuration
+if [ ${SHELL} == $(which bash) ] && [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+elif [ ${SHELL} == $(which ksh) ] && [ -f ~/.kshrc ]; then
 	. ~/.kshrc
 fi
 
