@@ -30,7 +30,7 @@ stty stop ''
 #ulimit -d 716800
 
 # Need to import here since it uses functions
-if [ -r $HOME/configs/machine_specific/ps1 ]; then
+if [[ -r $HOME/configs/machine_specific/ps1 ]]; then
 	. $HOME/configs/machine_specific/ps1
 else
 	[ -r $HOME/configs/shell/ps1 ] \
@@ -38,9 +38,9 @@ else
 fi
 
 # Load shell specific configuration
-if [ ${SHELL} == $(which bash 2>/dev/null) ] && [ -f ~/.bashrc ]; then
+if [[ ${SHELL} == $(which bash 2>/dev/null) ]] && [[ -f ~/.bashrc ]]; then
 	. ~/.bashrc
-elif [ ${SHELL} == $(which ksh 2>/dev/null) ] && [ -f ~/.kshrc ]; then
+elif [[ ${SHELL} == $(which ksh 2>/dev/null) ]] && [[ -f ~/.kshrc ]]; then
 	. ~/.kshrc
 fi
 
