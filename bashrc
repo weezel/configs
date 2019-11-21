@@ -30,7 +30,7 @@ if [ -x /usr/local/bin/vim ]; then
 	alias rvim"=vim --servername vim --remote-tab"
 fi
 
-if [ -r /usr/share/doc/fzf/examples/key-bindings.bash ]; then
-	. /usr/share/doc/fzf/examples/key-bindings.bash
+if [ -r /home/weezel/apps/fzf-scripts/key-bindings.bash ]; then
+	. /home/weezel/apps/fzf-scripts/key-bindings.bash
 fi
 
