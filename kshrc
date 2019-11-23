@@ -16,11 +16,11 @@ SDL_VIDEO_X11_DGAMOUSE=0
 
 export PS1 GOPATH JAVA_HOME PYTHONPATH SDL_VIDEO_X11_DGAMOUSE
 
-[ -r $HOME/configs/shell/aliases ] \
-	&& . $HOME/configs/shell/aliases
+[ -r $HOME/configs/shell/openbsd_aliases ] \
+	&& . $HOME/configs/shell/openbsd_aliases
 
-[ -r $HOME/configs/shell/functions ] \
-	&& . $HOME/configs/shell/functions
+[ -r $HOME/configs/shell/openbsd_functions ] \
+	&& . $HOME/configs/shell/openbsd_functions
 
 [ -r $HOME/.ksh_autocomplete ] \
 	&& . $HOME/.ksh_autocomplete

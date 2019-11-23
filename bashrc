@@ -12,11 +12,11 @@ PYTHONPATH=/usr/local/lib/python3.7/site-packages
 
 export PS1 GOPATH JAVA_HOME PYTHONPATH SDL_VIDEO_X11_DGAMOUSE
 
-[ -r $HOME/configs/shell/bash_aliases ] \
-	&& . $HOME/configs/shell/bash_aliases
+[ -r $HOME/configs/shell/linux_aliases ] \
+	&& . $HOME/configs/shell/linux_aliases
 
-[ -r $HOME/configs/shell/bash_functions ] \
-	&& . $HOME/configs/shell/bash_functions
+[ -r $HOME/configs/shell/linux_functions ] \
+	&& . $HOME/configs/shell/linux_functions
 
 [ -r $HOME/apps/fzf-scripts/key-bindings.bash ] \
 	&& . $HOME/apps/fzf-scripts/key-bindings.bash
@@ -29,15 +29,21 @@ export PS1 GOPATH JAVA_HOME PYTHONPATH SDL_VIDEO_X11_DGAMOUSE
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 
 # fileutils
-if [ -x $(which gls) ]; then
+if [[ -x $(which gls) ]]; then
         alias ls="/usr/local/bin/gls -F --color=auto"
+else
+	alias ls="ls -F --color=auto "
 fi
+
 # colourful grep
-if [ -x $(which ggrep) ]; then
+if [[ -x $(which ggrep) ]]; then
         alias grep="ggrep --colour=auto"
+else
+	alias grep="grep --color=auto"
 fi
+
 # vim for the win
-if [ -x $(which vim) ]; then
+if [[ -x $(which vim) ]]; then
         export EDITOR=vim
         export VISUAL=emacs
         alias rvim"=vim --servername vim --remote-tab"
