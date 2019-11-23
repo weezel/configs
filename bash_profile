@@ -1,7 +1,7 @@
 TERM=screen-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
-PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/snap/bin
 LESSCHARSET=utf-8
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
