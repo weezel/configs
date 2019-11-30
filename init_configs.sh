@@ -1,10 +1,36 @@
 #!/bin/sh
 
-mkdir -p "$HOME/.config/vim/undodir"
+vim_init() {
+	local _vim_undodir="$HOME/.config/vim/undodir"
 
-ln -s $HOME/configs/dotvim/ $HOME/.vim
-ln -s $HOME/.vim/vimrc $HOME/.vimrc
-ln -s $HOME/configs/gitconfig $HOME/.gitconfig
-cp $HOME/configs/tmux.conf $HOME/.tmux.conf
-[[ -r $HOME/.ssh/config ]] || cp $HOME/configs/sshconfig $HOME/.ssh/config
+	[[ -d "$_vim_undodir" ]] || mkdir -p "$_vim_undodir"
+	ln -fs "$HOME/configs/dotvim/" "$HOME/.vim"
+	ln -fs "$HOME/.vim/vimrc" "$HOME/.vimrc"
+
+	ln -fs "$HOME/configs/dotvim/" "$HOME/.config/nvim"
+}
+
+tig_init() {
+	local _tig_configdir="$HOME/.config/tig"
+	[[ -d "$_tig_configdir" ]] || mkdir -p "$_tig_configdir"
+	ln -fs $HOME/configs/tigrc "$_tig_configdir/"
+}
+
+git_init() {
+	ln -fs $HOME/configs/gitconfig $HOME/.gitconfig
+}
+
+vim_init
+tig_init
+git_init
+
+[[ -r $HOME/.tmux.conf ]] \
+	|| cp $HOME/configs/tmux.conf $HOME/.tmux.conf
+
+[[ -r $HOME/.ssh/config ]] \
+	|| cp $HOME/configs/sshconfig $HOME/.ssh/config
+
 tic $HOME/configs/mostlike.txt
+
+
+
