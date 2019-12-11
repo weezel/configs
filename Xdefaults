@@ -1,3 +1,5 @@
+SshAskpass*inputTimeout: 3
+
 XTerm*LoginShell:	true
 XTerm*deleteIsDEL:	false
 XTerm*background:	black
