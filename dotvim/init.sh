@@ -56,7 +56,7 @@ pyls)
 	printf "\nLanguage servers:\n"
 	printf "gols %20sInstall go language server\n" ""
 	printf "pyls %20sInstall Python language server\n" ""
-	echo "\nusage: $0: [OPTION]"
+	printf "\nusage: $0: [OPTION]\n"
 	exit 0
 esac
 
