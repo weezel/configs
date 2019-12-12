@@ -39,6 +39,11 @@ function vim_plug {
 	echo "### Done"
 }
 
+readonly CONFIG_HOME="$HOME/.config"
+[[ -d "$CONFIG_HOME" ]] || mkdir "$CONFIG_HOME"
+[[ -h "$CONFIG_HOME/nvim" ]] \
+	|| ln -fs "$HOME/configs/dotvim" "$CONFIG_HOME/nvim"
+
 case "${1}" in
 gols)
 	golangserv
