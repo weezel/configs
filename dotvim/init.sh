@@ -2,9 +2,13 @@
 
 
 function ideinit {
-	local _ide_file="$HOME/.config/vim_ide.vim"
-	[[ -L "${_ide_file}" ]] || \
-		ln -s "$HOME/configs/dotvim/vim_ide.vim" "${_ide_file}"
+	local _vim_ide_file="$HOME/.config/vim_ide.vim"
+	[[ -L "${_vim_ide_file}" ]] || \
+		ln -s "$HOME/configs/dotvim/vim_ide.vim" "${_vim_ide_file}"
+
+	local _nvim_ide_file="$HOME/.config/nvim_ide.vim"
+	[[ -L "${_nvim_ide_file}" ]] || \
+		ln -s "$HOME/configs/dotvim/nvim_ide.vim" "${_nvim_ide_file}"
 }
 
 function golangserv {
