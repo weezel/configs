@@ -17,7 +17,8 @@ tig_init() {
 }
 
 git_init() {
-	ln -fs $HOME/configs/gitconfig $HOME/.gitconfig
+	ln -fs "$HOME/configs/gitconfig" "$HOME/.gitconfig"
+	ln -fs "$HOME/configs/tigrc" "$HOME/.tigrc"
 }
 
 vim_init
@@ -31,6 +32,5 @@ git_init
 	|| cp $HOME/configs/sshconfig $HOME/.ssh/config
 
 tic $HOME/configs/mostlike.txt
-
 
 
