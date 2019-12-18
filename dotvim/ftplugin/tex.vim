@@ -7,7 +7,4 @@ nnoremap <F5> :w <CR> :!make 2>&1 >/dev/null<CR>
 
 set spell
 
-" The Saurus
-set thesaurus+=$HOME/.vim/dict/mthesaur.txt
-
 inoremap <C-Space> <C-X>s
