@@ -9,7 +9,7 @@ HISTSIZE=10000
 
 # Language specific locations
 GOPATH=$HOME/apps/go
-JAVA_HOME=/usr/local/jdk-1.8.0/
+JAVA_HOME=/usr/local/jdk-11
 PYTHONPATH=/usr/local/lib/python3.7/site-packages
 
 SDL_VIDEO_X11_DGAMOUSE=0
