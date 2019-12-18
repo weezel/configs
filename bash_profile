@@ -29,7 +29,7 @@ fi
 # Remove suspend console binding
 stty stop ''
 
-if [ ${SHELL} == $(which bash) ] && [ -f ~/.bashrc ]; then
+if [ -f ~/.bashrc ]; then
 	source ~/.bashrc
 fi
 
