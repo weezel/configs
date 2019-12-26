@@ -21,16 +21,27 @@ git_init() {
 	ln -fs "$HOME/configs/tigrc" "$HOME/.tigrc"
 }
 
-vim_init
-tig_init
-git_init
+case $1 in
+vim)
+	vim_init
+	;;
+git)
+	tig_init
+	git_init
+	;;
 
-[[ -r $HOME/.tmux.conf ]] \
-	|| cp $HOME/configs/tmux.conf $HOME/.tmux.conf
+*)
+	vim_init
+	tig_init
+	git_init
 
-[[ -r $HOME/.ssh/config ]] \
-	|| cp $HOME/configs/sshconfig $HOME/.ssh/config
+	[[ -r $HOME/.tmux.conf ]] \
+			|| cp $HOME/configs/tmux.conf $HOME/.tmux.conf
 
-tic $HOME/configs/mostlike.txt
+	[[ -r $HOME/.ssh/config ]] \
+			|| cp $HOME/configs/sshconfig $HOME/.ssh/config
 
+	tic $HOME/configs/mostlike.txt
+	;;
+esac
 
