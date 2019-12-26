@@ -40,14 +40,12 @@ xset fp+ /usr/local/share/fonts/terminus
 xset fp+ /usr/local/share/fonts/Hack
 xset fp rehash
 
-
 if [ -x /usr/local/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
 	eval `dbus-launch --sh-syntax --exit-with-session`
 fi
 
 xsetroot -solid black
 
-~/bin/monitor_config.sh
 
 /usr/local/bin/compton -b
 
@@ -55,6 +53,8 @@ xsetroot -solid black
 /usr/X11R6/bin/xidle -program "/usr/X11R6/bin/xlock" \
 	-timeout 600 &
 /usr/local/libexec/tray-app/sound &
+
+~/bin/monitor_config.sh
 
 eval i3
 
