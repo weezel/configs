@@ -17,7 +17,7 @@ endif
 if has("gui_running")
 	set guioptions-=T " No toolbar
 	set guioptions-=m " No menubar
-	set gfn=Hack\ Regular\ 10
+	set gfn=Hack\ Regular\ 12
 	set guicursor=a:blinkon0
 endif
 
