@@ -72,6 +72,7 @@ let g:tagbar_autofocus=0
 let g:tagbar_sort = 1
 Plug 'majutsushi/tagbar'
 
+let g:NERDTreeWinPos = "left"
 map <F3> :NERDTreeToggle<CR>
 Plug 'scrooloose/nerdtree'
 
