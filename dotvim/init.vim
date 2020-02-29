@@ -31,11 +31,12 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
 	set t_Co=256
 endif
 
+syntax on
 colors peaksea
 set background=dark
-" Better matching completion menu
-hi Pmenu ctermfg=0 ctermbg=6 guibg=#444444
-hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
+" Stylize completion menu
+highlight Pmenu ctermfg=3 ctermbg=0 guifg=#555555 guibg=#ffffff
+highlight PmenuSel ctermfg=0 ctermbg=11 guibg=#555555 guifg=#ffffff
 
 set listchars=tab:>-,eol:$,trail:.,extends:#
 set backspace=indent,eol,start
@@ -49,7 +50,6 @@ vnoremap Q gq
 
 " Visual
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#statusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l\[%v\],%c\ %)%L
-syntax on
 
 " Automatically open and close the popup menu / preview window
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
