@@ -4,14 +4,15 @@ vim_init() {
 	local _vim_undodir="$HOME/.config/vim/undodir"
 
 	[[ -d "$_vim_undodir" ]] || mkdir -p "$_vim_undodir"
-	ln -fs "$HOME/configs/dotvim/" "$HOME/.vim"
+	ln -fs "$HOME/configs/dotvim" "$HOME/.vim"
 	ln -fs "$HOME/.vim/vimrc" "$HOME/.vimrc"
 
-	ln -fs "$HOME/configs/dotvim/" "$HOME/.config/nvim"
+	ln -fs "$HOME/configs/dotvim" "$HOME/.config/nvim"
 }
 
 tig_init() {
 	local _tig_configdir="$HOME/.config/tig"
+
 	[[ -d "$_tig_configdir" ]] || mkdir -p "$_tig_configdir"
 	ln -fs $HOME/configs/tigrc "$_tig_configdir/"
 }
