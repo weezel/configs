@@ -5,9 +5,11 @@ HISTCONTROL=ignoreboth
 HISTFILE=~/.bash_history
 HISTSIZE=10000
 
-# Language specific locations
-JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64
+# Language specific settings
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 PYTHONPATH=/usr/local/lib/python3.7/site-packages
+GO111MODULE=on
+
 
 export PS1 JAVA_HOME PYTHONPATH SDL_VIDEO_X11_DGAMOUSE
 

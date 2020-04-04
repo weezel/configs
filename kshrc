@@ -7,9 +7,10 @@ HISTCONTROL=ignoredups:ignorespace
 HISTFILE=~/.sh_history
 HISTSIZE=10000
 
-# Language specific locations
+# Language specific settings
 JAVA_HOME=/usr/local/jdk-11
 PYTHONPATH=/usr/local/lib/python3.7/site-packages
+GO111MODULE=on
 
 SDL_VIDEO_X11_DGAMOUSE=0
 
