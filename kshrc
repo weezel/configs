@@ -9,7 +9,7 @@ HISTSIZE=10000
 
 # Language specific settings
 JAVA_HOME=/usr/local/jdk-11
-PYTHONPATH=/usr/local/lib/python3.7/site-packages
+PYTHONPATH=/usr/local/lib/python3.8/site-packages
 GO111MODULE=on
 
 SDL_VIDEO_X11_DGAMOUSE=0
