@@ -14,11 +14,9 @@ synclient PalmDetect=1
 synclient PalmMinWidth=15
 synclient PalmMinZ=30
 
-# Trackpoint scroll
-#xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
-#xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Button" 2
-#xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
-xinput set-prop 8 'Device Accel Constant Deceleration' 0.3
+# Trackpad and trackpoint acceleration respectively
+xinput set-prop 7 'Device Accel Constant Deceleration' 0.6
+xinput set-prop 8 'Device Accel Constant Deceleration' 0.2
 
 # Keyboard related
 xset b off
