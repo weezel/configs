@@ -5,7 +5,7 @@
 ##
 HISTCONTROL=ignoredups:ignorespace
 HISTFILE=~/.sh_history
-HISTSIZE=10000
+HISTSIZE=100000
 
 # Language specific settings
 JAVA_HOME=/usr/local/jdk-11
