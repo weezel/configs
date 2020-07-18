@@ -9,6 +9,8 @@
 	excludesfile = $HOME/.gitignore
 	autocrlf = input
 	editor = nvim -f
+[pull]
+        ff = only
 [merge]
 	ff = only
 	conflictstyle = diff3
