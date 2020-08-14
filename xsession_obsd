@@ -44,7 +44,6 @@ fi
 
 xsetroot -solid black
 
-
 /usr/local/bin/compton -b
 
 # Lock screen when away or resuming from suspend
