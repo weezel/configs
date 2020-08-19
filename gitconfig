@@ -44,3 +44,5 @@
 	followTags = true
 [status]
 	showUntrackedFiles = all
+[pull]
+	ff = only
