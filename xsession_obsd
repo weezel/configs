@@ -16,7 +16,7 @@ synclient PalmMinZ=30
 
 # Trackpad and trackpoint acceleration respectively
 xinput set-prop 7 'Device Accel Constant Deceleration' 0.6
-xinput set-prop 8 'Device Accel Constant Deceleration' 0.2
+xinput set-prop 8 'Device Accel Constant Deceleration' 0.35
 
 # Keyboard related
 xset b off
