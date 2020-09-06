@@ -1,0 +1,20 @@
+alias cp="cp -i"
+alias grep="grep --color=auto"
+alias ls="ls -F --color=auto "
+alias rm="rm -i"
+alias sudo="sudo -E"
+alias xcap="ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq blaa.mpg"
+
+# Use colors for less, man, etc.
+# To compile mostlike.txt, do this
+# $ tic mostlike.txt
+# It will end up under ~/.terminfo/m/mostlike
+# Source: http://nion.modprobe.de/blog/archives/569-colored-manpages.html
+alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
+
+if [[ -x $(which vim) ]]; then
+        export EDITOR=nvim
+        export VISUAL=emacs
+        alias rvim"=vim --servername vim --remote-tab"
+fi
+
