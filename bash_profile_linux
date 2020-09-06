@@ -1,6 +1,11 @@
 # Remove suspend console binding
 stty stop ''
 
+export $HOME
+
+[ -r $HOME/.bashrc ] \
+	&& . $HOME/.bashrc
+
 SSH_AGENT_PID=$(pgrep -u $(id -u) ssh-agent)
 if [[ -z $SSH_AGENT_PID ]]; then
 	eval $(ssh-agent -a $HOME/.ssh/agent_sock)
