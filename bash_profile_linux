@@ -1,8 +1,6 @@
 # Remove suspend console binding
 stty stop ''
 
-export $HOME
-
 [ -r $HOME/.bashrc ] \
 	&& . $HOME/.bashrc
 
