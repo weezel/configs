@@ -1,0 +1,31 @@
+HISTCONTROL=ignoreboth
+HISTFILE=~/.bash_history
+HISTSIZE=10000
+
+CURRENTOS=$(uname -s | awk '{print tolower($0)}')
+
+[ -r $HOME/configs/shell/env_$CURRENTOS ] \
+	&& . $HOME/configs/shell/env_$CURRENTOS
+
+[ -r $HOME/configs/shell/color_config ] \
+	&& . $HOME/configs/shell/color_config
+
+[ -r $HOME/configs/shell/aliases_$CURRENTOS ] \
+	&& . $HOME/configs/shell/aliases_$CURRENTOS
+
+[ -r $HOME/configs/shell/functions_$CURRENTOS ] \
+	&& . $HOME/configs/shell/functions_$CURRENTOS
+
+[ -r $HOME/apps/fzf-scripts/key-bindings.bash ] \
+	&& . $HOME/apps/fzf-scripts/key-bindings.bash
+
+# Stylize PS1
+if [ -r $HOME/configs/machine_specific/ps1 ]; then
+	. $HOME/configs/machine_specific/ps1
+else
+	[ -r $HOME/configs/shell/ps1 ] \
+		&& . $HOME/configs/shell/ps1
+fi
+
+export PS1
+
