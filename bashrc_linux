@@ -4,11 +4,11 @@ HISTSIZE=10000
 
 CURRENTOS=$(uname -s | awk '{print tolower($0)}')
 
-[ -r /home/weezel/configs/shell/env_$CURRENTOS ] \
-	&& . /home/weezel/configs/shell/env_$CURRENTOS
+[ -r $HOME/configs/shell/env_$CURRENTOS ] \
+	&& . $HOME/configs/shell/env_$CURRENTOS
 
-[ -r /home/weezel/configs/shell/color_config ] \
-	&& . /home/weezel/configs/shell/color_config
+[ -r $HOME/configs/shell/color_config ] \
+	&& . $HOME/configs/shell/color_config
 
 [ -r $HOME/configs/shell/aliases_$CURRENTOS ] \
 	&& . $HOME/configs/shell/aliases_$CURRENTOS
