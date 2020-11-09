@@ -1,0 +1,16 @@
+PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin
+
+LESSCHARSET=utf-8
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
+
+TERM=screen-256color
+[ -n "$TMUX" ] && export TERM=screen-256color
+
+# Language specific settings
+GO111MODULE=on
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+PYTHONPATH=/usr/local/lib/python3.8/site-packages
+
+export GO111MODULE HOME JAVA_HOME LANG LC_ALL LESSCHARSET PATH PYTHONPATH TERM
+
