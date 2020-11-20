@@ -4,7 +4,7 @@ LESSCHARSET=utf-8
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 
-TERM=screen-256color
+TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
 # Language specific settings
