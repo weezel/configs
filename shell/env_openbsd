@@ -10,7 +10,6 @@ TERM=screen-256color
 # Language specific settings
 GO111MODULE=on
 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-PYTHONPATH=/usr/local/lib/python3.8/site-packages
 
-export GO111MODULE HOME JAVA_HOME LANG LC_ALL LESSCHARSET PATH PYTHONPATH TERM
+export GO111MODULE HOME JAVA_HOME LANG LC_ALL LESSCHARSET PATH TERM
 
