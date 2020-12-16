@@ -11,9 +11,15 @@ bind generic    gg  move-first-line
 bind generic    G   move-last-line
 bind main       G   move-last-line
 bind generic    C   !git commit -v
+# Verbose commit
 bind main       C   !git commit -v
 bind status     C   !git commit -v
+# Create a branch
+bind refs       n   !@git branch "%(prompt Enter branch name: )"
+# Patch the current file
+bind status     P   !git add --patch %(file)
 
+## Colors
 # general
 color   default                 15      235
 color   cursor                  15      241
