@@ -6,10 +6,13 @@
 set main-view               = line-number:no,interval=5 id:yes date:default author:full,width=0,maxwidth=10 commit-title:yes,graph,refs,overflow=no
 set main-view-date          = custom
 set main-view-date-format   = "%Y-%m-%d %H:%M"
-bind generic    g    none
-bind generic    gg   move-first-line
-bind generic    G    move-last-line
-bind main       G    move-last-line
+bind generic    g   none
+bind generic    gg  move-first-line
+bind generic    G   move-last-line
+bind main       G   move-last-line
+bind generic    C   !git commit -v
+bind main       C   !git commit -v
+bind status     C   !git commit -v
 
 # general
 color   default                 15      235
