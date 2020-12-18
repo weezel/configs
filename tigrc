@@ -6,18 +6,18 @@
 set main-view               = line-number:no,interval=5 id:yes date:default author:full,width=0,maxwidth=10 commit-title:yes,graph,refs,overflow=no
 set main-view-date          = custom
 set main-view-date-format   = "%Y-%m-%d %H:%M"
-bind generic    g   none
-bind generic    gg  move-first-line
-bind generic    G   move-last-line
-bind main       G   move-last-line
-bind generic    C   !git commit -v
+bind generic g none
+bind generic gg move-first-line
+bind generic G  move-last-line
+bind main G move-last-line
+bind generic C !git commit -v
 # Verbose commit
-bind main       C   !git commit -v
-bind status     C   !git commit -v
+bind main C !git commit -v
+bind status C !git commit -v
 # Create a branch
-bind refs       n   !@git branch "%(prompt Enter branch name: )"
+bind refs n !@git branch "%(prompt Enter branch name: )"
 # Patch the current file
-bind status     P   !git add --patch %(file)
+bind status P !git add --patch %(file)
 
 ## Colors
 # general
