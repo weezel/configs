@@ -9,12 +9,11 @@ HISTSIZE=100000
 
 # Language specific settings
 JAVA_HOME=/usr/local/jdk-11
-PYTHONPATH=/usr/local/lib/python3.8/site-packages
 GO111MODULE=on
 
 SDL_VIDEO_X11_DGAMOUSE=0
 
-export PS1 JAVA_HOME PYTHONPATH SDL_VIDEO_X11_DGAMOUSE
+export PS1 JAVA_HOME SDL_VIDEO_X11_DGAMOUSE
 
 [ -r $HOME/configs/shell/openbsd_aliases ] \
 	&& . $HOME/configs/shell/openbsd_aliases
