@@ -13,7 +13,7 @@ GO111MODULE=on
 
 SDL_VIDEO_X11_DGAMOUSE=0
 
-export PS1 JAVA_HOME SDL_VIDEO_X11_DGAMOUSE
+export PS1 JAVA_HOME GO111MODULE SDL_VIDEO_X11_DGAMOUSE
 
 [ -r $HOME/configs/shell/openbsd_aliases ] \
 	&& . $HOME/configs/shell/openbsd_aliases
