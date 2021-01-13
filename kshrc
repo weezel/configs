@@ -1,54 +1,30 @@
-# sh/ksh initialization
-
-##
-# Settings
-##
 HISTCONTROL=ignoredups:ignorespace
 HISTFILE=~/.sh_history
 HISTSIZE=100000
 
-# Language specific settings
-JAVA_HOME=/usr/local/jdk-11
-GO111MODULE=on
+[ -r $HOME/configs/shell/env_openbsd ] \
+        && . $HOME/configs/shell/env_openbsd
 
-SDL_VIDEO_X11_DGAMOUSE=0
+[ -r $HOME/configs/shell/aliases_openbsd ] \
+        && . $HOME/configs/shell/aliases_openbsd
 
-export PS1 JAVA_HOME GO111MODULE SDL_VIDEO_X11_DGAMOUSE
-
-[ -r $HOME/configs/shell/openbsd_aliases ] \
-	&& . $HOME/configs/shell/openbsd_aliases
-
-[ -r $HOME/configs/shell/openbsd_functions ] \
-	&& . $HOME/configs/shell/openbsd_functions
+[ -r $HOME/configs/shell/functions_openbsd ] \
+        && . $HOME/configs/shell/functions_openbsd
 
 [ -r $HOME/.ksh_autocomplete ] \
-	&& . $HOME/.ksh_autocomplete
+        && . $HOME/.ksh_autocomplete
 
-# Use colors for less, man, etc.
-# To compile mostlike.txt, do this
-# $ tic mostlike.txt
-# It will end up under ~/.terminfo/m/mostlike
-# Source: http://nion.modprobe.de/blog/archives/569-colored-manpages.html
-alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
-
-# fileutils
-if [ -x $(which gls) ]; then
-	alias ls="/usr/local/bin/gls -F --color=auto"
+# Stylize PS1
+if [ -r $HOME/configs/machine_specific/ps1 ]; then
+       . $HOME/configs/machine_specific/ps1
+else
+       [ -r $HOME/configs/shell/ps1 ] \
+               && . $HOME/configs/shell/ps1
 fi
-# colourful grep
-if [ -x $(which ggrep) ]; then
-	alias grep="ggrep --colour=auto"
-fi
-# vim for the win
-if [ -x $(which vim) ]; then
-	export EDITOR=vim
-	export VISUAL=emacs
-	alias rvim"=vim --servername vim --remote-tab"
-fi
+export PS1
 
 # "Show status" binding
 stty status ^T
 
-set +o markdirs		# Add / to all directory names generated from wildcard
-			# expansion. From zmyrgel's dotfile.
-
+set +o markdirs         # Add / to all directory names generated from wildcard
+                        # expansion. From zmyrgel's dotfile.
