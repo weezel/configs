@@ -1,2 +1,1 @@
-keysym Shift_L = Shift_L Multi_key
-keysym Shift_R = Shift_R Multi_key
+keycode 107 = Insert NoSymbol Insert

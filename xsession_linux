@@ -33,6 +33,8 @@ xsetroot -solid black
 
 compton -b
 
+xmodmap ~/.Xmodmap
+
 #mate-volume-control-applet &
 nm-applet &
 

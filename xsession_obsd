@@ -50,6 +50,8 @@ xsetroot -solid black
 
 /usr/local/bin/compton -b
 
+xmodmap ~/.Xmodmap
+
 # Lock screen when away or resuming from suspend
 /usr/X11R6/bin/xidle -program "/usr/X11R6/bin/xlock" \
 	-timeout 600 &
