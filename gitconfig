@@ -17,6 +17,8 @@
 	tool = kdiff3
 	prompt = false
 	keepBackup = false
+[rebase]
+	instructionFormat = (%an) %s
 [difftool]
 	tool = kdiff3
 	prompt = false
