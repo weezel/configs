@@ -11,11 +11,9 @@ prev_exitval()
 {
 	local _prevxtval=$?
 
-	#if [ ${_prevxtval} -eq 0 ]; then
-	#	printf "\e[1;32m%s\e[0m" "${1}"
-	#else
-	#	printf "\e[1;31m%s\e[0m" "${1}"
-	#fi
+	if [ ${_prevxtval} -ne 0 ]; then
+		printf "\e[1;31m%s" "${prev_exitval}"
+	fi
 }
 
 print_colours()
