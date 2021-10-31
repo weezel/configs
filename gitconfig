@@ -48,3 +48,5 @@
 	showUntrackedFiles = all
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
