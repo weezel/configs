@@ -2,7 +2,7 @@
 stty stop ''
 
 [ -r $HOME/.bashrc ] \
-	&& . $HOME/.kshrc
+	&& . $HOME/.bashrc
 
 SSH_AGENT_PID=$(pgrep -u $(id -u) ssh-agent)
 if [[ -z $SSH_AGENT_PID ]]; then
