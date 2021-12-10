@@ -1,5 +1,8 @@
 #!/bin/sh
 
+set -euo pipefail
+
+
 keybindings_url="https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.bash"
 
 CURRENT_OS=$(uname -s | awk '{print tolower($0)}')
@@ -12,9 +15,17 @@ fzfdir="$HOME/apps/fzf-scripts"
 [ -d "$fzfdir" ] || mkdir -p "$fzfdir"
 
 # Debian based?
-if [ $(which dpkg) ]; then
-	keybindings_file="$(dpkg -L fzf |fgrep key-bindings.bash)"
-	cp "$keybindings_file" "$fzfdir/key-bindings.bash"
+if [ $(which dpkg 2>/dev/null) ]; then
+	echo "-> dpkg"
+	keybindings_file="$(dpkg -L fzf |grep key-bindings.bash)"
+	cp -f "$keybindings_file" "$fzfdir/key-bindings.bash"
+# Manjaro?
+elif [ $(which pacman 2>/dev/null) ]; then
+	echo "-> pacman"
+	keybindings_file="$(pacman -Ql fzf |awk '/key-bindings.bash/ {print $NF}')"
+	cp -f "$keybindings_file" "$fzfdir/key-bindings.bash"
 else
+	echo "-> other"
 	curl -L -o "$fzfdir/key-bindings.sh" "$keybindings_url"
 fi
+
