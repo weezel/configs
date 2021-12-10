@@ -1,0 +1,38 @@
+$!/usr/bin/env bash
+
+PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+export PATH
+
+# Mouse related
+xinput set-prop 13 321 0.7
+#xinput --set-prop "Synaptics TM3075-002" "Device Accel Profile" 1
+#xset mouse 100 5
+
+# Keyboard related
+xset b off
+xset r rate 300 30
+setxkbmap -layout us,fi -option grp:caps_toggle
+
+# Disable screen blanking since Intel broke their driver
+xset -dpms
+xset s noblank
+xset s off
+
+if [ -x dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+	eval `dbus-launch --sh-syntax --exit-with-session`
+fi
+
+compton -b
+
+xmodmap ~/.Xmodmap
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+nm-applet &
+xfce4-power-manager &
+pulseaudio &
+xautolock -time 10 -locker blurlock &
+
+~/bin/monitor_config.sh
+
+eval i3
+
