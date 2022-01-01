@@ -29,7 +29,6 @@ xmodmap ~/.Xmodmap
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet &
 xfce4-power-manager &
-pulseaudio &
 xautolock -time 10 -locker blurlock &
 
 ~/bin/monitor_config.sh
