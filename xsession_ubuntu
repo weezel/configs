@@ -31,7 +31,7 @@ fi
 
 xsetroot -solid black
 
-compton -b
+picom -b
 
 xmodmap ~/.Xmodmap
 
