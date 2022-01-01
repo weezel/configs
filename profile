@@ -4,14 +4,11 @@ stty stop ''
 [ -r $HOME/.bashrc ] \
 	&& . $HOME/.bashrc
 
-SSH_AGENT_PID=$(pgrep -u $(id -u) ssh-agent)
-if [[ -z $SSH_AGENT_PID ]]; then
-	eval $(ssh-agent -a $HOME/.ssh/agent_sock)
-	for key in $HOME/.ssh/id_rsa $HOME/.ssh/id_ed25519; do
-		if [ -r "${key}" ]; then
-			ssh-add "${key}"
-		fi
-	done
+if [ $(pgrep -u $(id -u) ssh-agent) | wc -l ] -eq 0 ]; then
+	ssh-agent -t 8h > "${HOME}/.ssh/agent.env"
+fi
+if [[ ! $SSH_AUTH_SOCK ]]; then
+	. "${HOME}/.ssh/agent.env" >/dev/null
 fi
 
 # Ulimit
