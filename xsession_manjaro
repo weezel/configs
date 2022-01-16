@@ -4,7 +4,7 @@ PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 export PATH
 
 # Mouse related
-xinput set-prop 13 321 0.7
+xinput set-prop 13 321 0.6
 #xinput --set-prop "Synaptics TM3075-002" "Device Accel Profile" 1
 #xset mouse 100 5
 
@@ -29,7 +29,7 @@ xmodmap ~/.Xmodmap
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet &
 xfce4-power-manager &
-xautolock -time 10 -locker blurlock &
+xautolock -time 10 -locker i3lock &
 
 ~/bin/monitor_config.sh
 
