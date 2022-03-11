@@ -1,4 +1,15 @@
-PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/snap/bin
+DISTRIBUTION=$(awk -F '=' '$1 == "ID" {print tolower($2)}' /etc/os-release)
+
+case "${DISTRIBUTION}" in
+manjaro)
+	PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+	JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+	;;
+ubuntu)
+	PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/snap/bin
+	JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+	;;
+esac
 
 LESSCHARSET=utf-8
 LC_ALL=en_US.UTF-8
@@ -6,7 +17,6 @@ LANG=en_US.UTF-8
 
 # Language specific settings
 GO111MODULE=on
-JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 export GO111MODULE HOME JAVA_HOME LANG LC_ALL LESSCHARSET PATH
 
