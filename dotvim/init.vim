@@ -38,6 +38,11 @@ set background=dark
 highlight Pmenu ctermfg=3 ctermbg=0 guifg=#555555 guibg=#ffffff
 highlight PmenuSel ctermfg=0 ctermbg=11 guibg=#555555 guifg=#ffffff
 
+" Hilight current line number
+set cursorline
+highlight clear CursorLine
+highlight CursorLineNR cterm=bold ctermfg=yellow gui=bold
+
 set listchars=tab:>-,eol:$,trail:.,extends:#
 set backspace=indent,eol,start
 set tm=500 " time out to 500msec
