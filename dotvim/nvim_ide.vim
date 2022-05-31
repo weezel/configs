@@ -10,22 +10,6 @@ let g:lightline = {
       \ }
 Plug 'itchyny/lightline.vim'
 
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <C-S-Space> :call LanguageClient_contextMenu()<CR>
-inoremap <C-S-Space> <Esc>:call LanguageClient_contextMenu()<CR>
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-inoremap <C-Space> <C-X><C-O>
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>" : "\<CR>")
-
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'python': ['~/bin/pyls'],
-    \ }
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'ksh install.sh',
-    \ }
-
 let g:deoplete#enable_at_startup = 0
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/vim-hug-neovim-rpc'
