@@ -29,7 +29,7 @@ xmodmap ~/.Xmodmap
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet &
 xfce4-power-manager &
-xautolock -time 10 -locker i3lock &
+#xautolock -time 10 -locker i3lock &
 
 ~/bin/monitor_config.sh
 
