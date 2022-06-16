@@ -25,6 +25,7 @@ xmodmap ~/.Xmodmap
 nm-applet &
 xfce4-power-manager &
 sbxkb &
+pa-applet &
 #xautolock -time 10 -locker i3lock &
 
 ~/bin/monitor_config.sh
