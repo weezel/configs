@@ -8,7 +8,7 @@ elif [[ -r "${HOME}/.kshrc" ]]; then
 fi
 
 if [ $(pgrep -u "$USER" ssh-agent | wc -l) -eq 0 ]; then
-	ssh-agent -t 8h > "${HOME}/.ssh/agent.env"
+	ssh-agent -t 48h > "${HOME}/.ssh/agent.env"
 fi
 [[ -z $SSH_AUTH_SOCK ]] && \
 	. "${HOME}/.ssh/agent.env" >/dev/null
