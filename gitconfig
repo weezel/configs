@@ -2,6 +2,7 @@
 	# Include [user] section from .gituser
 	# name = My name
 	# email = My email
+	# signingkey = ssh-ed25519 AA....
 	path = ~/.gituser
 [color]
 	ui = true
@@ -50,3 +51,12 @@
 	ff = only
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	# This file should be in format:
+	#   email@address.com ssh-ed25519 AA...
+	# per line.
+	allowedSignersFile = /home/weezel/.ssh/allowed_signers
