@@ -29,7 +29,7 @@
 	add-unmerged = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 	edit-unmerged = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; `git var GIT_EDITOR` `f`"
 	br = branch
-	ci = commit
+	ci = commit -s
 	co = checkout
 	firstcommit = log --diff-filter=A
 	graph = log --graph --stat --pretty=oneline --abbrev-commit
