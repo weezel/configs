@@ -60,3 +60,5 @@
 	#   email@address.com ssh-ed25519 AA...
 	# per line.
 	allowedSignersFile = /home/weezel/.ssh/allowed_signers
+[fetch]
+	prune = true
