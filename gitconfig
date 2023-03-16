@@ -27,10 +27,10 @@
 	# Editing and adding conflicted files: when we get many merge conflicts
 	# and want to quickly solve them using an editor, then add the  files.
 	add-unmerged = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-	edit-unmerged = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; `git var GIT_EDITOR` `f`"
 	br = branch
 	ci = commit -s
 	co = checkout
+	edit-unmerged = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; `git var GIT_EDITOR` `f`"
 	firstcommit = log --diff-filter=A
 	graph = log --graph --stat --pretty=oneline --abbrev-commit
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
