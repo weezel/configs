@@ -20,6 +20,7 @@
 	keepBackup = false
 [rebase]
 	instructionFormat = (%an) %s
+	autoStash = true
 [difftool]
 	tool = kdiff3
 	prompt = false
