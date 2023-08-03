@@ -3,7 +3,7 @@ DISTRIBUTION=$(awk -F '=' '$1 == "ID" {print tolower($2)}' /etc/os-release)
 case "${DISTRIBUTION}" in
 manjaro)
 	PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
-	JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+	JAVA_HOME=/usr/lib/jvm/java-20-openjdk
 	;;
 ubuntu)
 	PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/snap/bin
