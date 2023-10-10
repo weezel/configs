@@ -11,9 +11,9 @@
 	autocrlf = input
 	editor = nvim -f
 [pull]
-        ff = only
+        ff = no
 [merge]
-	ff = only
+	ff = no
 	conflictstyle = diff3
 	tool = kdiff3
 	prompt = false
