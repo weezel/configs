@@ -30,7 +30,7 @@ pa-applet &
 #xautolock -time 10 -locker i3lock &
 
 # Start bluetooth manager
-/bin/blueman-manager &
+/bin/blueman-applet &
 
 ~/bin/monitor_config.sh
 
