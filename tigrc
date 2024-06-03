@@ -6,6 +6,7 @@
 set main-view = line-number:no,interval=5 id:yes date:default author:full,width=0,maxwidth=10 commit-title:yes,graph,refs,overflow=no
 set main-view-date              = custom
 set main-view-date-format       = "%Y-%m-%d %H:%M"
+set line-graphics               = utf-8
 bind generic g none
 bind generic gg move-first-line
 bind generic G  move-last-line
@@ -84,7 +85,7 @@ color   status.header           221     default
 color   status.section          81      default
 color   stat_staged             213     default
 color   stat_unstaged           213     default
-color   stat_untracked          213     default
+color   stat_untracked          250     default
 
 # raw commit header
 color   commit                  156     default
