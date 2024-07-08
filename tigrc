@@ -7,6 +7,7 @@ set main-view = line-number:no,interval=5 id:yes date:default author:full,width=
 set main-view-date              = custom
 set main-view-date-format       = "%Y-%m-%d %H:%M"
 set line-graphics               = utf-8
+set vertical-split              = false
 bind generic g none
 bind generic gg move-first-line
 bind generic G  move-last-line
