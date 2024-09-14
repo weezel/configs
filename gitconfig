@@ -29,6 +29,7 @@
 	# and want to quickly solve them using an editor, then add the  files.
 	add-unmerged = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 	br = branch
+	cd = log --oneline --left-right --no-merges
 	ci = commit -s
 	co = checkout
 	brcmp = show-branch
@@ -65,3 +66,5 @@
 	allowedSignersFile = /home/weezel/.ssh/allowed_signers
 [fetch]
 	prune = true
+[trim]
+	bases = main,master
