@@ -55,6 +55,7 @@
 	showUntrackedFiles = all
 [pull]
 	ff = only
+	rebase = true
 [init]
 	defaultBranch = main
 [commit]
