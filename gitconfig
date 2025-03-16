@@ -67,6 +67,8 @@
 	allowedSignersFile = /home/weezel/.ssh/allowed_signers
 [fetch]
 	prune = true
+	pruneTags = true
+	all = true
 [trim]
 	bases = main,master
 [branch]
