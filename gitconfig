@@ -80,3 +80,6 @@
 	colorMoved = plain
 	mnemonicPrefix = true
 	renames = true
+[rerere]
+	enabled = true
+	autoupdate = true
