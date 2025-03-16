@@ -68,3 +68,10 @@
 	prune = true
 [trim]
 	bases = main,master
+[branch]
+	sort = -committerdate
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
