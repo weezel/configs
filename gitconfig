@@ -21,6 +21,8 @@
 [rebase]
 	instructionFormat = (%an) %s
 	autoStash = true
+	autoSquash = true
+	updateRefs = true
 [difftool]
 	tool = kdiff3
 	prompt = false
