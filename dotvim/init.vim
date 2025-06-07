@@ -61,23 +61,19 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_fugitive')?fugitive#s
 "set completeopt=menuone,menu,longest,preview
 set completeopt=longest,menuone,preview
 
+set hidden " Don't force to write
 set history=2000
-set nowrap
+set hlsearch
+set incsearch " Do incremental searching
+set laststatus=2
 set nobackup
 set noswapfile
-set ruler
-set laststatus=2
-set hlsearch
+set nowrap
 set number
-set wildmenu
+set ruler
+set showcmd " Display incomplete commands
 set showtabline=2
-set hidden " Don't force to write
-
-" Display incomplete commands
-set showcmd
-
-" Do incremental searching
-set incsearch
+set wildmenu
 
 " When splitting, don't substitute the current
 " buffer with the newly opened one
@@ -110,11 +106,6 @@ set sidescrolloff=80
 filetype on
 filetype plugin indent on
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-    set mouse=a
-endif
-
 " #######################
 " Encoding section
 " #######################
@@ -136,10 +127,8 @@ augroup end
 
 " Reveal extra white spaces
 "highlight ExtraWhitespace ctermbg=red guibg=red
-" Show trailing whitespace:
-match ExtraWhitespace /\s\+$/
-" Show trailing whitepace and spaces before a tab:
-match ExtraWhitespace /\s\+$\| \+\ze\t/
+match ExtraWhitespace /\s\+$/  " Show trailing whitespace:
+match ExtraWhitespace /\s\+$\| \+\ze\t/  " Show trailing whitepace and spaces before a tab:
 " Alternatively, the following pattern will match trailing whitespace, except
 " when typing at the end of a line.
 "match ExtraWhitespace /\s\+\%#\@<!$/
@@ -186,7 +175,7 @@ inoremap <C-A-k> <ESC><C-Y>i
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
 
-" Sorry Vim guys, I'm used to readline
+" Sorry Vim peeps, I'm used to readline
 inoremap <C-a> <esc>I
 inoremap <C-e> <esc>A
 inoremap <C-d> <Delete>
@@ -204,16 +193,12 @@ nnoremap <M-l> <C-w>l
 nnoremap <C-n> :cn<CR>
 nnoremap <C-p> :cp<CR>
 
-" Allow deleting selection without updating the clipboard (yank buffer)
-"noremap dd "_dd
-"vnoremap x "_x
-"vnoremap X "_X
 " Don't move the cursor after pasting
 " (by jumping to back start of previously changed text)
 noremap p p`[
 noremap P P`[
 
-" Don't so help, really
+" No help, really
 noremap  <F1> :set invfullscreen<CR>
 inoremap <F1> <ESC>:set invfullscreen<CR>a
 " When scrolling, cursor stays in the middle
