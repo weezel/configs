@@ -1,0 +1,7 @@
+[editor]
+mouse = false
+auto-completion = false
+auto-pairs = false
+
+[keys.insert]
+"C-space" = "completion"
