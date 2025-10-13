@@ -2,7 +2,7 @@ vim.opt.termguicolors = true
 
 -- Buffer behavior
 vim.opt.hidden = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.history = 2000
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
